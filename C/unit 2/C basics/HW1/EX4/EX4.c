@@ -22,6 +22,4 @@ int main(){
 
 	product = num1*num2;
 	printf("Product : %f ",product);
-
-
 }

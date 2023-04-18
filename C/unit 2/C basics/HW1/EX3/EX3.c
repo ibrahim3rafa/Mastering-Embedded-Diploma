@@ -15,7 +15,7 @@ int main(){
 
 	printf("Please enter the two integers\n");
 	fflush(stdout);
-	scanf("%d %d \n",&num1,&num2);	// get the two numbers from user
+	scanf("%d %d",&num1,&num2);	// get the two numbers from user
 	sum = num1+num2;
 	printf("The sum is %ld",sum);
 

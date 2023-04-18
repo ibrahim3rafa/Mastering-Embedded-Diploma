@@ -12,7 +12,7 @@ void swap_without_temp(float a , float b ){
 	b = a-b;
 	a = a-b;
 
-	printf("the value of a after swapping is %.2f ",a);
+	printf("the value of a after swapping is %.2f\n",a);
 	printf("The value of b after swapping is %.2f ",b);
 }
 int main(){
@@ -22,7 +22,7 @@ int main(){
 	fflush(stdout);
 	scanf(" %f",&a);
 	fflush(stdout);
-	printf("\nEnter value of b : \n");
+	printf("Enter value of b : \n");
 	fflush(stdout);
 	scanf(" %f",&b);
 	swap_without_temp(a,b);
