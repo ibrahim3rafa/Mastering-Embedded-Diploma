@@ -1,23 +1,10 @@
-12:43:50 **** Incremental Build of configuration Debug for project lesson 1 ****
+18:17:58 **** Incremental Build of configuration Debug for project lesson 1 ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "lesson 1.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\Embedded C\Unit3\lesson 1\lesson 1\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lesson 1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: lesson 1.elf
- 
-arm-none-eabi-objdump -h -S  lesson\ 1.elf  > "lesson 1.list"
-arm-none-eabi-objcopy  -O ihex  lesson\ 1.elf  "lesson 1.hex"
-arm-none-eabi-objcopy  -O binary  lesson\ 1.elf  "lesson 1.bin"
 arm-none-eabi-size   lesson\ 1.elf 
    text	   data	    bss	    dec	    hex	filename
     672	     12	   1564	   2248	    8c8	lesson 1.elf
 Finished building: default.size.stdout
-Finished building: lesson 1.list
-Finished building: lesson 1.hex
-Finished building: lesson 1.bin
- 
- 
- 
  
 
-12:43:51 Build Finished. 0 errors, 0 warnings. (took 619ms)
+18:17:58 Build Finished. 0 errors, 0 warnings. (took 244ms)
 

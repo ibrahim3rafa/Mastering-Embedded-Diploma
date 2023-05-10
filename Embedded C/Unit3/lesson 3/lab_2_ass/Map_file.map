@@ -1,0 +1,116 @@
+
+Discarded input sections
+
+ .group         0x00000000        0x8 main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+Mem              0x00000000         0x04000000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00010000                . = 0x10000
+
+.startup        0x00010000        0x8
+ startup.o(.text)
+ .text          0x00010000        0x8 startup.o
+
+.text           0x00010008        0x0
+ *(.text)
+ .text          0x00010008        0x0 main.o
+ *(.rodata)
+
+.glue_7         0x00010008        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x00010008        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x00010008        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00010008        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x00010008        0x0
+ .iplt          0x00000000        0x0 startup.o
+
+.text.main      0x00010008       0x7c
+ .text.main     0x00010008       0x7c main.o
+                0x00010008                main
+
+.rel.dyn        0x00010084        0x0
+ .rel.iplt      0x00000000        0x0 startup.o
+
+.data           0x00010084        0x0
+ *(.data)
+ .data          0x00010084        0x0 startup.o
+ .data          0x00010084        0x0 main.o
+
+.igot.plt       0x00010084        0x0
+ .igot.plt      0x00000000        0x0 startup.o
+
+.data.R_ODR_PTR
+                0x00010084        0x4
+ .data.R_ODR_PTR
+                0x00010084        0x4 main.o
+                0x00010084                R_ODR_PTR
+
+.bss            0x00010088        0x0
+ *(.bss)
+ .bss           0x00010088        0x0 startup.o
+ .bss           0x00010088        0x0 main.o
+ *(COMMON)
+                0x00011088                . = (. + 0x1000)
+                0x00011088                stack_top = .
+LOAD main.o
+LOAD startup.o
+OUTPUT(learn_in_depth_cortex_m3.elf elf32-littlearm)
+
+.vectors        0x00000000       0x50
+ .vectors       0x00000000       0x50 startup.o
+
+.ARM.attributes
+                0x00000000       0x2f
+ .ARM.attributes
+                0x00000000       0x21 startup.o
+ .ARM.attributes
+                0x00000021       0x33 main.o
+
+.comment        0x00000000       0x7b
+ .comment       0x00000000       0x7b main.o
+                                 0x7c (size before relaxing)
+
+.debug_line     0x00000000       0xb3
+ .debug_line    0x00000000       0x3b startup.o
+ .debug_line    0x0000003b       0x78 main.o
+
+.debug_info     0x00000000      0x1e0
+ .debug_info    0x00000000       0xa2 startup.o
+ .debug_info    0x000000a2      0x13e main.o
+
+.debug_abbrev   0x00000000       0xf7
+ .debug_abbrev  0x00000000       0x14 startup.o
+ .debug_abbrev  0x00000014       0xe3 main.o
+
+.debug_aranges  0x00000000       0x40
+ .debug_aranges
+                0x00000000       0x20 startup.o
+ .debug_aranges
+                0x00000020       0x20 main.o
+
+.debug_ranges   0x00000000       0x10
+ .debug_ranges  0x00000000       0x10 main.o
+
+.debug_macro    0x00000000      0xaa5
+ .debug_macro   0x00000000       0x45 main.o
+ .debug_macro   0x00000045      0xa60 main.o
+
+.debug_str      0x00000000     0x2e11
+ .debug_str     0x00000000     0x2e11 main.o
+                               0x2e88 (size before relaxing)
+
+.debug_frame    0x00000000       0x2c
+ .debug_frame   0x00000000       0x2c main.o

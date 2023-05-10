@@ -577,3 +577,7 @@
 2023-05-08 10:56:51,492 [ERROR] CtxDoc:318 - the reference STM32WL does not exists in contextual documentation database
 2023-05-08 10:57:11,909 [INFO] ApiDb:226 - Save user favorites file C:\Users\ARAFA/.stm32cubeide/favorites.mcus.txt: 0 item(s)
 2023-05-08 10:57:11,909 [INFO] ApiDb:230 - User favorites MCUs=[]
+2023-05-10 18:16:43,580 [INFO] Activator:178 - 
+
+
+2023-05-10 18:16:43,629 [INFO] Activator:179 - !SESSION log4j initialized
