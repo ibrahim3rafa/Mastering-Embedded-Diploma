@@ -19,13 +19,13 @@ int main(void)
 	volatile unsigned long delay_count;
     SYSCTL_RCGC2_R = 0X20;
 	for(delay_count=0 ; delay_count < 200 ; delay_count++);
-	GPIO_PORTF_DIR_R |= 1<<3;
-	GPIO_PORTF_DEN_R |= 1<<3;
+	GPIO_PORTF_DIR_R |= (1<<3);
+	GPIO_PORTF_DEN_R |= (1<<3);
 	
 	/* Loop forever */
 	while(1)
 	{
-	GPIO_PORTF_DATA_R |= 1<<3;
+	GPIO_PORTF_DATA_R |= (1<<3);
 	for(delay_count=0 ; delay_count < 200000 ; delay_count++);
 	GPIO_PORTF_DATA_R &= ~(1<<3);
 	for(delay_count=0 ; delay_count < 200000 ; delay_count++);
