@@ -1,0 +1,74 @@
+/*
+ * STM32F103x6.h
+ *
+ *  Created on: Jul 30, 2023
+ *      Author: ARAFA
+ */
+
+#ifndef STM32F103X6_H_
+#define STM32F103X6_H_
+
+//------------------------------------------------------------------
+//Includes
+//------------------------------------------------------------------
+
+#include"stdlib.h"
+#include"stdint.h"
+
+
+/****************************************************************************************************/
+
+
+//------------------------------------------------------------------
+//Base addresses for memories
+//------------------------------------------------------------------
+
+#define Flash_Memory_Base 							(0x08000000UL)
+#define System_Memory_Base 							(0x1FFFF000UL)
+#define Sram_Memory_Base 							(0x20000000UL)
+
+
+#define Peripherals_Base 							(0x40000000UL)
+
+#define Cortex_M3_Internal_Peripherals				(0xE0000000UL)
+
+/****************************************************************************************************/
+
+
+//------------------------------------------------------------------
+//Base addresses for APB2 BUS Peripherals
+//------------------------------------------------------------------
+#define GPIOA_BASE 									(0x4001 0800)
+#define GPIOA_BASE 									(0x4001 0C00)
+#define GPIO_PORTC 									(0x4001 1000)
+#define GPIO_PORTD									(0x4001 1400)
+#define GPIO_PORTE 									(0x4001 1800)
+#define GPIO_PORTF 									(0x4001 1C00)
+#define GPIO_PORTG 									(0x4001 2000)
+
+#define EXTI_BASE 									(0x4001 0400)
+
+
+#define AFIO_BASE 									(0x4001 0000)
+
+
+/****************************************************************************************************/
+
+#define GPIO 										(GPIOx_typedefConfig*)(GPIO_PORT)
+//----------------------------------------------------------------
+//Peripherals Instants
+//----------------------------------------------------------------
+
+typedef struct{
+	volatile uint32_t CRL;
+	volatile uint32_t CRH;
+	volatile uint32_t IDR;
+	volatile uint32_t ODR;
+	volatile uint32_t BSRR;
+	volatile uint32_t BRR;
+	volatile uint32_t LCKR;
+}GPIOx_typedefConfig;
+
+
+
+#endif /* STM32F103X6_H_ */

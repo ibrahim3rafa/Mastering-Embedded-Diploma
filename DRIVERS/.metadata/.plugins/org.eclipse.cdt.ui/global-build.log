@@ -1,0 +1,1557 @@
+08:01:11 **** Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+14:52:22 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+15:27:56 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:24:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:42:0: warning: "GPIOA_BASE" redefined
+ #define GPIOA_BASE          (0x4001 0C00)
+ 
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:41:0: note: this is the location of the previous definition
+ #define GPIOA_BASE          (0x4001 0800)
+ 
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+15:28:26 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+20:12:27 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+20:18:37 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+21:35:07 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+21:48:23 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum) < GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:20: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  (*configRegister) &= ~(0xf<<GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                    ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:90:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: variable 'Pin_Conf' set but not used [-Wunused-but-set-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:48:57 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum) < GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:90:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: variable 'Pin_Conf' set but not used [-Wunused-but-set-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:49:56 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:90:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: variable 'Pin_Conf' set but not used [-Wunused-but-set-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:51:06 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum)));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:90:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: variable 'Pin_Conf' set but not used [-Wunused-but-set-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:51:45 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:76: error: expected ')' before ';' token
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                                                                            ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:111:1: error: expected ';' before '}' token
+ }
+ ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: unused variable 'Pin_Conf' [-Wunused-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:52:11 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:76: error: expected ')' before ';' token
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                                                                            ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:111:1: error: expected ';' before '}' token
+ }
+ ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: unused variable 'Pin_Conf' [-Wunused-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: At top level:
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:114:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:52:13 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:76: error: expected ')' before ';' token
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                                                                            ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:111:1: error: expected ';' before '}' token
+ }
+ ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: unused variable 'Pin_Conf' [-Wunused-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: At top level:
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:114:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:52:20 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:76: error: expected ')' before ';' token
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                                                                            ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:129:1: error: expected declaration or statement at end of input
+ void MCAL_GPIO_Lock_Pin(GPIO_typedefConfig* GPIOx, uint16_t pinNumber);
+ ^~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: unused variable 'Pin_Conf' [-Wunused-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:53:38 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:76: error: expected ')' before ';' token
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                                                                            ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:112:1: error: expected ';' before '}' token
+ }
+ ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: unused variable 'Pin_Conf' [-Wunused-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:54:05 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:76: error: expected ')' before ';' token
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                                                                            ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:112:1: error: expected ';' before '}' token
+ }
+ ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: unused variable 'Pin_Conf' [-Wunused-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:54:08 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:76: error: expected ')' before ';' token
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                                                                            ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:112:1: error: expected ';' before '}' token
+ }
+ ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: unused variable 'Pin_Conf' [-Wunused-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:54:09 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:76: error: expected ')' before ';' token
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                                                                            ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:112:1: error: expected ';' before '}' token
+ }
+ ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: unused variable 'Pin_Conf' [-Wunused-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:54:50 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:76: error: expected ')' before ';' token
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                                                                            ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:112:1: error: expected ';' before '}' token
+ }
+ ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:79:10: warning: unused variable 'Pin_Conf' [-Wunused-variable]
+  uint8_t Pin_Conf = 0;
+          ^~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:55:24 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:18: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum)));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:90:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:110:18: error: invalid operands to binary | (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister |= ((Pin_Conf)<<GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:55:42 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:20: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  (*configRegister) &= ~(0xf<<(GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum)));
+                    ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:90:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:110:18: error: invalid operands to binary | (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister |= ((Pin_Conf)<<GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:57:00 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:81:17: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+  configRegister = (pinConfig->GPIO_PinNum)<GPIO_PIN_8 ? &GPIOx->CRL : &GPIOx->CRH;
+                 ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:84:20: error: invalid operands to binary & (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  (*configRegister) &= ~(0xf<<GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                    ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:90:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:110:18: error: invalid operands to binary | (have 'GPIO_typedefConfig {aka struct <anonymous>}' and 'int')
+  *configRegister |= ((Pin_Conf)<<GPIO_CRLH_PIN_POSITION(pinConfig->GPIO_PinNum));
+                  ^~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+21:57:56 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:90:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+21:59:05 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:90:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+22:04:31 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_Deinit':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:130:22: error: expected ';' before numeric constant
+  GPIOx->BRR = 0x0000 0000;
+                      ^~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:131:22: error: expected ';' before numeric constant
+  GPIOx->BSRR =0x0000 0000 ;
+                      ^~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:132:21: error: expected ';' before numeric constant
+  GPIOx->CRH =0x4444 4444;
+                     ^~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:133:22: error: expected ';' before numeric constant
+  GPIOx->CRL = 0x4444 4444;
+                      ^~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:135:22: error: expected ';' before numeric constant
+  GPIOx->LCKR =0x0000 0000;
+                      ^~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:136:21: error: expected ';' before numeric constant
+  GPIOx->ODR =0x0000 0000;
+                     ^~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:04:54 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_Deinit':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:132:21: error: expected ';' before numeric constant
+  GPIOx->CRH =0x4444 4444;
+                     ^~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:133:22: error: expected ';' before numeric constant
+  GPIOx->CRL = 0x4444 4444;
+                      ^~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:135:22: error: expected ';' before numeric constant
+  GPIOx->LCKR =0x0000 0000;
+                      ^~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:136:21: error: expected ';' before numeric constant
+  GPIOx->ODR =0x0000 0000;
+                     ^~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:05:01 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_Deinit':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:135:22: error: expected ';' before numeric constant
+  GPIOx->LCKR =0x0000 0000;
+                      ^~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:136:21: error: expected ';' before numeric constant
+  GPIOx->ODR =0x0000 0000;
+                     ^~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:05:05 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_Deinit':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:136:21: error: expected ';' before numeric constant
+  GPIOx->ODR =0x0000 0000;
+                     ^~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:05:07 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+22:10:51 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_Deinit':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:141:9: error: switch quantity not an integer
+  switch(GPIOx){
+         ^~~~~
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:10:0,
+                 from ../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:7:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:47:37: error: invalid digit "8" in octal constant
+ #define GPIOA_BASE          (0x4001 0800)
+                                     ^
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:47: note: in expansion of macro 'GPIOA_BASE'
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                                               ^~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:142:7: note: in expansion of macro 'GPIOA'
+  case GPIOA:
+       ^~~~~
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:47:37: error: expected ')' before numeric constant
+ #define GPIOA_BASE          (0x4001 0800)
+                                     ^
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:47: note: in expansion of macro 'GPIOA_BASE'
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                                               ^~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:142:7: note: in expansion of macro 'GPIOA'
+  case GPIOA:
+       ^~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:142:2: error: pointers are not permitted as case values
+  case GPIOA:
+  ^~~~
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:10:0,
+                 from ../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:7:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:60:35: error: expected ')' before numeric constant
+ #define RCC_BASE          (0x4002 1000)
+                                   ^
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:150:38: note: in expansion of macro 'RCC_BASE'
+ #define RCC           ((RCC_typedef*)RCC_BASE)
+                                      ^~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:143:3: note: in expansion of macro 'RCC'
+   RCC->
+   ^~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:144:2: error: expected identifier before '}' token
+  }
+  ^
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:11:06 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_Deinit':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:141:9: error: switch quantity not an integer
+  switch(GPIOx){
+         ^~~~~
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:10:0,
+                 from ../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:7:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:47:37: error: invalid digit "8" in octal constant
+ #define GPIOA_BASE          (0x4001 0800)
+                                     ^
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:47: note: in expansion of macro 'GPIOA_BASE'
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                                               ^~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:142:7: note: in expansion of macro 'GPIOA'
+  case GPIOA:
+       ^~~~~
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:47:37: error: expected ')' before numeric constant
+ #define GPIOA_BASE          (0x4001 0800)
+                                     ^
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:47: note: in expansion of macro 'GPIOA_BASE'
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                                               ^~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:142:7: note: in expansion of macro 'GPIOA'
+  case GPIOA:
+       ^~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:142:2: error: pointers are not permitted as case values
+  case GPIOA:
+  ^~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:11:48 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_Deinit':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:141:9: error: switch quantity not an integer
+  switch(GPIOx){
+         ^~~~~
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:10:0,
+                 from ../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:7:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:47:37: error: invalid digit "8" in octal constant
+ #define GPIOA_BASE          (0x4001 0800)
+                                     ^
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:47: note: in expansion of macro 'GPIOA_BASE'
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                                               ^~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:142:8: note: in expansion of macro 'GPIOA'
+  case *GPIOA:
+        ^~~~~
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:47:37: error: expected ')' before numeric constant
+ #define GPIOA_BASE          (0x4001 0800)
+                                     ^
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:47: note: in expansion of macro 'GPIOA_BASE'
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                                               ^~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:142:8: note: in expansion of macro 'GPIOA'
+  case *GPIOA:
+        ^~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:142:2: error: case label does not reduce to an integer constant
+  case *GPIOA:
+  ^~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:15:03 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:10:0,
+                 from ../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:7:
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_Deinit':
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:47:37: error: invalid digit "8" in octal constant
+ #define GPIOA_BASE          (0x4001 0800)
+                                     ^
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:47: note: in expansion of macro 'GPIOA_BASE'
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                                               ^~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:142:14: note: in expansion of macro 'GPIOA'
+  if(GPIOx == GPIOA){
+              ^~~~~
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:47:37: error: expected ')' before numeric constant
+ #define GPIOA_BASE          (0x4001 0800)
+                                     ^
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:47: note: in expansion of macro 'GPIOA_BASE'
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                                               ^~~~~~~~~~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:142:14: note: in expansion of macro 'GPIOA'
+  if(GPIOx == GPIOA){
+              ^~~~~
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:15:37 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+22:19:58 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+10:25:52 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+15:00:16 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_Lock_Pin':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:320:1: error: expected expression before '}' token
+ }
+ ^
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:320:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [STM32F103C6_gpio_driver/subdir.mk:18: STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:03:53 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c: In function 'MCAL_GPIO_init':
+../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c:92:39: warning: suggest parentheses around '-' inside '<<' [-Wparentheses]
+   Pin_Conf = ((pinConfig->GPIO_PinMode-4 << 2) | ((pinConfig->GPIO_Output_Speed )& 0x0f));
+                ~~~~~~~~~~~~~~~~~~~~~~~^~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+15:04:34 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+15:05:30 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+    556	      8	   1568	   2132	    854	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+15:36:54 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:26:25: warning: extra tokens at end of #include directive
+ #include "STM32F103x6.h";
+                         ^
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:52:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_1;
+        ^~
+../Src/main.c:53:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode= INPUT_FLOATING_MODE;
+        ^~
+../Src/main.c:54:23: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(GPIOA,pinCFG);
+                       ^~~~~~
+In file included from ../Src/main.c:25:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../Src/main.c:57:2: error: 'GPIOA_CRH' undeclared (first use in this function); did you mean 'GPIOC'?
+  GPIOA_CRH &= ~(0b11<<20);  // input mode
+  ^~~~~~~~~
+  GPIOC
+../Src/main.c:57:2: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:61:2: error: 'GPIOB_CRL' undeclared (first use in this function); did you mean 'GPIOA_CRH'?
+  GPIOB_CRL |= (0b01<<4);   //01: Output mode, max speed 10 MHz
+  ^~~~~~~~~
+  GPIOA_CRH
+../Src/main.c:64:2: error: 'GPIOB_CRH' undeclared (first use in this function); did you mean 'GPIOB_CRL'?
+  GPIOB_CRH |= (0b01<<20);   //01: Output mode, max speed 10 MHz
+  ^~~~~~~~~
+  GPIOB_CRL
+../Src/main.c: In function 'main':
+../Src/main.c:75:8: error: 'GPIOA_IDR' undeclared (first use in this function); did you mean 'GPIO_Init'?
+   if(!(GPIOA_IDR & (1<<1))){
+        ^~~~~~~~~
+        GPIO_Init
+../Src/main.c:76:4: error: 'GPIOB_ODR' undeclared (first use in this function); did you mean 'GPIOA_IDR'?
+    GPIOB_ODR ^= (1<<1);  //toggle PB1
+    ^~~~~~~~~
+    GPIOA_IDR
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:37:29 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:26:25: warning: extra tokens at end of #include directive
+ #include "STM32F103x6.h";
+                         ^
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:52:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_1;
+        ^~
+../Src/main.c:53:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode= INPUT_FLOATING_MODE;
+        ^~
+../Src/main.c:54:23: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(GPIOA,pinCFG);
+                       ^~~~~~
+In file included from ../Src/main.c:25:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:77:8: error: 'GPIOA_IDR' undeclared (first use in this function); did you mean 'GPIO_Init'?
+   if(!(GPIOA_IDR & (1<<1))){
+        ^~~~~~~~~
+        GPIO_Init
+../Src/main.c:77:8: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:78:4: error: 'GPIOB_ODR' undeclared (first use in this function); did you mean 'GPIOA_IDR'?
+    GPIOB_ODR ^= (1<<1);  //toggle PB1
+    ^~~~~~~~~
+    GPIOA_IDR
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:38:04 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c:24:25: warning: extra tokens at end of #include directive
+ #include "STM32F103x6.h";
+                         ^
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:53:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_1;
+        ^~
+../Src/main.c:54:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode= INPUT_FLOATING_MODE;
+        ^~
+../Src/main.c:55:23: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(GPIOA,pinCFG);
+                       ^~~~~~
+In file included from ../Src/main.c:25:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:78:8: error: 'GPIOA_IDR' undeclared (first use in this function); did you mean 'GPIO_Init'?
+   if(!(GPIOA_IDR & (1<<1))){
+        ^~~~~~~~~
+        GPIO_Init
+../Src/main.c:78:8: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:79:4: error: 'GPIOB_ODR' undeclared (first use in this function); did you mean 'GPIOA_IDR'?
+    GPIOB_ODR ^= (1<<1);  //toggle PB1
+    ^~~~~~~~~
+    GPIOA_IDR
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:38:13 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:53:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_1;
+        ^~
+../Src/main.c:54:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode= INPUT_FLOATING_MODE;
+        ^~
+../Src/main.c:55:23: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(GPIOA,pinCFG);
+                       ^~~~~~
+In file included from ../Src/main.c:25:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:78:8: error: 'GPIOA_IDR' undeclared (first use in this function); did you mean 'GPIO_Init'?
+   if(!(GPIOA_IDR & (1<<1))){
+        ^~~~~~~~~
+        GPIO_Init
+../Src/main.c:78:8: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:79:4: error: 'GPIOB_ODR' undeclared (first use in this function); did you mean 'GPIOA_IDR'?
+    GPIOB_ODR ^= (1<<1);  //toggle PB1
+    ^~~~~~~~~
+    GPIOA_IDR
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:02:23 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:54:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_1;
+        ^~
+../Src/main.c:55:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode= INPUT_FLOATING_MODE;
+        ^~
+../Src/main.c:56:23: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(GPIOA,pinCFG);
+                       ^~~~~~
+In file included from ../Src/main.c:25:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:79:8: error: 'GPIOA_IDR' undeclared (first use in this function); did you mean 'GPIO_Init'?
+   if(!(GPIOA_IDR & (1<<1))){
+        ^~~~~~~~~
+        GPIO_Init
+../Src/main.c:79:8: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:80:4: error: 'GPIOB_ODR' undeclared (first use in this function); did you mean 'GPIOA_IDR'?
+    GPIOB_ODR ^= (1<<1);  //toggle PB1
+    ^~~~~~~~~
+    GPIOA_IDR
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:02:59 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:54:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_1;
+        ^~
+../Src/main.c:55:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode= INPUT_FLOATING_MODE;
+        ^~
+../Src/main.c: In function 'main':
+../Src/main.c:79:8: error: 'GPIOA_IDR' undeclared (first use in this function); did you mean 'GPIO_Init'?
+   if(!(GPIOA_IDR & (1<<1))){
+        ^~~~~~~~~
+        GPIO_Init
+../Src/main.c:79:8: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:80:4: error: 'GPIOB_ODR' undeclared (first use in this function); did you mean 'GPIOA_IDR'?
+    GPIOB_ODR ^= (1<<1);  //toggle PB1
+    ^~~~~~~~~
+    GPIOA_IDR
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:03:23 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:54:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_1;
+        ^~
+../Src/main.c:55:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode= INPUT_FLOATING_MODE;
+        ^~
+../Src/main.c: In function 'main':
+../Src/main.c:79:8: error: 'GPIOA_IDR' undeclared (first use in this function); did you mean 'GPIO_Init'?
+   if(!(GPIOA_IDR & (1<<1))){
+        ^~~~~~~~~
+        GPIO_Init
+../Src/main.c:79:8: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:80:4: error: 'GPIOB_ODR' undeclared (first use in this function); did you mean 'GPIOA_IDR'?
+    GPIOB_ODR ^= (1<<1);  //toggle PB1
+    ^~~~~~~~~
+    GPIOA_IDR
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:03:43 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:56:23: warning: passing argument 2 of 'MCAL_GPIO_init' from incompatible pointer type [-Wincompatible-pointer-types]
+  MCAL_GPIO_init(GPIOA,&pinCFG);
+                       ^
+In file included from ../Src/main.c:25:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig ** {aka struct <anonymous> **}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:79:8: error: 'GPIOA_IDR' undeclared (first use in this function); did you mean 'GPIO_Init'?
+   if(!(GPIOA_IDR & (1<<1))){
+        ^~~~~~~~~
+        GPIO_Init
+../Src/main.c:79:8: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:80:4: error: 'GPIOB_ODR' undeclared (first use in this function); did you mean 'GPIOA_IDR'?
+    GPIOB_ODR ^= (1<<1);  //toggle PB1
+    ^~~~~~~~~
+    GPIOA_IDR
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:04:08 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:79:8: error: 'GPIOA_IDR' undeclared (first use in this function); did you mean 'GPIO_Init'?
+   if(!(GPIOA_IDR & (1<<1))){
+        ^~~~~~~~~
+        GPIO_Init
+../Src/main.c:79:8: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:80:4: error: 'GPIOB_ODR' undeclared (first use in this function); did you mean 'GPIOA_IDR'?
+    GPIOB_ODR ^= (1<<1);  //toggle PB1
+    ^~~~~~~~~
+    GPIOA_IDR
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:09:51 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:61:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:53:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:70:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:61:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:79:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:70:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:95:50: error: expected ')' before ';' token
+    while(!(MCAL_GPIO_Read_Pin(GPIOA, GPIO_PIN_1));
+                                                  ^
+../Src/main.c:96:3: error: expected expression before '}' token
+   }
+   ^
+../Src/main.c:98:7: error: 'GPIOA_IDR' undeclared (first use in this function); did you mean 'GPIO_Init'?
+   if((GPIOA_IDR & (1<<13))){
+       ^~~~~~~~~
+       GPIO_Init
+../Src/main.c:98:7: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:99:4: error: 'GPIOB_ODR' undeclared (first use in this function); did you mean 'GPIOA_IDR'?
+    GPIOB_ODR ^= (1<<13);  //toggle PB1
+    ^~~~~~~~~
+    GPIOA_IDR
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:10:18 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:61:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:53:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:70:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:61:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:79:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:70:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:98:7: error: expected expression before ')' token
+   if(()){
+       ^
+../Src/main.c:99:4: error: 'GPIOB_ODR' undeclared (first use in this function); did you mean 'GPIOD'?
+    GPIOB_ODR ^= (1<<13);  //toggle PB1
+    ^~~~~~~~~
+    GPIOD
+../Src/main.c:99:4: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:11:34 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:61:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:53:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:70:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:61:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:79:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:70:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:98:45: error: expected statement before ')' token
+   if(MCAL_GPIO_Read_Pin(GPIOA, GPIO_PIN_13))){
+                                             ^
+../Src/main.c:98:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if(MCAL_GPIO_Read_Pin(GPIOA, GPIO_PIN_13))){
+   ^~
+../Src/main.c:98:46: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   if(MCAL_GPIO_Read_Pin(GPIOA, GPIO_PIN_13))){
+                                              ^
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:11:39 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:61:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:53:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:70:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:61:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:79:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:70:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:12:08 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:61:17: error: conflicting types for 'pinCFG'
+  GPIO_pinConfig pinCFG;
+                 ^~~~~~
+../Src/main.c:53:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:70:18: error: conflicting types for 'pinCFG'
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:61:17: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig pinCFG;
+                 ^~~~~~
+../Src/main.c:79:18: error: redeclaration of 'pinCFG' with no linkage
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+../Src/main.c:70:18: note: previous declaration of 'pinCFG' was here
+  GPIO_pinConfig* pinCFG;
+                  ^~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:12:45 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_Init':
+../Src/main.c:54:22: warning: 'pinCFG' is used uninitialized in this function [-Wuninitialized]
+  pinCFG->GPIO_PinNum = GPIO_PIN_1;
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1384	      8	   1568	   2960	    b90	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+16:12:50 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1384	      8	   1568	   2960	    b90	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+16:19:00 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1372	      8	   1568	   2948	    b84	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+Finished building: STM32F103C6_Drivers.bin
+ 
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+16:20:29 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1372	      8	   1568	   2948	    b84	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+16:21:42 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1388	      8	   1568	   2964	    b94	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+Finished building: STM32F103C6_Drivers.bin
+ 
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+16:22:46 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1388	      8	   1568	   2964	    b94	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+16:24:36 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:10:0,
+                 from ../Src/main.c:25:
+../Src/main.c: In function 'main':
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:25: error: called object is not a function or function pointer
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                         ^
+../Src/main.c:98:26: note: in expansion of macro 'GPIOA'
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13)) == 1){
+                          ^~~~~
+../Src/main.c:98:7: error: too few arguments to function 'MCAL_GPIO_Read_Pin'
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13)) == 1){
+       ^~~~~~~~~~~~~~~~~~
+In file included from ../Src/main.c:25:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:109:9: note: declared here
+ uint8_t MCAL_GPIO_Read_Pin(GPIO_typedefConfig* GPIOx, uint16_t pinNumber);
+         ^~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:24:56 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:10:0,
+                 from ../Src/main.c:25:
+../Src/main.c: In function 'main':
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:25: error: called object is not a function or function pointer
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                         ^
+../Src/main.c:98:26: note: in expansion of macro 'GPIOA'
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13))) == 1){
+                          ^~~~~
+../Src/main.c:98:7: error: too few arguments to function 'MCAL_GPIO_Read_Pin'
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13))) == 1){
+       ^~~~~~~~~~~~~~~~~~
+In file included from ../Src/main.c:25:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:109:9: note: declared here
+ uint8_t MCAL_GPIO_Read_Pin(GPIO_typedefConfig* GPIOx, uint16_t pinNumber);
+         ^~~~~~~~~~~~~~~~~~
+../Src/main.c:98:47: error: expected expression before '==' token
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13))) == 1){
+                                               ^~
+../Src/main.c:98:3: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13))) == 1){
+   ^~
+../Src/main.c:98:51: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13))) == 1){
+                                                   ^
+../Src/main.c:98:51: error: expected statement before ')' token
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:25:00 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:10:0,
+                 from ../Src/main.c:25:
+../Src/main.c: In function 'main':
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:25: error: called object is not a function or function pointer
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                         ^
+../Src/main.c:98:26: note: in expansion of macro 'GPIOA'
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13) == 1){
+                          ^~~~~
+../Src/main.c:98:7: error: too few arguments to function 'MCAL_GPIO_Read_Pin'
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13) == 1){
+       ^~~~~~~~~~~~~~~~~~
+In file included from ../Src/main.c:25:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:109:9: note: declared here
+ uint8_t MCAL_GPIO_Read_Pin(GPIO_typedefConfig* GPIOx, uint16_t pinNumber);
+         ^~~~~~~~~~~~~~~~~~
+../Src/main.c:98:50: error: expected ')' before '{' token
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13) == 1){
+                                                  ^
+../Src/main.c:105:2: error: expected expression before '}' token
+  }
+  ^
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:25:43 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:10:0,
+                 from ../Src/main.c:25:
+../Src/main.c: In function 'main':
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:25: error: called object is not a function or function pointer
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                         ^
+../Src/main.c:98:26: note: in expansion of macro 'GPIOA'
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13)) == 1){
+                          ^~~~~
+../Src/main.c:98:7: error: too few arguments to function 'MCAL_GPIO_Read_Pin'
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13)) == 1){
+       ^~~~~~~~~~~~~~~~~~
+In file included from ../Src/main.c:25:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:109:9: note: declared here
+ uint8_t MCAL_GPIO_Read_Pin(GPIO_typedefConfig* GPIOx, uint16_t pinNumber);
+         ^~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:26:15 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:10:0,
+                 from ../Src/main.c:25:
+../Src/main.c: In function 'main':
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103x6.h:140:25: error: called object is not a function or function pointer
+ #define GPIOA           ((GPIO_typedefConfig*)GPIOA_BASE)
+                         ^
+../Src/main.c:98:26: note: in expansion of macro 'GPIOA'
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13))){
+                          ^~~~~
+../Src/main.c:98:7: error: too few arguments to function 'MCAL_GPIO_Read_Pin'
+   if((MCAL_GPIO_Read_Pin(GPIOA GPIO_PIN_13))){
+       ^~~~~~~~~~~~~~~~~~
+In file included from ../Src/main.c:25:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:109:9: note: declared here
+ uint8_t MCAL_GPIO_Read_Pin(GPIO_typedefConfig* GPIOx, uint16_t pinNumber);
+         ^~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:26:32 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1388	      8	   1568	   2964	    b94	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+16:26:50 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1388	      8	   1568	   2964	    b94	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+16:29:33 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1372	      8	   1568	   2948	    b84	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
