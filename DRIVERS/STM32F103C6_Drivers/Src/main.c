@@ -18,15 +18,26 @@
  */
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
-  #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+#warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
 
-#include "STM32F103C6_gpio_driver.h"
-#include"STM32F103x6.h"
-#include"stdio.h"
+#include "../STM32F103C6_drivers/inc/STM32F103C6_gpio_driver.h"
+#include"../STM32F103C6_drivers/inc/STM32F103x6.h"
+#include"lcd.h"
+#include "keypad.h"
 
 
+#define ZERO 0x01
+#define ONE 0x79
+#define TWO 0x24
+#define THREE 0x30
+#define FOUR 0x4C
+#define FIVE 0x12
+#define SIX 0x02
+#define SEVEN 0x19
+#define EIGHT 0x00
+#define NINE 0x10
 
 void clock_init(void){
 	//	Bit 2 IOPAEN: IO port A clock enable
@@ -44,64 +55,93 @@ void clock_init(void){
 	RCC_GPIOB_CLK_EN();
 
 }
+GPIO_pinConfig pinCFG;
+void GPIO_init(){
 
-void GPIO_Init(void){
+	//setting gpio configuration pins for 7seg
 
-	//PA1 input pin
-	 // input mode
-	 //01: Floating input (reset state)
-	GPIO_pinConfig pinCFG;
-	pinCFG.GPIO_PinNum = GPIO_PIN_1;
-	pinCFG.GPIO_PinMode= INPUT_FLOATING_MODE;
-	MCAL_GPIO_init(GPIOA,&pinCFG);
-
-	//PA13 input pin
-	// input mode
- //01: Floating input (reset state)
-//	GPIO_pinConfig* pinCFG;
-	pinCFG.GPIO_PinNum = GPIO_PIN_13;
-	pinCFG.GPIO_PinMode= INPUT_FLOATING_MODE;
-	MCAL_GPIO_init(GPIOA,&pinCFG);
-
-
-	// PB1 is output push-pull pin
-  //01: Output mode, max speed 10 MHz
-   //00: General purpose output push-pull
-//	GPIO_pinConfig* pinCFG;
-	pinCFG.GPIO_PinNum = GPIO_PIN_1;
-	pinCFG.GPIO_PinMode= OUTPUT_PUSH_PULL_MODE;
+	pinCFG.GPIO_PinNum = GPIO_PIN_9;
+	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
 	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-	MCAL_GPIO_init(GPIOB,&pinCFG);
+	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
 
-	// PB13 is output push-pull pin
-	   //01: Output mode, max speed 10 MHz
-  //00: General purpose output push-pull
-//	GPIO_pinConfig* pinCFG;
-	pinCFG.GPIO_PinNum = GPIO_PIN_13;
-	pinCFG.GPIO_PinMode= OUTPUT_PUSH_PULL_MODE;
+	pinCFG.GPIO_PinNum = GPIO_PIN_10;
+	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
 	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-	MCAL_GPIO_init(GPIOB,&pinCFG);
+	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
+
+	pinCFG.GPIO_PinNum = GPIO_PIN_11;
+	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
+
+	pinCFG.GPIO_PinNum = GPIO_PIN_12;
+	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
+
+	pinCFG.GPIO_PinNum = GPIO_PIN_13;
+	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
+
+	pinCFG.GPIO_PinNum = GPIO_PIN_14;
+	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
+
+	pinCFG.GPIO_PinNum = GPIO_PIN_15;
+	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
+
 }
+
+
+void wait_mss(uint32_t time){
+	uint32_t i,j ;
+	for(i=0 ; i<time ; i++){
+		for(j=0 ; j<255; j++);
+	}
+}
+unsigned char seg[] = {ZERO,ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,ZERO};
+unsigned char lcd[] = {'0','1','2','3','4','5','6','7','8','9','0'};
 
 int main(void)
 {
+	unsigned char key_pressed;
 	clock_init();
-	GPIO_Init();
+	GPIO_init();
+	LCD_init();
+	wait_mss(500);
+	LCD_displayString("ARAFA");
+	wait_mss(500);
+	LCD_clearScreen();
 
+	for(unsigned char i = 0 ; i<11 ; i++){
+		MCAL_GPIO_Write_Port(GPIOB, seg[i]<<9);
+		wait_mss(500);
+		LCD_displayCharacter(lcd[i]);
+		wait_mss(500);
+	}
+	LCD_clearScreen();
+	KEYPAD_init();
+	wait_mss(500);
+	LCD_displayString("keypad ready");
+	wait_mss(500);
+	LCD_clearScreen();
 	while(1){
 
-		if(!(MCAL_GPIO_Read_Pin(GPIOA, GPIO_PIN_1))){
-			MCAL_GPIO_Toggle_Pin(GPIOB, GPIO_PIN_1);  //toggle PB1
-			while(!(MCAL_GPIO_Read_Pin(GPIOA, GPIO_PIN_1)));
+		key_pressed = KEYPAD_getKey();
+		switch(key_pressed){
+		case 'A':
+			break;
+		case '?':
+			LCD_clearScreen();
+			break;
+		default:
+			LCD_displayCharacter(key_pressed);
+			break;
 		}
-
-		if((MCAL_GPIO_Read_Pin(GPIOA,GPIO_PIN_13))){
-			MCAL_GPIO_Toggle_Pin(GPIOB, GPIO_PIN_13); //toggle PB1
-
-		}
-
-		for(int i=0 ; i<255 ; i++);
-
 	}
-
 }

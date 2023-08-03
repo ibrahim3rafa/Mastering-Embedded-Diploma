@@ -1555,3 +1555,2078 @@ Finished building: STM32F103C6_Drivers.bin
 Finished building: STM32F103C6_Drivers.list
  
  
+09:22:57 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1372	      8	   1568	   2948	    b84	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+09:26:05 **** Clean-only build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 clean 
+rm -rf *
+ 
+09:26:05 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_gpio_driver/STM32F103C6_gpio_driver.o"
+In file included from ../STM32F103C6_lcd_driver/lcd.c:9:0:
+../STM32F103C6_lcd_driver/lcd.h:11:9: fatal error: avr/io.h: No such file or directory
+ #include<avr/io.h>
+         ^~~~~~~~~~
+compilation terminated.
+make: *** [STM32F103C6_lcd_driver/subdir.mk:18: STM32F103C6_lcd_driver/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:26:12 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_init':
+../STM32F103C6_lcd_driver/lcd.c:12:2: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+  _delay_ms(20);
+  ^~~~~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.c:9:0:
+../STM32F103C6_lcd_driver/lcd.h:24:34: error: 'DDRA' undeclared (first use in this function)
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:13:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR = 0xff;
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:24:34: note: each undeclared identifier is reported only once for each function it appears in
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:13:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR = 0xff;
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:28:32: error: 'DDRB' undeclared (first use in this function); did you mean 'DDRA'?
+ #define LCD_CTR_PORT_DIR       DDRB
+                                ^
+../STM32F103C6_lcd_driver/lcd.c:14:2: note: in expansion of macro 'LCD_CTR_PORT_DIR'
+  LCD_CTR_PORT_DIR  |=(1<<LCD_RW_PIN) | (1<<LCD_RS_PIN) |(1<<LCD_E_PIN);
+  ^~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:15:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &=~(1<<LCD_RW_PIN | 1<<LCD_RS_PIN | 1<<LCD_E_PIN);
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_isBusy':
+../STM32F103C6_lcd_driver/lcd.h:24:34: error: 'DDRA' undeclared (first use in this function)
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:36:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR &= ~(0xff<<LCD_DATA_SHIFT);
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:38:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT |= (1<<LCD_RW_PIN);
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_sendCommand':
+../STM32F103C6_lcd_driver/lcd.h:23:31: error: 'PORTA' undeclared (first use in this function)
+ #define LCD_DATA_PORT         PORTA
+                               ^
+../STM32F103C6_lcd_driver/lcd.c:54:2: note: in expansion of macro 'LCD_DATA_PORT'
+  LCD_DATA_PORT = command;
+  ^~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function); did you mean 'PORTA'?
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:55:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &= ~((1<<LCD_RS_PIN) | (1<<LCD_RW_PIN)) ;
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_displayCharacter':
+../STM32F103C6_lcd_driver/lcd.h:23:31: error: 'PORTA' undeclared (first use in this function)
+ #define LCD_DATA_PORT         PORTA
+                               ^
+../STM32F103C6_lcd_driver/lcd.c:85:2: note: in expansion of macro 'LCD_DATA_PORT'
+  LCD_DATA_PORT = data;
+  ^~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function); did you mean 'PORTA'?
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:86:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &= ~(1<<LCD_RW_PIN) ;
+  ^~~~~~~~~~~~
+make: *** [STM32F103C6_lcd_driver/subdir.mk:18: STM32F103C6_lcd_driver/lcd.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:26:15 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_init':
+../STM32F103C6_lcd_driver/lcd.c:12:2: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+  _delay_ms(20);
+  ^~~~~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.c:9:0:
+../STM32F103C6_lcd_driver/lcd.h:24:34: error: 'DDRA' undeclared (first use in this function)
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:13:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR = 0xff;
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:24:34: note: each undeclared identifier is reported only once for each function it appears in
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:13:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR = 0xff;
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:28:32: error: 'DDRB' undeclared (first use in this function); did you mean 'DDRA'?
+ #define LCD_CTR_PORT_DIR       DDRB
+                                ^
+../STM32F103C6_lcd_driver/lcd.c:14:2: note: in expansion of macro 'LCD_CTR_PORT_DIR'
+  LCD_CTR_PORT_DIR  |=(1<<LCD_RW_PIN) | (1<<LCD_RS_PIN) |(1<<LCD_E_PIN);
+  ^~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:15:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &=~(1<<LCD_RW_PIN | 1<<LCD_RS_PIN | 1<<LCD_E_PIN);
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_isBusy':
+../STM32F103C6_lcd_driver/lcd.h:24:34: error: 'DDRA' undeclared (first use in this function)
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:36:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR &= ~(0xff<<LCD_DATA_SHIFT);
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:38:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT |= (1<<LCD_RW_PIN);
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_sendCommand':
+../STM32F103C6_lcd_driver/lcd.h:23:31: error: 'PORTA' undeclared (first use in this function)
+ #define LCD_DATA_PORT         PORTA
+                               ^
+../STM32F103C6_lcd_driver/lcd.c:54:2: note: in expansion of macro 'LCD_DATA_PORT'
+  LCD_DATA_PORT = command;
+  ^~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function); did you mean 'PORTA'?
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:55:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &= ~((1<<LCD_RS_PIN) | (1<<LCD_RW_PIN)) ;
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_displayCharacter':
+../STM32F103C6_lcd_driver/lcd.h:23:31: error: 'PORTA' undeclared (first use in this function)
+ #define LCD_DATA_PORT         PORTA
+                               ^
+../STM32F103C6_lcd_driver/lcd.c:85:2: note: in expansion of macro 'LCD_DATA_PORT'
+  LCD_DATA_PORT = data;
+  ^~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function); did you mean 'PORTA'?
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:86:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &= ~(1<<LCD_RW_PIN) ;
+  ^~~~~~~~~~~~
+make: *** [STM32F103C6_lcd_driver/subdir.mk:18: STM32F103C6_lcd_driver/lcd.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:26:49 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_init':
+../STM32F103C6_lcd_driver/lcd.c:12:2: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+  _delay_ms(20);
+  ^~~~~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.c:9:0:
+../STM32F103C6_lcd_driver/lcd.h:24:34: error: 'DDRA' undeclared (first use in this function)
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:13:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR = 0xff;
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:24:34: note: each undeclared identifier is reported only once for each function it appears in
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:13:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR = 0xff;
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:28:32: error: 'DDRB' undeclared (first use in this function); did you mean 'DDRA'?
+ #define LCD_CTR_PORT_DIR       DDRB
+                                ^
+../STM32F103C6_lcd_driver/lcd.c:14:2: note: in expansion of macro 'LCD_CTR_PORT_DIR'
+  LCD_CTR_PORT_DIR  |=(1<<LCD_RW_PIN) | (1<<LCD_RS_PIN) |(1<<LCD_E_PIN);
+  ^~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:15:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &=~(1<<LCD_RW_PIN | 1<<LCD_RS_PIN | 1<<LCD_E_PIN);
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_isBusy':
+../STM32F103C6_lcd_driver/lcd.h:24:34: error: 'DDRA' undeclared (first use in this function)
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:36:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR &= ~(0xff<<LCD_DATA_SHIFT);
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:38:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT |= (1<<LCD_RW_PIN);
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_sendCommand':
+../STM32F103C6_lcd_driver/lcd.h:23:31: error: 'GPIOA' undeclared (first use in this function)
+ #define LCD_DATA_PORT         GPIOA
+                               ^
+../STM32F103C6_lcd_driver/lcd.c:54:2: note: in expansion of macro 'LCD_DATA_PORT'
+  LCD_DATA_PORT = command;
+  ^~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:55:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &= ~((1<<LCD_RS_PIN) | (1<<LCD_RW_PIN)) ;
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_displayCharacter':
+../STM32F103C6_lcd_driver/lcd.h:23:31: error: 'GPIOA' undeclared (first use in this function)
+ #define LCD_DATA_PORT         GPIOA
+                               ^
+../STM32F103C6_lcd_driver/lcd.c:85:2: note: in expansion of macro 'LCD_DATA_PORT'
+  LCD_DATA_PORT = data;
+  ^~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:27:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:86:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &= ~(1<<LCD_RW_PIN) ;
+  ^~~~~~~~~~~~
+make: *** [STM32F103C6_lcd_driver/subdir.mk:18: STM32F103C6_lcd_driver/lcd.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:27:15 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_init':
+../STM32F103C6_lcd_driver/lcd.c:12:2: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+  _delay_ms(20);
+  ^~~~~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.c:9:0:
+../STM32F103C6_lcd_driver/lcd.h:25:34: error: 'DDRA' undeclared (first use in this function)
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:13:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR = 0xff;
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:25:34: note: each undeclared identifier is reported only once for each function it appears in
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:13:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR = 0xff;
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:29:32: error: 'DDRB' undeclared (first use in this function); did you mean 'DDRA'?
+ #define LCD_CTR_PORT_DIR       DDRB
+                                ^
+../STM32F103C6_lcd_driver/lcd.c:14:2: note: in expansion of macro 'LCD_CTR_PORT_DIR'
+  LCD_CTR_PORT_DIR  |=(1<<LCD_RW_PIN) | (1<<LCD_RS_PIN) |(1<<LCD_E_PIN);
+  ^~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:28:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:15:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &=~(1<<LCD_RW_PIN | 1<<LCD_RS_PIN | 1<<LCD_E_PIN);
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_isBusy':
+../STM32F103C6_lcd_driver/lcd.h:25:34: error: 'DDRA' undeclared (first use in this function)
+ #define LCD_DATA_PORT_DIR        DDRA
+                                  ^
+../STM32F103C6_lcd_driver/lcd.c:36:2: note: in expansion of macro 'LCD_DATA_PORT_DIR'
+  LCD_DATA_PORT_DIR &= ~(0xff<<LCD_DATA_SHIFT);
+  ^~~~~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.h:28:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:38:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT |= (1<<LCD_RW_PIN);
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_sendCommand':
+../STM32F103C6_lcd_driver/lcd.c:54:16: error: lvalue required as left operand of assignment
+  LCD_DATA_PORT = command;
+                ^
+In file included from ../STM32F103C6_lcd_driver/lcd.c:9:0:
+../STM32F103C6_lcd_driver/lcd.h:28:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:55:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &= ~((1<<LCD_RS_PIN) | (1<<LCD_RW_PIN)) ;
+  ^~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_displayCharacter':
+../STM32F103C6_lcd_driver/lcd.c:85:16: error: lvalue required as left operand of assignment
+  LCD_DATA_PORT = data;
+                ^
+In file included from ../STM32F103C6_lcd_driver/lcd.c:9:0:
+../STM32F103C6_lcd_driver/lcd.h:28:29: error: 'PORTB' undeclared (first use in this function)
+ #define LCD_CTR_PORT        PORTB
+                             ^
+../STM32F103C6_lcd_driver/lcd.c:86:2: note: in expansion of macro 'LCD_CTR_PORT'
+  LCD_CTR_PORT &= ~(1<<LCD_RW_PIN) ;
+  ^~~~~~~~~~~~
+make: *** [STM32F103C6_lcd_driver/subdir.mk:18: STM32F103C6_lcd_driver/lcd.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+09:28:23 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_init':
+../STM32F103C6_lcd_driver/lcd.c:12:2: warning: implicit declaration of function '_delay_ms' [-Wimplicit-function-declaration]
+  _delay_ms(20);
+  ^~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:13:20: error: lvalue required as left operand of assignment
+  LCD_DATA_PORT_DIR = 0xff;
+                    ^
+../STM32F103C6_lcd_driver/lcd.c:14:20: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT_DIR  |=(1<<LCD_RW_PIN) | (1<<LCD_RS_PIN) |(1<<LCD_E_PIN);
+                    ^~
+../STM32F103C6_lcd_driver/lcd.c:15:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &=~(1<<LCD_RW_PIN | 1<<LCD_RS_PIN | 1<<LCD_E_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_isBusy':
+../STM32F103C6_lcd_driver/lcd.c:36:20: error: lvalue required as left operand of assignment
+  LCD_DATA_PORT_DIR &= ~(0xff<<LCD_DATA_SHIFT);
+                    ^~
+../STM32F103C6_lcd_driver/lcd.c:38:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT |= (1<<LCD_RW_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:39:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_RS_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:41:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT |= (1<<LCD_E_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:43:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_E_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:45:20: error: lvalue required as left operand of assignment
+  LCD_DATA_PORT_DIR |= (0xff<<LCD_DATA_SHIFT);
+                    ^~
+../STM32F103C6_lcd_driver/lcd.c:46:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_RW_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_sendCommand':
+../STM32F103C6_lcd_driver/lcd.c:54:16: error: lvalue required as left operand of assignment
+  LCD_DATA_PORT = command;
+                ^
+../STM32F103C6_lcd_driver/lcd.c:55:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~((1<<LCD_RS_PIN) | (1<<LCD_RW_PIN)) ;
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:57:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT |= (1<<LCD_E_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:59:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_E_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_displayCharacter':
+../STM32F103C6_lcd_driver/lcd.c:85:16: error: lvalue required as left operand of assignment
+  LCD_DATA_PORT = data;
+                ^
+../STM32F103C6_lcd_driver/lcd.c:86:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_RW_PIN) ;
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:87:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT |= (1<<LCD_RS_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:90:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT |= (1<<LCD_E_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:92:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_E_PIN);
+               ^~
+make: *** [STM32F103C6_lcd_driver/subdir.mk:18: STM32F103C6_lcd_driver/lcd.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:04:51 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_init':
+../STM32F103C6_lcd_driver/lcd.c:21:20: error: lvalue required as left operand of assignment
+  LCD_DATA_PORT_DIR = 0xff;
+                    ^
+../STM32F103C6_lcd_driver/lcd.c:22:20: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT_DIR  |=(1<<LCD_RW_PIN) | (1<<LCD_RS_PIN) |(1<<LCD_E_PIN);
+                    ^~
+../STM32F103C6_lcd_driver/lcd.c:23:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &=~(1<<LCD_RW_PIN | 1<<LCD_RS_PIN | 1<<LCD_E_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_isBusy':
+../STM32F103C6_lcd_driver/lcd.c:44:20: error: lvalue required as left operand of assignment
+  LCD_DATA_PORT_DIR &= ~(0xff<<LCD_DATA_SHIFT);
+                    ^~
+../STM32F103C6_lcd_driver/lcd.c:46:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT |= (1<<LCD_RW_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:47:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_RS_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:49:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT |= (1<<LCD_E_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:51:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_E_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:53:20: error: lvalue required as left operand of assignment
+  LCD_DATA_PORT_DIR |= (0xff<<LCD_DATA_SHIFT);
+                    ^~
+../STM32F103C6_lcd_driver/lcd.c:54:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_RW_PIN);
+               ^~
+make: *** [STM32F103C6_lcd_driver/subdir.mk:18: STM32F103C6_lcd_driver/lcd.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:18:27 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+../STM32F103C6_lcd_driver/lcd.c: In function 'clock_tick':
+../STM32F103C6_lcd_driver/lcd.c:27:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:28:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:29:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_8;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:30:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:32:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:33:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:34:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_9;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:35:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:37:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:38:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:39:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_10;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:40:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_init':
+../STM32F103C6_lcd_driver/lcd.c:55:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:56:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:57:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_0;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:58:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:60:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:61:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:62:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_1;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:63:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:65:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:66:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:67:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_2;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:68:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:70:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:71:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:72:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_3;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:73:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:75:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:76:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:77:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_4;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:78:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:80:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:81:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:82:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_5;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:83:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:85:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:86:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:87:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_6;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:88:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:90:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:91:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:92:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_7;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:93:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_isBusy':
+../STM32F103C6_lcd_driver/lcd.c:117:2: error: 'LCD_DATA_PORT_DIR' undeclared (first use in this function); did you mean 'LCD_CTR_PORT_DIR'?
+  LCD_DATA_PORT_DIR &= ~(0xff<<LCD_DATA_SHIFT);
+  ^~~~~~~~~~~~~~~~~
+  LCD_CTR_PORT_DIR
+../STM32F103C6_lcd_driver/lcd.c:117:2: note: each undeclared identifier is reported only once for each function it appears in
+../STM32F103C6_lcd_driver/lcd.c:119:2: error: 'LCD_CTR_PORT' undeclared (first use in this function); did you mean 'LCD_DATA_PORT'?
+  LCD_CTR_PORT |= (1<<LCD_RW_PIN);
+  ^~~~~~~~~~~~
+  LCD_DATA_PORT
+make: *** [STM32F103C6_lcd_driver/subdir.mk:18: STM32F103C6_lcd_driver/lcd.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:18:40 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+../STM32F103C6_lcd_driver/lcd.c: In function 'clock_tick':
+../STM32F103C6_lcd_driver/lcd.c:27:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:28:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:29:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_8;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:30:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:32:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:33:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:34:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_9;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:35:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:37:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:38:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:39:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_10;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:40:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_init':
+../STM32F103C6_lcd_driver/lcd.c:56:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:57:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_0;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:58:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:60:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:61:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:62:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_1;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:63:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:65:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:66:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:67:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_2;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:68:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:70:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:71:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:72:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_3;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:73:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:75:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:76:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:77:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_4;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:78:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:80:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:81:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:82:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_5;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:83:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:85:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:86:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:87:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_6;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:88:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c:90:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:91:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:92:8: error: invalid type argument of '->' (have 'GPIO_pinConfig {aka struct <anonymous>}')
+  pinCFG->GPIO_PinNum = GPIO_PIN_7;
+        ^~
+../STM32F103C6_lcd_driver/lcd.c:93:32: error: incompatible type for argument 2 of 'MCAL_GPIO_init'
+  MCAL_GPIO_init(LCD_DATA_PORT, pinCFG);
+                                ^~~~~~
+In file included from ../STM32F103C6_lcd_driver/lcd.h:12:0,
+                 from ../STM32F103C6_lcd_driver/lcd.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc/STM32F103C6_gpio_driver.h:102:6: note: expected 'GPIO_pinConfig * {aka struct <anonymous> *}' but argument is of type 'GPIO_pinConfig {aka struct <anonymous>}'
+ void MCAL_GPIO_init(GPIO_typedefConfig* GPIOx, GPIO_pinConfig* pinConfig);
+      ^~~~~~~~~~~~~~
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_isBusy':
+../STM32F103C6_lcd_driver/lcd.c:117:2: error: 'LCD_DATA_PORT_DIR' undeclared (first use in this function); did you mean 'LCD_CTR_PORT_DIR'?
+  LCD_DATA_PORT_DIR &= ~(0xff<<LCD_DATA_SHIFT);
+  ^~~~~~~~~~~~~~~~~
+  LCD_CTR_PORT_DIR
+../STM32F103C6_lcd_driver/lcd.c:117:2: note: each undeclared identifier is reported only once for each function it appears in
+../STM32F103C6_lcd_driver/lcd.c:119:2: error: 'LCD_CTR_PORT' undeclared (first use in this function); did you mean 'LCD_DATA_PORT'?
+  LCD_CTR_PORT |= (1<<LCD_RW_PIN);
+  ^~~~~~~~~~~~
+  LCD_DATA_PORT
+make: *** [STM32F103C6_lcd_driver/subdir.mk:18: STM32F103C6_lcd_driver/lcd.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:20:14 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_isBusy':
+../STM32F103C6_lcd_driver/lcd.c:117:2: error: 'LCD_DATA_PORT_DIR' undeclared (first use in this function); did you mean 'LCD_CTR_PORT_DIR'?
+  LCD_DATA_PORT_DIR &= ~(0xff<<LCD_DATA_SHIFT);
+  ^~~~~~~~~~~~~~~~~
+  LCD_CTR_PORT_DIR
+../STM32F103C6_lcd_driver/lcd.c:117:2: note: each undeclared identifier is reported only once for each function it appears in
+../STM32F103C6_lcd_driver/lcd.c:119:2: error: 'LCD_CTR_PORT' undeclared (first use in this function); did you mean 'LCD_DATA_PORT'?
+  LCD_CTR_PORT |= (1<<LCD_RW_PIN);
+  ^~~~~~~~~~~~
+  LCD_DATA_PORT
+make: *** [STM32F103C6_lcd_driver/subdir.mk:18: STM32F103C6_lcd_driver/lcd.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:03:43 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+../STM32F103C6_lcd_driver/lcd.c: In function 'LCD_isBusy':
+../STM32F103C6_lcd_driver/lcd.c:156:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_RS_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:158:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT |= (1<<LCD_E_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:160:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_E_PIN);
+               ^~
+../STM32F103C6_lcd_driver/lcd.c:163:15: error: lvalue required as left operand of assignment
+  LCD_CTR_PORT &= ~(1<<LCD_RW_PIN);
+               ^~
+make: *** [STM32F103C6_lcd_driver/subdir.mk:18: STM32F103C6_lcd_driver/lcd.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+13:15:41 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+   text	   data	    bss	    dec	    hex	filename
+   1372	      8	   1568	   2948	    b84	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+13:18:31 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2192	      8	   1568	   3768	    eb8	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+13:21:24 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2192	      8	   1568	   3768	    eb8	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+13:26:16 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2200	      8	   1568	   3776	    ec0	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+13:34:40 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2192	      8	   1568	   3768	    eb8	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+13:34:47 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2188	      8	   1568	   3764	    eb4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+13:36:22 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2188	      8	   1568	   3764	    eb4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+13:49:31 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2188	      8	   1568	   3764	    eb4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+13:52:03 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2184	      8	   1568	   3760	    eb0	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+13:53:52 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2184	      8	   1568	   3760	    eb0	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+14:04:49 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2188	      8	   1568	   3764	    eb4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+14:09:53 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2184	      8	   1568	   3760	    eb0	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+Finished building: STM32F103C6_Drivers.bin
+ 
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+14:12:22 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2188	      8	   1568	   3764	    eb4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+14:14:17 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2172	      8	   1568	   3748	    ea4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+14:21:56 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2396	      8	   1568	   3972	    f84	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+14:27:35 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2396	      8	   1568	   3972	    f84	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+15:01:44 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2400	      8	   1568	   3976	    f88	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.list
+Finished building: STM32F103C6_Drivers.bin
+ 
+ 
+15:09:52 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2400	      8	   1568	   3976	    f88	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+18:34:46 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2404	      8	   1568	   3980	    f8c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+18:36:40 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_lcd_driver/lcd.d" -MT"STM32F103C6_lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2404	      8	   1568	   3980	    f8c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+18:41:26 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Src/main.o: In function `wait_ms':
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Debug/../Src/main.c:30: multiple definition of `wait_ms'
+STM32F103C6_lcd_driver/lcd.o:D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Debug/../STM32F103C6_lcd_driver/lcd.c:17: first defined here
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:51: STM32F103C6_Drivers.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:41:39 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_lcd_driver" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_gpio_driver/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:56:3: warning: implicit declaration of function 'wait_ms'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+   wait_ms(500);
+   ^~~~~~~
+   wcstombs
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2412	      8	   1568	   3988	    f94	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+18:47:12 **** Clean-only build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 clean 
+rm -rf *
+ 
+18:47:12 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/lcd_driver/lcd.d" -MT"STM32F103C6_drivers/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_drivers/lcd_driver/lcd.c:9:10: fatal error: ../STM32F103C6_drivers/lcd.h: No such file or directory
+ #include "../STM32F103C6_drivers/lcd.h"
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [STM32F103C6_drivers/lcd_driver/subdir.mk:18: STM32F103C6_drivers/lcd_driver/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/main.c:27:9: fatal error: ../STM32F103C6_drivers/lcd.h: No such file or directory
+ #include"../STM32F103C6_drivers/lcd.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+../STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.c:9:10: fatal error: STM32F103x6.h: No such file or directory
+ #include "STM32F103x6.h"
+          ^~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+make: *** [STM32F103C6_drivers/gpio_driver/subdir.mk:18: STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:48:03 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/lcd_driver/lcd.d" -MT"STM32F103C6_drivers/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_drivers/lcd_driver/lcd.c:9:10: fatal error: ../STM32F103C6_drivers/lcd.h: No such file or directory
+ #include "../STM32F103C6_drivers/lcd.h"
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [STM32F103C6_drivers/lcd_driver/subdir.mk:18: STM32F103C6_drivers/lcd_driver/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/main.c:27:9: fatal error: ../STM32F103C6_drivers/lcd.h: No such file or directory
+ #include"../STM32F103C6_drivers/lcd.h"
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+../STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.c:9:10: fatal error: STM32F103x6.h: No such file or directory
+ #include "STM32F103x6.h"
+          ^~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [STM32F103C6_drivers/gpio_driver/subdir.mk:18: STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:49:11 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/lcd_driver/lcd.d" -MT"STM32F103C6_drivers/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.o"
+../STM32F103C6_drivers/lcd_driver/lcd.c:9:10: fatal error: ../STM32F103C6_drivers/lcd.h: No such file or directory
+ #include "../STM32F103C6_drivers/lcd.h"
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [STM32F103C6_drivers/lcd_driver/subdir.mk:18: STM32F103C6_drivers/lcd_driver/lcd.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Src/main.c: In function 'main':
+../Src/main.c:56:3: warning: implicit declaration of function 'wait_ms'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+   wait_ms(500);
+   ^~~~~~~
+   wcstombs
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:49:27 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/lcd_driver/lcd.d" -MT"STM32F103C6_drivers/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+   text	   data	    bss	    dec	    hex	filename
+   2412	      8	   1568	   3988	    f94	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+18:49:34 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2412	      8	   1568	   3988	    f94	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+19:39:56 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/lcd_driver/lcd.d" -MT"STM32F103C6_drivers/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/lcd_driver/lcd.o"
+../Src/main.c: In function 'main':
+../Src/main.c:56:3: warning: implicit declaration of function 'wait_ms'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+   wait_ms(500);
+   ^~~~~~~
+   wcstombs
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2440	      8	   1568	   4016	    fb0	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+19:54:05 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+../STM32F103C6_drivers/keypad_driver/keypad.c: In function 'KEYPAD_init':
+../STM32F103C6_drivers/keypad_driver/keypad.c:15:2: error: 'KEYPAD_PORT_DIR' undeclared (first use in this function); did you mean 'KEYPAD_PORT'?
+  KEYPAD_PORT_DIR &=~((1<<keypadRow[0]) | (1<<keypadRow[1]) | (1<<keypadRow[2]) | (1<<keypadRow[3]));
+  ^~~~~~~~~~~~~~~
+  KEYPAD_PORT
+../STM32F103C6_drivers/keypad_driver/keypad.c:15:2: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../STM32F103C6_drivers/keypad_driver/keypad.c:9:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc/keypad.h:25:24: error: 'PORTB' undeclared (first use in this function)
+ #define KEYPAD_PORT    PORTB
+                        ^
+../STM32F103C6_drivers/keypad_driver/keypad.c:17:2: note: in expansion of macro 'KEYPAD_PORT'
+  KEYPAD_PORT = 0xFF;
+  ^~~~~~~~~~~
+../STM32F103C6_drivers/keypad_driver/keypad.c: In function 'KEYPAD_getKey':
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc/keypad.h:25:24: error: 'PORTB' undeclared (first use in this function)
+ #define KEYPAD_PORT    PORTB
+                        ^
+../STM32F103C6_drivers/keypad_driver/keypad.c:24:3: note: in expansion of macro 'KEYPAD_PORT'
+   KEYPAD_PORT |=((1<<C0) | (1<<C1) | (1<<C2) | (1<<C3));
+   ^~~~~~~~~~~
+../STM32F103C6_drivers/keypad_driver/keypad.c:28:9: error: 'KEYPAD_PORT_PIN' undeclared (first use in this function); did you mean 'KEYPAD_PORT'?
+    if(!(KEYPAD_PORT_PIN & (1<<keypadRow[j])));
+         ^~~~~~~~~~~~~~~
+         KEYPAD_PORT
+make: *** [STM32F103C6_drivers/keypad_driver/subdir.mk:18: STM32F103C6_drivers/keypad_driver/keypad.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:54:29 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+../STM32F103C6_drivers/keypad_driver/keypad.c: In function 'KEYPAD_init':
+../STM32F103C6_drivers/keypad_driver/keypad.c:15:2: error: 'KEYPAD_PORT_DIR' undeclared (first use in this function); did you mean 'KEYPAD_PORT'?
+  KEYPAD_PORT_DIR &=~((1<<keypadRow[0]) | (1<<keypadRow[1]) | (1<<keypadRow[2]) | (1<<keypadRow[3]));
+  ^~~~~~~~~~~~~~~
+  KEYPAD_PORT
+../STM32F103C6_drivers/keypad_driver/keypad.c:15:2: note: each undeclared identifier is reported only once for each function it appears in
+../STM32F103C6_drivers/keypad_driver/keypad.c:17:14: error: lvalue required as left operand of assignment
+  KEYPAD_PORT = 0xFF;
+              ^
+../STM32F103C6_drivers/keypad_driver/keypad.c: In function 'KEYPAD_getKey':
+../STM32F103C6_drivers/keypad_driver/keypad.c:24:15: error: lvalue required as left operand of assignment
+   KEYPAD_PORT |=((1<<C0) | (1<<C1) | (1<<C2) | (1<<C3));
+               ^~
+../STM32F103C6_drivers/keypad_driver/keypad.c:25:15: error: lvalue required as left operand of assignment
+   KEYPAD_PORT &= ~(1<<keypadColumn[i]);
+               ^~
+../STM32F103C6_drivers/keypad_driver/keypad.c:28:9: error: 'KEYPAD_PORT_PIN' undeclared (first use in this function); did you mean 'KEYPAD_PORT'?
+    if(!(KEYPAD_PORT_PIN & (1<<keypadRow[j])));
+         ^~~~~~~~~~~~~~~
+         KEYPAD_PORT
+make: *** [STM32F103C6_drivers/keypad_driver/subdir.mk:18: STM32F103C6_drivers/keypad_driver/keypad.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:59:59 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+../STM32F103C6_drivers/keypad_driver/keypad.c: In function 'KEYPAD_init':
+../STM32F103C6_drivers/keypad_driver/keypad.c:17:2: error: 'pinCFG' undeclared (first use in this function)
+  pinCFG.GPIO_PinNum = GPIO_PIN_0;
+  ^~~~~~
+../STM32F103C6_drivers/keypad_driver/keypad.c:17:2: note: each undeclared identifier is reported only once for each function it appears in
+../STM32F103C6_drivers/keypad_driver/keypad.c: In function 'KEYPAD_getKey':
+../STM32F103C6_drivers/keypad_driver/keypad.c:66:3: error: 'pinCFG' undeclared (first use in this function)
+   pinCFG.GPIO_PinNum = keypadColumn[0];
+   ^~~~~~
+../STM32F103C6_drivers/keypad_driver/keypad.c:72:15: error: lvalue required as left operand of assignment
+   KEYPAD_PORT &= ~(1<<keypadColumn[i]);
+               ^~
+../STM32F103C6_drivers/keypad_driver/keypad.c:75:9: error: 'KEYPAD_PORT_PIN' undeclared (first use in this function); did you mean 'KEYPAD_PORT'?
+    if(!(KEYPAD_PORT_PIN & (1<<keypadRow[j])));
+         ^~~~~~~~~~~~~~~
+         KEYPAD_PORT
+make: *** [STM32F103C6_drivers/keypad_driver/subdir.mk:18: STM32F103C6_drivers/keypad_driver/keypad.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:01:05 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+../STM32F103C6_drivers/keypad_driver/keypad.c: In function 'KEYPAD_getKey':
+../STM32F103C6_drivers/keypad_driver/keypad.c:73:15: error: lvalue required as left operand of assignment
+   KEYPAD_PORT &= ~(1<<keypadColumn[i]);
+               ^~
+../STM32F103C6_drivers/keypad_driver/keypad.c:76:9: error: 'KEYPAD_PORT_PIN' undeclared (first use in this function); did you mean 'KEYPAD_PORT'?
+    if(!(KEYPAD_PORT_PIN & (1<<keypadRow[j])));
+         ^~~~~~~~~~~~~~~
+         KEYPAD_PORT
+../STM32F103C6_drivers/keypad_driver/keypad.c:76:9: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [STM32F103C6_drivers/keypad_driver/subdir.mk:18: STM32F103C6_drivers/keypad_driver/keypad.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:03:34 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+../STM32F103C6_drivers/keypad_driver/keypad.c: In function 'KEYPAD_getKey':
+../STM32F103C6_drivers/keypad_driver/keypad.c:100:12: error: 'KEYPAD_PORT_PIN' undeclared (first use in this function); did you mean 'KEYPAD_PORT'?
+    while(!(KEYPAD_PORT_PIN & (1<<keypadRow[j])));
+            ^~~~~~~~~~~~~~~
+            KEYPAD_PORT
+../STM32F103C6_drivers/keypad_driver/keypad.c:100:12: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [STM32F103C6_drivers/keypad_driver/subdir.mk:18: STM32F103C6_drivers/keypad_driver/keypad.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:03:45 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2440	      8	   1568	   4016	    fb0	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+20:05:41 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:55:2: warning: implicit declaration of function 'wait_ms'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+  wait_ms(500);
+  ^~~~~~~
+  wcstombs
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3236	     40	   1576	   4852	   12f4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+20:09:31 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3160	     40	   1576	   4776	   12a8	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+20:09:56 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3164	     40	   1576	   4780	   12ac	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+20:18:28 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+../Src/main.c: In function 'main':
+../Src/main.c:55:2: warning: implicit declaration of function 'wait_ms'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+  wait_ms(500);
+  ^~~~~~~
+  wcstombs
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3164	     40	   1576	   4780	   12ac	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+20:20:18 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3164	     40	   1576	   4780	   12ac	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+20:22:07 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3168	     40	   1576	   4784	   12b0	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+20:24:29 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/lcd_driver/lcd.d" -MT"STM32F103C6_drivers/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/lcd_driver/lcd.o"
+../Src/main.c: In function 'main':
+../Src/main.c:55:2: warning: implicit declaration of function 'wait_ms'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+  wait_ms(500);
+  ^~~~~~~
+  wcstombs
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3168	     40	   1576	   4784	   12b0	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+20:31:04 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/lcd_driver/lcd.d" -MT"STM32F103C6_drivers/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/lcd_driver/lcd.o"
+../Src/main.c: In function 'main':
+../Src/main.c:55:2: warning: implicit declaration of function 'wait_ms'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+  wait_ms(500);
+  ^~~~~~~
+  wcstombs
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3168	     40	   1576	   4784	   12b0	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+20:31:38 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+../Src/main.c: In function 'main':
+../Src/main.c:55:2: warning: implicit declaration of function 'wait_ms'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+  wait_ms(500);
+  ^~~~~~~
+  wcstombs
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3172	     40	   1576	   4788	   12b4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+20:32:06 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3172	     40	   1576	   4788	   12b4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+20:51:31 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3148	     40	   1576	   4764	   129c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+20:54:14 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3164	     40	   1576	   4780	   12ac	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+20:59:11 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3140	     40	   1576	   4756	   1294	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+21:01:12 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3164	     40	   1576	   4780	   12ac	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+21:03:18 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3164	     40	   1568	   4772	   12a4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+21:03:42 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3132	     40	   1568	   4740	   1284	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+05:17:02 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/lcd_driver/lcd.d" -MT"STM32F103C6_drivers/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/lcd_driver/lcd.o"
+../Src/main.c: In function 'main':
+../Src/main.c:55:2: warning: implicit declaration of function 'wait_ms'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+  wait_ms(500);
+  ^~~~~~~
+  wcstombs
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2700	     40	   1568	   4308	   10d4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+05:25:26 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.d" -MT"STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/gpio_driver/STM32F103C6_gpio_driver.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2732	     40	   1568	   4340	   10f4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+05:40:56 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc/keypad.h:13:0: warning: "F_CPU" redefined
+ #define F_CPU 8000000UL
+ 
+In file included from ../Src/main.c:27:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc/lcd.h:13:0: note: this is the location of the previous definition
+ #define F_CPU 1000000UL
+ 
+../Src/main.c: In function 'main':
+../Src/main.c:56:2: warning: implicit declaration of function 'wait_ms'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+  wait_ms(500);
+  ^~~~~~~
+  wcstombs
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2736	     40	   1568	   4344	   10f8	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+05:41:36 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc/keypad.h:13:0: warning: "F_CPU" redefined
+ #define F_CPU 8000000UL
+ 
+In file included from ../Src/main.c:27:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc/lcd.h:13:0: note: this is the location of the previous definition
+ #define F_CPU 1000000UL
+ 
+../Src/main.c: In function 'main':
+../Src/main.c:64:2: warning: implicit declaration of function 'wait_ms'; did you mean 'wait_mss'? [-Wimplicit-function-declaration]
+  wait_ms(500);
+  ^~~~~~~
+  wait_mss
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2792	     40	   1568	   4400	   1130	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+05:41:45 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc/keypad.h:13:0: warning: "F_CPU" redefined
+ #define F_CPU 8000000UL
+ 
+In file included from ../Src/main.c:27:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc/lcd.h:13:0: note: this is the location of the previous definition
+ #define F_CPU 1000000UL
+ 
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2792	     40	   1568	   4400	   1130	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+05:42:37 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc/keypad.h:13:0: warning: "F_CPU" redefined
+ #define F_CPU 8000000UL
+ 
+In file included from ../Src/main.c:27:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc/lcd.h:13:0: note: this is the location of the previous definition
+ #define F_CPU 1000000UL
+ 
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2804	     40	   1576	   4420	   1144	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+06:11:39 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/lcd_driver/lcd.d" -MT"STM32F103C6_drivers/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2796	     40	   1576	   4412	   113c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+06:12:18 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/keypad_driver/keypad.d" -MT"STM32F103C6_drivers/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2800	     40	   1576	   4416	   1140	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+06:16:34 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2796	     40	   1568	   4404	   1134	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+06:52:38 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'GPIO_init':
+../Src/main.c:63:2: error: 'pinCFG' undeclared (first use in this function)
+  pinCFG.GPIO_PinNum = GPIO_PIN_9;
+  ^~~~~~
+../Src/main.c:63:2: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+06:53:37 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3132	     64	   1568	   4764	   129c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+Finished building: STM32F103C6_Drivers.bin
+ 
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+06:55:51 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3148	     64	   1568	   4780	   12ac	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+06:57:55 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3144	     64	   1568	   4776	   12a8	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+07:01:05 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/lcd_driver/lcd.d" -MT"STM32F103C6_drivers/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3144	     64	   1568	   4776	   12a8	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+07:04:41 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../STM32F103C6_drivers/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/STM32F103C6_drivers/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"STM32F103C6_drivers/lcd_driver/lcd.d" -MT"STM32F103C6_drivers/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "STM32F103C6_drivers/lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3144	     64	   1568	   4776	   12a8	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 

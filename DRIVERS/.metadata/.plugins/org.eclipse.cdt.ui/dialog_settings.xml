@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<item key="LastUsedHeaderTemplate" value="Default C header template"/>
 	<item key="LastUsedSourceTemplate" value="Default C source template"/>
-	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="${workspace_loc:/${ProjName}/STM32F103C6_gpio_driver/inc}"/>
+	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="${workspace_loc:/${ProjName}/STM32F103C6_drivers/inc}"/>
 	<section name="completion_proposal_size">
 		<item key="size.x" value="561"/>
 		<item key="size.y" value="349"/>
@@ -19,5 +19,12 @@
 		<item key="org.eclipse.cdt.internal.ui.text.COutlineInformationControlDIALOG_Y_ORIGIN" value="412"/>
 		<item key="org.eclipse.cdt.internal.ui.text.COutlineInformationControlDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.cdt.internal.ui.text.COutlineInformationControlDIALOG_USE_PERSISTED_LOCATION" value="true"/>
+	</section>
+	<section name="CResourceRenameRefactoringInputPage">
+		<item key="updateReferences" value="true"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
+		<item key="size.width" value="640"/>
+		<item key="size.height" value="180"/>
 	</section>
 </section>
