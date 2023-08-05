@@ -19,9 +19,10 @@ OBJCOPY_BIN :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-STM32F103C6_drivers/gpio_driver \
-STM32F103C6_drivers/keypad_driver \
-STM32F103C6_drivers/lcd_driver \
+HAL/keypad_driver \
+HAL/lcd_driver \
+MCAL/EXTI_driver \
+MCAL/gpio_driver \
 Src \
 Startup \
 

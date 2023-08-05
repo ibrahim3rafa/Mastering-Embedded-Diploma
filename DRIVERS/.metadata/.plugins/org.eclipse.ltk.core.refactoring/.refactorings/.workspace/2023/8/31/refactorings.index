@@ -3,3 +3,7 @@
 1690994815851	Delete resource 'STM32F103C6_Drivers/STM32F103C6_drivers/lcd.c'
 1690994826450	Delete resource 'STM32F103C6_Drivers/STM32F103C6_drivers/lcd.h'
 1690998436871	Delete resource 'STM32F103C6_Drivers/STM32F103C6_drivers/keypad_driver/keypad.h'
+1691046745290	Delete resource 'STM32F103C6_Drivers/STM32F103C6_drivers/inc/lcd.h'
+1691046748832	Delete resource 'STM32F103C6_Drivers/STM32F103C6_drivers/inc/keypad.h'
+1691046801480	Delete resource 'STM32F103C6_Drivers/STM32F103C6_drivers/keypad_driver'
+1691046804605	Delete resource 'STM32F103C6_Drivers/STM32F103C6_drivers/lcd_driver'

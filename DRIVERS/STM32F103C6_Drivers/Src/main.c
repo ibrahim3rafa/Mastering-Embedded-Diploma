@@ -22,10 +22,11 @@
 #endif
 
 
-#include "../STM32F103C6_drivers/inc/STM32F103C6_gpio_driver.h"
-#include"../STM32F103C6_drivers/inc/STM32F103x6.h"
+#include <GPIO_driver.h>
+#include"../MCAL/inc/STM32F103x6.h"
 #include"lcd.h"
 #include "keypad.h"
+#include"EXTI_driver.h"
 
 
 #define ZERO 0x01
@@ -39,6 +40,13 @@
 #define EIGHT 0x00
 #define NINE 0x10
 
+unsigned int IRQ_FLAG = 0;
+
+void callBack_Application_Func(){
+	IRQ_FLAG = 1;
+	LCD_displayString("IRQ EXTI9 is happended _|-");
+	wait_mss(1000);
+}
 void clock_init(void){
 	//	Bit 2 IOPAEN: IO port A clock enable
 	//	Set and cleared by software.
@@ -54,48 +62,24 @@ void clock_init(void){
 	//	1: IO port B clock enabled
 	RCC_GPIOB_CLK_EN();
 
+	RCC_AFIO_CLK_EN();
+
 }
-GPIO_pinConfig pinCFG;
+//GPIO_pinConfig pinCFG;
+
+/*
+
 void GPIO_init(){
 
-	//setting gpio configuration pins for 7seg
+	GPIO_pinConfig Pin_Cfg ;
+	Pin_Cfg.GPIO_PinNum = GPIO_PIN_8;
+	Pin_Cfg.GPIO_PinMode = AF_INPUT_FLOATING_MODE;
+	MCAL_GPIO_init(GPIOB, &Pin_Cfg);
 
-	pinCFG.GPIO_PinNum = GPIO_PIN_9;
-	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
-	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
 
-	pinCFG.GPIO_PinNum = GPIO_PIN_10;
-	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
-	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
-
-	pinCFG.GPIO_PinNum = GPIO_PIN_11;
-	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
-	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
-
-	pinCFG.GPIO_PinNum = GPIO_PIN_12;
-	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
-	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
-
-	pinCFG.GPIO_PinNum = GPIO_PIN_13;
-	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
-	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
-
-	pinCFG.GPIO_PinNum = GPIO_PIN_14;
-	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
-	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
-
-	pinCFG.GPIO_PinNum = GPIO_PIN_15;
-	pinCFG.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
-	pinCFG.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-	MCAL_GPIO_init(KEYPAD_PORT, &pinCFG);
 
 }
+*/
 
 
 void wait_mss(uint32_t time){
@@ -107,41 +91,36 @@ void wait_mss(uint32_t time){
 unsigned char seg[] = {ZERO,ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,ZERO};
 unsigned char lcd[] = {'0','1','2','3','4','5','6','7','8','9','0'};
 
+
+//void GPIO_init(){
+//	GPIO_pinConfig pin_cfg;
+//	pin_cfg.GPIO_PinNum = GPIO_PIN_9;
+//	pin_cfg.GPIO_PinMode = AF_INPUT_FLOATING_MODE;
+//	MCAL_GPIO_init(GPIOB, &pin_cfg);
+//
+//}
 int main(void)
 {
-	unsigned char key_pressed;
 	clock_init();
-	GPIO_init();
+//	GPIO_init();
 	LCD_init();
-	wait_mss(500);
-	LCD_displayString("ARAFA");
-	wait_mss(500);
 	LCD_clearScreen();
 
-	for(unsigned char i = 0 ; i<11 ; i++){
-		MCAL_GPIO_Write_Port(GPIOB, seg[i]<<9);
-		wait_mss(500);
-		LCD_displayCharacter(lcd[i]);
-		wait_mss(500);
-	}
-	LCD_clearScreen();
-	KEYPAD_init();
-	wait_mss(500);
-	LCD_displayString("keypad ready");
-	wait_mss(500);
-	LCD_clearScreen();
+	EXTI_pinConfig_t EXTI_CFG;
+	EXTI_CFG.EXTI_PIN=(EXTI_GPIO_Mapping_t)EXTI9PB9;
+	EXTI_CFG.EXTI_Trigger = EXTI_Trigger_Mode_Rising;
+	EXTI_CFG.P_EXTI_CallBack = callBack_Application_Func;
+	EXTI_CFG.IRQ_State = IRQ_Enable;
+
+	MCAL_EXTI_GPIO_Init(&EXTI_CFG);
+
+	IRQ_FLAG = 1;
+
 	while(1){
-
-		key_pressed = KEYPAD_getKey();
-		switch(key_pressed){
-		case 'A':
-			break;
-		case '?':
+		if(IRQ_FLAG){
 			LCD_clearScreen();
-			break;
-		default:
-			LCD_displayCharacter(key_pressed);
-			break;
+			IRQ_FLAG  = 0;
 		}
 	}
+
 }

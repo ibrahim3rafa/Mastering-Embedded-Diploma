@@ -1,0 +1,9 @@
+GPIO_driver.c:11:10:GPIO_CRLH_PIN_POSITION	16	static
+GPIO_driver.c:80:6:MCAL_GPIO_init	32	static
+GPIO_driver.c:134:6:MCAL_GPIO_Deinit	16	static
+GPIO_driver.c:183:6:MCAL_GPIO_Write_Port	16	static
+GPIO_driver.c:205:6:MCAL_GPIO_Write_Pin	16	static
+GPIO_driver.c:244:10:MCAL_GPIO_Read_Port	16	static
+GPIO_driver.c:264:9:MCAL_GPIO_Read_Pin	16	static
+GPIO_driver.c:285:6:MCAL_GPIO_Toggle_Pin	16	static
+GPIO_driver.c:307:9:MCAL_GPIO_Lock_Pin	24	static

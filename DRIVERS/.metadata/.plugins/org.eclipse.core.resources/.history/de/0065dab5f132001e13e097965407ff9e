@@ -1,0 +1,221 @@
+/*
+ * STM32F103C_EXTI_driver.h
+ *
+ *  Created on: Aug 4, 2023
+ *      Author: ARAFA
+ */
+
+#ifndef INC_EXTI_DRIVER_H_
+#define INC_EXTI_DRIVER_H_
+
+#include <GPIO_driver.h>
+#include"STM32F103x6.h"
+
+
+
+
+/********************************************************************************************************************************
+ *->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   STRUCTS CONFIG  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ *********************************************************************************************************************************/
+
+//EXTI_config_struct
+
+typedef struct {
+	uint16_t EXTI_line ;   								/*specifies the EXTI input line number From EXTI0-EXTI15
+	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 you can know that form @EXTI_define_ref*/
+
+	GPIO_typedefConfig GPIOx; 							/*specifies the EXTI input port from PORTA -- PORTD
+	 	 	 	 	 	 	 	 							you can know that form @GPIO_define_ref at STM32F103x6.h file */
+
+	uint8_t EXTI_pinNumber;								/*specifies the EXTI input pin number from PA0 -- PD0--> you allowed to choose only GPIO.PIN0 form everyport
+	 	 	 	 	 	 	 	 							you can know that form //@ref GPIO_PINS_define at GPIO.h file */
+	uint16_t EXTIx_IRQ; 								/*specifies the EXTIx IRQ  number From EXTI0_IRQ-->EXTI15_IRQ
+	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 you can know that form @EXTIx_IRQ_define_ref*/
+
+}EXTI_GPIO_Mapping_t;
+
+
+
+/*EXTI_Pin_config_struct */
+typedef struct{
+
+	EXTI_GPIO_Mapping_t EXTI_PIN;						/*specifies the EXTI pin configuration (EXTI_line,EXTI_PORT_EXTI_PIN,EXTI_IRQ_NUMBER)
+	 	 	 	 	 	 	 	 							you can know that form //@ref EXTI_PIN*/
+
+	uint16_t EXTI_Trigger;								/*specifies the EXTI TRIGGER mode which(Rising,Falling,RS&FA)
+															You can know that from @EXTI_Trigger_Mode*/
+
+	void (*P_EXTI_CallBack)();						/*	specifies the EXTI callBack function which will be called from application program
+															You can use it at ISR*/
+
+}EXTI_pinConfig_t;
+
+
+
+
+/********************************************************************************************************************************
+ *->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   MACROS CONFIG  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ *********************************************************************************************************************************/
+
+
+/*EXTI_define_ref*/
+#define EXTI0 					0
+#define EXTI1 					1
+#define EXTI2 					2
+#define EXTI3 					3
+#define EXTI4 					4
+#define EXTI5 					5
+#define EXTI6 					6
+#define EXTI7 					7
+#define EXTI8 					8
+#define EXTI9 					9
+#define EXTI10 					10
+#define EXTI11 					11
+#define EXTI12					12
+#define EXTI13					13
+#define EXTI14					14
+#define EXTI15					15
+
+
+
+
+/*@EXTIx_IRQ_define_ref*/
+#define EXTI0_IRQ				6
+#define EXTI1_IRQ				7
+#define EXTI2_IRQ				8
+#define EXTI3_IRQ				9
+#define EXTI4_IRQ				10
+#define EXTI5_IRQ				23
+#define EXTI6_IRQ				23
+#define EXTI7_IRQ				23
+#define EXTI8_IRQ				23
+#define EXTI9_IRQ				23
+#define EXTI10_IRQ				40
+#define EXTI11_IRQ				40
+#define EXTI12_IRQ				40
+#define EXTI13_IRQ				40
+#define EXTI14_IRQ				40
+#define EXTI15_IRQ				40
+
+
+
+
+/*@ref EXTI_PIN*/
+//EXTI0
+#define EXTI0PA0				(EXTI_GPIO_Mapping_t){EXTI0,GPIOA,GPIO_PIN_0,EXTI0_IRQ}
+#define EXTI0PB0				(EXTI_GPIO_Mapping_t){EXTI0,GPIOB,GPIO_PIN_0,EXTI0_IRQ}
+#define EXTI0PC0				(EXTI_GPIO_Mapping_t){EXTI0,GPIOC,GPIO_PIN_0,EXTI0_IRQ}
+#define EXTI0PD0				(EXTI_GPIO_Mapping_t){EXTI0,GPIOD,GPIO_PIN_0,EXTI0_IRQ}
+
+//EXTI1
+#define EXTI1PA0				(EXTI_GPIO_Mapping_t){EXTI1,GPIOA,GPIO_PIN_0,EXTI1_IRQ}
+#define EXTI1PB0				(EXTI_GPIO_Mapping_t){EXTI1,GPIOB,GPIO_PIN_0,EXTI1_IRQ}
+#define EXTI1PC0				(EXTI_GPIO_Mapping_t){EXTI1,GPIOC,GPIO_PIN_0,EXTI1_IRQ}
+#define EXTI1PD0				(EXTI_GPIO_Mapping_t){EXTI1,GPIOD,GPIO_PIN_0,EXTI1_IRQ}
+
+
+//EXTI2
+#define EXTI2PA0				(EXTI_GPIO_Mapping_t){EXTI2,GPIOA,GPIO_PIN_0,EXTI2_IRQ}
+#define EXTI2PB0				(EXTI_GPIO_Mapping_t){EXTI2,GPIOB,GPIO_PIN_0,EXTI2_IRQ}
+#define EXTI2PC0				(EXTI_GPIO_Mapping_t){EXTI2,GPIOC,GPIO_PIN_0,EXTI2_IRQ}
+#define EXTI2PD0				(EXTI_GPIO_Mapping_t){EXTI2,GPIOD,GPIO_PIN_0,EXTI2_IRQ}
+
+
+//EXTI3
+#define EXTI3PA0				(EXTI_GPIO_Mapping_t){EXTI3,GPIOA,GPIO_PIN_0,EXTI3_IRQ}
+#define EXTI3PB0				(EXTI_GPIO_Mapping_t){EXTI3,GPIOB,GPIO_PIN_0,EXTI3_IRQ}
+#define EXTI3PC0				(EXTI_GPIO_Mapping_t){EXTI3,GPIOC,GPIO_PIN_0,EXTI3_IRQ}
+#define EXTI3PD0				(EXTI_GPIO_Mapping_t){EXTI3,GPIOD,GPIO_PIN_0,EXTI3_IRQ}
+
+
+//EXTI4
+#define EXTI4PA0				(EXTI_GPIO_Mapping_t){EXTI4,GPIOA,GPIO_PIN_0,EXTI4_IRQ}
+#define EXTI4PB0				(EXTI_GPIO_Mapping_t){EXTI4,GPIOB,GPIO_PIN_0,EXTI4_IRQ}
+#define EXTI4PC0				(EXTI_GPIO_Mapping_t){EXTI4,GPIOC,GPIO_PIN_0,EXTI4_IRQ}
+#define EXTI4PD0				(EXTI_GPIO_Mapping_t){EXTI4,GPIOD,GPIO_PIN_0,EXTI4_IRQ}
+
+
+//EXTI5
+#define EXTI5PA0				(EXTI_GPIO_Mapping_t){EXTI5,GPIOA,GPIO_PIN_0,EXTI5_IRQ}
+#define EXTI5PB0				(EXTI_GPIO_Mapping_t){EXTI5,GPIOB,GPIO_PIN_0,EXTI5_IRQ}
+#define EXTI5PC0				(EXTI_GPIO_Mapping_t){EXTI5,GPIOC,GPIO_PIN_0,EXTI5_IRQ}
+#define EXTI5PD0				(EXTI_GPIO_Mapping_t){EXTI5,GPIOD,GPIO_PIN_0,EXTI5_IRQ}
+
+
+//EXTI6
+#define EXTI6PA0				(EXTI_GPIO_Mapping_t){EXTI6,GPIOA,GPIO_PIN_0,EXTI6_IRQ}
+#define EXTI6PB0				(EXTI_GPIO_Mapping_t){EXTI6,GPIOB,GPIO_PIN_0,EXTI6_IRQ}
+#define EXTI6PC0				(EXTI_GPIO_Mapping_t){EXTI6,GPIOC,GPIO_PIN_0,EXTI6_IRQ}
+#define EXTI6PD0				(EXTI_GPIO_Mapping_t){EXTI6,GPIOD,GPIO_PIN_0,EXTI6_IRQ}
+
+
+//EXTI7
+#define EXTI7PA0				(EXTI_GPIO_Mapping_t){EXTI7,GPIOA,GPIO_PIN_0,EXTI7_IRQ}
+#define EXTI7PB0				(EXTI_GPIO_Mapping_t){EXTI7,GPIOB,GPIO_PIN_0,EXTI7_IRQ}
+#define EXTI7PC0				(EXTI_GPIO_Mapping_t){EXTI7,GPIOC,GPIO_PIN_0,EXTI7_IRQ}
+#define EXTI7PD0				(EXTI_GPIO_Mapping_t){EXTI7,GPIOD,GPIO_PIN_0,EXTI7_IRQ}
+
+
+//EXTI8
+#define EXTI8PA0				(EXTI_GPIO_Mapping_t){EXTI8,GPIOA,GPIO_PIN_0,EXTI8_IRQ}
+#define EXTI8PB0				(EXTI_GPIO_Mapping_t){EXTI8,GPIOB,GPIO_PIN_0,EXTI8_IRQ}
+#define EXTI8PC0				(EXTI_GPIO_Mapping_t){EXTI8,GPIOC,GPIO_PIN_0,EXTI8_IRQ}
+#define EXTI8PD0				(EXTI_GPIO_Mapping_t){EXTI8,GPIOD,GPIO_PIN_0,EXTI8_IRQ}
+
+
+//EXTI9
+#define EXTI9PA0				(EXTI_GPIO_Mapping_t){EXTI9,GPIOA,GPIO_PIN_0,EXTI9_IRQ}
+#define EXTI9PB0				(EXTI_GPIO_Mapping_t){EXTI9,GPIOB,GPIO_PIN_0,EXTI9_IRQ}
+#define EXTI9PC0				(EXTI_GPIO_Mapping_t){EXTI9,GPIOC,GPIO_PIN_0,EXTI9_IRQ}
+#define EXTI9PD0				(EXTI_GPIO_Mapping_t){EXTI9,GPIOD,GPIO_PIN_0,EXTI9_IRQ}
+
+
+//EXTI10
+#define EXTI10PA0				(EXTI_GPIO_Mapping_t){EXTI10,GPIOA,GPIO_PIN_0,EXTI10_IRQ}
+#define EXTI10PB0				(EXTI_GPIO_Mapping_t){EXTI10,GPIOB,GPIO_PIN_0,EXTI10_IRQ}
+#define EXTI10PC0				(EXTI_GPIO_Mapping_t){EXTI10,GPIOC,GPIO_PIN_0,EXTI10_IRQ}
+#define EXTI10PD0				(EXTI_GPIO_Mapping_t){EXTI10,GPIOD,GPIO_PIN_0,EXTI10_IRQ}
+
+
+//EXTI11
+#define EXTI11PA0				(EXTI_GPIO_Mapping_t){EXTI11,GPIOA,GPIO_PIN_0,EXTI11_IRQ}
+#define EXTI11PB0				(EXTI_GPIO_Mapping_t){EXTI11,GPIOB,GPIO_PIN_0,EXTI11_IRQ}
+#define EXTI11PC0				(EXTI_GPIO_Mapping_t){EXTI11,GPIOC,GPIO_PIN_0,EXTI11_IRQ}
+#define EXTI11PD0				(EXTI_GPIO_Mapping_t){EXTI11,GPIOD,GPIO_PIN_0,EXTI11_IRQ}
+
+
+//EXTI12
+#define EXTI12PA0				(EXTI_GPIO_Mapping_t){EXTI12,GPIOA,GPIO_PIN_0,EXTI12_IRQ}
+#define EXTI12PB0				(EXTI_GPIO_Mapping_t){EXTI12,GPIOB,GPIO_PIN_0,EXTI12_IRQ}
+#define EXTI12PC0				(EXTI_GPIO_Mapping_t){EXTI12,GPIOC,GPIO_PIN_0,EXTI12_IRQ}
+#define EXTI12PD0				(EXTI_GPIO_Mapping_t){EXTI12,GPIOD,GPIO_PIN_0,EXTI12_IRQ}
+
+
+//EXTI13
+#define EXTI13PA0				(EXTI_GPIO_Mapping_t){EXTI13,GPIOA,GPIO_PIN_0,EXTI13_IRQ}
+#define EXTI13PB0				(EXTI_GPIO_Mapping_t){EXTI13,GPIOB,GPIO_PIN_0,EXTI13_IRQ}
+#define EXTI13PC0				(EXTI_GPIO_Mapping_t){EXTI13,GPIOC,GPIO_PIN_0,EXTI13_IRQ}
+#define EXTI13PD0				(EXTI_GPIO_Mapping_t){EXTI13,GPIOD,GPIO_PIN_0,EXTI13_IRQ}
+
+
+//EXTI14
+#define EXTI14PA0				(EXTI_GPIO_Mapping_t){EXTI14,GPIOA,GPIO_PIN_0,EXTI14_IRQ}
+#define EXTI14PB0				(EXTI_GPIO_Mapping_t){EXTI14,GPIOB,GPIO_PIN_0,EXTI14_IRQ}
+#define EXTI14PC0				(EXTI_GPIO_Mapping_t){EXTI14,GPIOC,GPIO_PIN_0,EXTI14_IRQ}
+#define EXTI14PD0				(EXTI_GPIO_Mapping_t){EXTI14,GPIOD,GPIO_PIN_0,EXTI14_IRQ}
+
+
+//EXTI15
+#define EXTI15PA0				(EXTI_GPIO_Mapping_t){EXTI15,GPIOA,GPIO_PIN_0,EXTI15_IRQ}
+#define EXTI15PB0				(EXTI_GPIO_Mapping_t){EXTI15,GPIOB,GPIO_PIN_0,EXTI15_IRQ}
+#define EXTI15PC0				(EXTI_GPIO_Mapping_t){EXTI15,GPIOC,GPIO_PIN_0,EXTI15_IRQ}
+#define EXTI15PD0				(EXTI_GPIO_Mapping_t){EXTI15,GPIOD,GPIO_PIN_0,EXTI15_IRQ}
+
+
+
+/*@EXTI_Trigger_Mode*/
+#define EXTI_Trigger_Mode_Rising  					(0)
+#define EXTI_Trigger_Mode_Falling 					(1)
+#define EXTI_Trigger_Mode_RS_FA						(2)		//	Trigger rising and falling edge
+
+#endif /* INC_EXTI_DRIVER_H_ */

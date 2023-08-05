@@ -10,9 +10,10 @@ RM := rm -rf
 -include sources.mk
 -include Startup/subdir.mk
 -include Src/subdir.mk
--include STM32F103C6_drivers/lcd_driver/subdir.mk
--include STM32F103C6_drivers/keypad_driver/subdir.mk
--include STM32F103C6_drivers/gpio_driver/subdir.mk
+-include MCAL/gpio_driver/subdir.mk
+-include MCAL/EXTI_driver/subdir.mk
+-include HAL/lcd_driver/subdir.mk
+-include HAL/keypad_driver/subdir.mk
 -include subdir.mk
 -include objects.mk
 
