@@ -11,6 +11,8 @@ RM := rm -rf
 -include Startup/subdir.mk
 -include Src/subdir.mk
 -include MCAL/gpio_driver/subdir.mk
+-include MCAL/USART/subdir.mk
+-include MCAL/RCC_driver/subdir.mk
 -include MCAL/EXTI_driver/subdir.mk
 -include HAL/lcd_driver/subdir.mk
 -include HAL/keypad_driver/subdir.mk

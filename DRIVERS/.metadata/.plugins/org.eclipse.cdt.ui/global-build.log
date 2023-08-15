@@ -9401,3 +9401,459 @@ Finished building: STM32F103C6_Drivers.bin
 Finished building: STM32F103C6_Drivers.list
  
  
+11:40:19 **** Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/gpio_driver/GPIO_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/gpio_driver/GPIO_driver.d" -MT"MCAL/gpio_driver/GPIO_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/gpio_driver/GPIO_driver.o"
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/EXTI_driver/EXTI_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/EXTI_driver/EXTI_driver.d" -MT"MCAL/EXTI_driver/EXTI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/EXTI_driver/EXTI_driver.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/lcd_driver/lcd.d" -MT"HAL/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/lcd_driver/lcd.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/keypad_driver/keypad.d" -MT"HAL/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/USART/USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/USART/USART.d" -MT"MCAL/USART/USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/USART/USART.o"
+../Src/main.c: In function 'callBack_Application_Func':
+../Src/main.c:48:2: warning: implicit declaration of function 'wait_mss'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+  wait_mss(1000);
+  ^~~~~~~~
+  wcstombs
+../Src/main.c: At top level:
+../Src/main.c:85:6: warning: conflicting types for 'wait_mss'
+ void wait_mss(uint32_t time){
+      ^~~~~~~~
+../Src/main.c:48:2: note: previous implicit declaration of 'wait_mss' was here
+  wait_mss(1000);
+  ^~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3660	      8	   1632	   5300	   14b4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+08:06:28 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/RCC_driver/RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/RCC_driver/RCC.d" -MT"MCAL/RCC_driver/RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/RCC_driver/RCC.o"
+../MCAL/RCC_driver/RCC.c:8:9: fatal error: RCC.h: No such file or directory
+ #include"RCC.h"
+         ^~~~~~~
+compilation terminated.
+make: *** [MCAL/RCC_driver/subdir.mk:18: MCAL/RCC_driver/RCC.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+08:07:11 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/RCC_driver/RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/RCC_driver/RCC.d" -MT"MCAL/RCC_driver/RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/RCC_driver/RCC.o"
+../MCAL/RCC_driver/RCC.c:8:9: fatal error: RCC.h: No such file or directory
+ #include"RCC.h"
+         ^~~~~~~
+compilation terminated.
+make: *** [MCAL/RCC_driver/subdir.mk:18: MCAL/RCC_driver/RCC.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+08:08:07 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/gpio_driver/GPIO_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/gpio_driver/GPIO_driver.d" -MT"MCAL/gpio_driver/GPIO_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/gpio_driver/GPIO_driver.o"
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/USART/USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/USART/USART.d" -MT"MCAL/USART/USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/USART/USART.o"
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/RCC_driver/RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/RCC_driver/RCC.d" -MT"MCAL/RCC_driver/RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/RCC_driver/RCC.o"
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/EXTI_driver/EXTI_driver.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/EXTI_driver/EXTI_driver.d" -MT"MCAL/EXTI_driver/EXTI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/EXTI_driver/EXTI_driver.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/lcd_driver/lcd.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/lcd_driver/lcd.d" -MT"HAL/lcd_driver/lcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/lcd_driver/lcd.o"
+../Src/main.c: In function 'callBack_Application_Func':
+../Src/main.c:48:2: warning: implicit declaration of function 'wait_mss'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+  wait_mss(1000);
+  ^~~~~~~~
+  wcstombs
+../Src/main.c: At top level:
+../Src/main.c:85:6: warning: conflicting types for 'wait_mss'
+ void wait_mss(uint32_t time){
+      ^~~~~~~~
+../Src/main.c:48:2: note: previous implicit declaration of 'wait_mss' was here
+  wait_mss(1000);
+  ^~~~~~~~
+../MCAL/RCC_driver/RCC.c: In function 'MCAL_RCC_GetSYS_CLCKFreq':
+../MCAL/RCC_driver/RCC.c:43:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+arm-none-eabi-gcc -gdwarf-2 "../HAL/keypad_driver/keypad.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/keypad_driver/keypad.d" -MT"HAL/keypad_driver/keypad.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/keypad_driver/keypad.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3660	      8	   1632	   5300	   14b4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+08:51:46 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/USART/USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/USART/USART.d" -MT"MCAL/USART/USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/USART/USART.o"
+In file included from ../MCAL/USART/USART.c:11:0:
+../MCAL/USART/USART.c: In function 'MCAL_UART_Init':
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/EXTI_driver.h:269:28: error: expected identifier before '(' token
+ #define IRQ_Enable         (1)
+                            ^
+../MCAL/USART/USART.c:72:14: note: in expansion of macro 'IRQ_Enable'
+  if(UARTCfg->IRQ_Enable != UART_IRQ_Enable_NONE){
+              ^~~~~~~~~~
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/EXTI_driver.h:269:28: error: expected identifier before '(' token
+ #define IRQ_Enable         (1)
+                            ^
+../MCAL/USART/USART.c:73:27: note: in expansion of macro 'IRQ_Enable'
+   USARTx->CR1 |= UARTCfg->IRQ_Enable;
+                           ^~~~~~~~~~
+../MCAL/USART/USART.c:76:4: error: 'NVIC_' undeclared (first use in this function)
+    NVIC_
+    ^~~~~
+../MCAL/USART/USART.c:76:4: note: each undeclared identifier is reported only once for each function it appears in
+../MCAL/USART/USART.c:77:3: error: expected ';' before '}' token
+   }
+   ^
+make: *** [MCAL/USART/subdir.mk:18: MCAL/USART/USART.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+08:54:36 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/USART/USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/USART/USART.d" -MT"MCAL/USART/USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/USART/USART.o"
+In file included from ../MCAL/USART/USART.c:11:0:
+../MCAL/USART/USART.c: In function 'MCAL_UART_Init':
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/EXTI_driver.h:239:49: error: called object is not a function or function pointer
+ #define NVIC_USART1_IRQ_Enable      (NVIC_ISER1 |= (1<<5))  //37-32
+                                     ~~~~~~~~~~~~^~~~~~~~~~
+../MCAL/USART/USART.c:76:4: note: in expansion of macro 'NVIC_USART1_IRQ_Enable'
+    NVIC_USART1_IRQ_Enable();
+    ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [MCAL/USART/subdir.mk:18: MCAL/USART/USART.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+08:56:11 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/USART/USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/USART/USART.d" -MT"MCAL/USART/USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/USART/USART.o"
+../MCAL/USART/USART.c: In function 'MCAL_UART_Init':
+../MCAL/USART/USART.c:81:4: error: 'NVIC_USART3b_IRQ_Enable' undeclared (first use in this function); did you mean 'NVIC_USART3_IRQ_Enable'?
+    NVIC_USART3b_IRQ_Enable;
+    ^~~~~~~~~~~~~~~~~~~~~~~
+    NVIC_USART3_IRQ_Enable
+../MCAL/USART/USART.c:81:4: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [MCAL/USART/subdir.mk:18: MCAL/USART/USART.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+08:56:15 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/USART/USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/USART/USART.d" -MT"MCAL/USART/USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/USART/USART.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3660	      8	   1632	   5300	   14b4	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+10:05:10 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/USART/USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/USART/USART.d" -MT"MCAL/USART/USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/USART/USART.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3720	      8	   1640	   5368	   14f8	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+10:14:11 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'callBack_Application_Func':
+../Src/main.c:35:2: warning: implicit declaration of function 'LCD_displayString' [-Wimplicit-function-declaration]
+  LCD_displayString("IRQ EXTI9 is happended _|-");
+  ^~~~~~~~~~~~~~~~~
+../Src/main.c:36:2: warning: implicit declaration of function 'wait_mss'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+  wait_mss(1000);
+  ^~~~~~~~
+  wcstombs
+../Src/main.c: At top level:
+../Src/main.c:59:6: warning: conflicting types for 'wait_mss'
+ void wait_mss(uint32_t time){
+      ^~~~~~~~
+../Src/main.c:36:2: note: previous implicit declaration of 'wait_mss' was here
+  wait_mss(1000);
+  ^~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:86:33: warning: passing argument 2 of 'MCAL_UART_RecieveDate' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_RecieveDate(USART1, &ch, Enable);
+                                 ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:125:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_RecieveDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:87:30: warning: passing argument 2 of 'MCAL_UART_SendDate' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_SendDate(USART1, &ch, Enable);
+                              ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:124:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_SendDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~
+../Src/main.c:74:14: warning: variable 'uartcfg' set but not used [-Wunused-but-set-variable]
+  UART_Config uartcfg;
+              ^~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1512	      8	   1632	   3152	    c50	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+10:15:35 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'callBack_Application_Func':
+../Src/main.c:35:2: warning: implicit declaration of function 'LCD_displayString' [-Wimplicit-function-declaration]
+  LCD_displayString("IRQ EXTI9 is happended _|-");
+  ^~~~~~~~~~~~~~~~~
+../Src/main.c:36:2: warning: implicit declaration of function 'wait_mss'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
+  wait_mss(1000);
+  ^~~~~~~~
+  wcstombs
+../Src/main.c: At top level:
+../Src/main.c:59:6: warning: conflicting types for 'wait_mss'
+ void wait_mss(uint32_t time){
+      ^~~~~~~~
+../Src/main.c:36:2: note: previous implicit declaration of 'wait_mss' was here
+  wait_mss(1000);
+  ^~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:89:33: warning: passing argument 2 of 'MCAL_UART_RecieveDate' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_RecieveDate(USART1, &ch, Enable);
+                                 ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:125:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_RecieveDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:90:30: warning: passing argument 2 of 'MCAL_UART_SendDate' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_SendDate(USART1, &ch, Enable);
+                              ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:124:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_SendDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2832	      8	   1632	   4472	   1178	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+10:15:58 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:84:33: warning: passing argument 2 of 'MCAL_UART_RecieveDate' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_RecieveDate(USART1, &ch, Enable);
+                                 ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:125:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_RecieveDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:85:30: warning: passing argument 2 of 'MCAL_UART_SendDate' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_SendDate(USART1, &ch, Enable);
+                              ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:124:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_SendDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2832	      8	   1632	   4472	   1178	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+10:20:46 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:86:33: warning: passing argument 2 of 'MCAL_UART_RecieveDate' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_RecieveDate(USART1, &ch, Enable);
+                                 ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:125:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_RecieveDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:87:30: warning: passing argument 2 of 'MCAL_UART_SendDate' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_SendDate(USART1, &ch, Enable);
+                              ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:124:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_SendDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2844	      8	   1632	   4484	   1184	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+10:57:52 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/RCC_driver/RCC.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/RCC_driver/RCC.d" -MT"MCAL/RCC_driver/RCC.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/RCC_driver/RCC.o"
+../Src/main.c: In function 'main':
+../Src/main.c:86:33: warning: passing argument 2 of 'MCAL_UART_RecieveDate' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_RecieveDate(USART1, &ch, Enable);
+                                 ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:125:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_RecieveDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:87:30: warning: passing argument 2 of 'MCAL_UART_SendDate' from incompatible pointer type [-Wincompatible-pointer-types]
+   MCAL_UART_SendDate(USART1, &ch, Enable);
+                              ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:124:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_SendDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~
+../MCAL/RCC_driver/RCC.c: In function 'MCAL_RCC_GetSYS_CLCKFreq':
+../MCAL/RCC_driver/RCC.c:46:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2852	      8	   1632	   4492	   118c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+11:04:40 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/USART/USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/USART/USART.d" -MT"MCAL/USART/USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/USART/USART.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2852	      8	   1632	   4492	   118c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+Finished building: STM32F103C6_Drivers.list
+ 
+ 
+11:08:22 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/USART/USART.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/USART/USART.d" -MT"MCAL/USART/USART.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/USART/USART.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2852	      8	   1632	   4492	   118c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+11:17:58 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'ARAFA_CallBack':
+../Src/main.c:34:30: error: 'ch' undeclared (first use in this function); did you mean 'char'?
+  MCAL_UART_SendDate(USART1, &ch, Disable);
+                              ^~
+                              char
+../Src/main.c:34:30: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c: In function 'main':
+../Src/main.c:71:12: warning: unused variable 'ch' [-Wunused-variable]
+  unsigned  ch;
+            ^~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:18:15 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'ARAFA_CallBack':
+../Src/main.c:34:29: warning: passing argument 2 of 'MCAL_UART_SendDate' from incompatible pointer type [-Wincompatible-pointer-types]
+  MCAL_UART_SendDate(USART1, &ch, Disable);
+                             ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:124:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_SendDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~
+../Src/main.c:35:32: warning: passing argument 2 of 'MCAL_UART_RecieveDate' from incompatible pointer type [-Wincompatible-pointer-types]
+  MCAL_UART_RecieveDate(USART1, &ch, Enable);
+                                ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:125:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_RecieveDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2864	      8	   1632	   4504	   1198	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 

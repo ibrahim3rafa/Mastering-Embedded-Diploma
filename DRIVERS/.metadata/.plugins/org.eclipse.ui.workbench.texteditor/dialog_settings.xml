@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="0"/>
+		<item key="selection" value="Enable"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="Enable"/>
 			<item value="0"/>
 			<item value="110"/>
 			<item value="P_EXTI_CallBack"/>
-			<item value="Enable"/>
 			<item value="EXTI0"/>
 			<item value="SET"/>
 			<item value="&amp;=~"/>
@@ -25,6 +25,8 @@
 			<item value="_delay_ms"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Disable"/>
+			<item value="DD"/>
 			<item value="15"/>
 			<item value="14"/>
 			<item value="13"/>
@@ -38,13 +40,11 @@
 			<item value="5"/>
 			<item value="4"/>
 			<item value="3"/>
-			<item value="2"/>
-			<item value="GP_EXTI_CallBack"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1467"/>
-		<item key="DIALOG_Y_ORIGIN" value="144"/>
+		<item key="DIALOG_X_ORIGIN" value="58"/>
+		<item key="DIALOG_Y_ORIGIN" value="373"/>
 		<item key="DIALOG_WIDTH" value="385"/>
 		<item key="DIALOG_HEIGHT" value="523"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

@@ -6,9 +6,10 @@
  */
 
 
-#include <EXTI_driver.h>
-#include <GPIO_driver.h>
-#include "STM32F103x6.h"
+#include "../includes/EXTI_driver.h"
+
+#include "../includes/GPIO_driver.h"
+#include "../includes/STM32F103x6.h"
 
 
 void (*GP_EXTI_CallBack[15])(void);

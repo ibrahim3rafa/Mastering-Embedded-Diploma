@@ -22,31 +22,19 @@
 #endif
 
 
-#include <GPIO_driver.h>
-#include"../MCAL/inc/STM32F103x6.h"
-#include"lcd.h"
-#include "keypad.h"
-#include"EXTI_driver.h"
-
-
-#define ZERO 0x01
-#define ONE 0x79
-#define TWO 0x24
-#define THREE 0x30
-#define FOUR 0x4C
-#define FIVE 0x12
-#define SIX 0x02
-#define SEVEN 0x19
-#define EIGHT 0x00
-#define NINE 0x10
+#include "../MCAL/includes/GPIO_driver.h"
+#include"../MCAL/includes/STM32F103x6.h"
+#include"../MCAL/includes/EXTI_driver.h"
+#include"USART.h"
+#include"RCC.h"
 
 unsigned int IRQ_FLAG = 0;
-
-void callBack_Application_Func(){
-	IRQ_FLAG = 1;
-	LCD_displayString("IRQ EXTI9 is happended _|-");
-	wait_mss(1000);
+unsigned  ch;
+void ARAFA_CallBack(void){
+	MCAL_UART_SendDate(USART1, &ch, Disable);
+	MCAL_UART_RecieveDate(USART1, &ch, Enable);
 }
+
 void clock_init(void){
 	//	Bit 2 IOPAEN: IO port A clock enable
 	//	Set and cleared by software.
@@ -64,22 +52,10 @@ void clock_init(void){
 
 	RCC_AFIO_CLK_EN();
 
-}
-//GPIO_pinConfig pinCFG;
-
-/*
-
-void GPIO_init(){
-
-	GPIO_pinConfig Pin_Cfg ;
-	Pin_Cfg.GPIO_PinNum = GPIO_PIN_8;
-	Pin_Cfg.GPIO_PinMode = AF_INPUT_FLOATING_MODE;
-	MCAL_GPIO_init(GPIOB, &Pin_Cfg);
-
-
+	RCC_USART1_CLK_Enable();
 
 }
-*/
+
 
 
 void wait_mss(uint32_t time){
@@ -88,39 +64,31 @@ void wait_mss(uint32_t time){
 		for(j=0 ; j<255; j++);
 	}
 }
-unsigned char seg[] = {ZERO,ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,ZERO};
-unsigned char lcd[] = {'0','1','2','3','4','5','6','7','8','9','0'};
 
 
-//void GPIO_init(){
-//	GPIO_pinConfig pin_cfg;
-//	pin_cfg.GPIO_PinNum = GPIO_PIN_9;
-//	pin_cfg.GPIO_PinMode = AF_INPUT_FLOATING_MODE;
-//	MCAL_GPIO_init(GPIOB, &pin_cfg);
-//
-//}
 int main(void)
 {
+
 	clock_init();
-//	GPIO_init();
-	LCD_init();
-	LCD_clearScreen();
 
-	EXTI_pinConfig_t EXTI_CFG;
-	EXTI_CFG.EXTI_PIN=(EXTI_GPIO_Mapping_t)EXTI9PB9;
-	EXTI_CFG.EXTI_Trigger = EXTI_Trigger_Mode_Rising;
-	EXTI_CFG.P_EXTI_CallBack = callBack_Application_Func;
-	EXTI_CFG.IRQ_State = IRQ_Enable;
 
-	MCAL_EXTI_GPIO_Init(&EXTI_CFG);
 
-	IRQ_FLAG = 1;
+	UART_Config uartcfg;
+
+	uartcfg.BuadRate = UART_BuadRate_115200;
+	uartcfg.HWFlowCtl = UART_HWFlowCtrl_NONE;
+	uartcfg.IRQEnable = UART_IRQ_Enable_RXNE_or_ORE ;
+	uartcfg.P_IRQ_CallBack = ARAFA_CallBack;
+	uartcfg.Parity = UART_Parity_NONE;
+	uartcfg.Word_Lenght = UART_Word_Lenght_8B;
+	uartcfg.StopBits = UART_StopBits_One;
+	uartcfg.USART_Mode = UART_Mode_RX_TX;
+
+	MCAL_UART_Init(USART1, &uartcfg);
+	MCAL_UART_GPIO_SetPins(USART1);
 
 	while(1){
-		if(IRQ_FLAG){
-			LCD_clearScreen();
-			IRQ_FLAG  = 0;
-		}
-	}
 
+
+	}
 }

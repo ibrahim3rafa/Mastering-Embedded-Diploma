@@ -1,18 +1,21 @@
-20:25:15 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+11:18:15 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
 make -j8 all 
-arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/inc" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
-../Src/main.c: In function 'callBack_Application_Func':
-../Src/main.c:48:2: warning: implicit declaration of function 'wait_mss'; did you mean 'wcstombs'? [-Wimplicit-function-declaration]
-  wait_mss(1000);
-  ^~~~~~~~
-  wcstombs
-../Src/main.c: At top level:
-../Src/main.c:85:6: warning: conflicting types for 'wait_mss'
- void wait_mss(uint32_t time){
-      ^~~~~~~~
-../Src/main.c:48:2: note: previous implicit declaration of 'wait_mss' was here
-  wait_mss(1000);
-  ^~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'ARAFA_CallBack':
+../Src/main.c:34:29: warning: passing argument 2 of 'MCAL_UART_SendDate' from incompatible pointer type [-Wincompatible-pointer-types]
+  MCAL_UART_SendDate(USART1, &ch, Disable);
+                             ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:124:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_SendDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~
+../Src/main.c:35:32: warning: passing argument 2 of 'MCAL_UART_RecieveDate' from incompatible pointer type [-Wincompatible-pointer-types]
+  MCAL_UART_RecieveDate(USART1, &ch, Enable);
+                                ^
+In file included from ../Src/main.c:28:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/DRIVERS/STM32F103C6_Drivers/MCAL/includes/USART.h:125:6: note: expected 'uint16_t * {aka short unsigned int *}' but argument is of type 'unsigned int *'
+ void MCAL_UART_RecieveDate(USART_typedef* USARTx, uint16_t* pTXBuffer, enum polling_Mechanism PollingState);
+      ^~~~~~~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\DRIVERS\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: STM32F103C6_Drivers.elf
  
@@ -20,13 +23,13 @@ arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.lis
 arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
 arm-none-eabi-size   STM32F103C6_Drivers.elf 
    text	   data	    bss	    dec	    hex	filename
-   3660	      8	   1632	   5300	   14b4	STM32F103C6_Drivers.elf
+   2864	      8	   1632	   4504	   1198	STM32F103C6_Drivers.elf
 Finished building: default.size.stdout
  
 Finished building: STM32F103C6_Drivers.bin
+ 
 Finished building: STM32F103C6_Drivers.list
  
- 
 
-20:25:16 Build Finished. 0 errors, 2 warnings. (took 684ms)
+11:18:16 Build Finished. 0 errors, 2 warnings. (took 696ms)
 

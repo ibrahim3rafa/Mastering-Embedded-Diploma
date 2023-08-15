@@ -8,8 +8,8 @@
 #ifndef LCD_H_
 #define LCD_H_
 
-#include <GPIO_driver.h>
-#include "../../MCAL/inc/STM32F103x6.h"
+#include "../../MCAL/includes/GPIO_driver.h"
+#include "../../MCAL/includes/STM32F103x6.h"
 
 /*
 

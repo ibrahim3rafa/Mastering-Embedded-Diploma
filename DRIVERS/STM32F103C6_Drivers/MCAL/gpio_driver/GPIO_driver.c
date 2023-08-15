@@ -4,9 +4,10 @@
  *  Created on: Jul 30, 2023
  *      Author: ARAFA
  */
-#include <GPIO_driver.h>
-#include "STM32F103x6.h"
-#include "../../MCAL/inc/STM32F103x6.h"
+#include "../includes/GPIO_driver.h"
+
+#include "../includes/STM32F103x6.h"
+#include "../includes/STM32F103x6.h"
 
 uint16_t GPIO_CRLH_PIN_POSITION(uint16_t pinNumber){
 	switch(pinNumber){

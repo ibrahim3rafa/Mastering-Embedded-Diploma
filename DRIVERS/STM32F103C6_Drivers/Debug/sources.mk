@@ -22,6 +22,8 @@ SUBDIRS := \
 HAL/keypad_driver \
 HAL/lcd_driver \
 MCAL/EXTI_driver \
+MCAL/RCC_driver \
+MCAL/USART \
 MCAL/gpio_driver \
 Src \
 Startup \
