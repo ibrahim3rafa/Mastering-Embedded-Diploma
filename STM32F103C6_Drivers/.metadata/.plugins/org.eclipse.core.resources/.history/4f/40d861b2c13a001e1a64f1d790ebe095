@@ -1,0 +1,15 @@
+/*
+ * RCC.h
+ *
+ *  Created on: Aug 14, 2023
+ *      Author: ARAFA
+ */
+
+#ifndef INCLUDES_RCC_H_
+#define INCLUDES_RCC_H_
+
+#include"STM32F103x6.h"
+
+#define RCC_USART1_CLK_Enable 						(RCC->APB)
+
+#endif /* INCLUDES_RCC_H_ */

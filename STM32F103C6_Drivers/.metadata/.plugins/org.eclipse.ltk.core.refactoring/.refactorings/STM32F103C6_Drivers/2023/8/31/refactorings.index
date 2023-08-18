@@ -1,0 +1,6 @@
+1690994732092	Rename resource 'STM32F103C6_gpio_driver'
+1691165653196	Rename resource 'STM32F103C6_drivers'
+1691166040628	Rename resource 'STM32F103C6_EXTI_driver.c'
+1691166061636	Rename resource 'STM32F103C6_gpio_driver.c'
+1691166069943	Rename resource 'STM32F103C_EXTI_driver.h'
+1691166088385	Rename resource 'STM32F103C6_gpio_driver.h'
