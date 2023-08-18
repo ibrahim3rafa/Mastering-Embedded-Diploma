@@ -245,8 +245,8 @@ typedef struct{
 
 
 //SPI Enable Interrupt
-#define NVIC_SPI1_IRQ_Enable						(NVIC_ISER1 |= (1<<2))  //37-35
-#define NVIC_SPI2_IRQ_Enable						(NVIC_ISER1 |= (1<<1))  //37-36
+#define NVIC_SPI1_IRQ_Enable						(NVIC_ISER1 |= (1<<3))  //35-32
+#define NVIC_SPI2_IRQ_Enable						(NVIC_ISER1 |= (1<<4))  //36-32
 
 
 
@@ -272,8 +272,8 @@ typedef struct{
 
 
 //SPI Disable Interrupt
-#define NVIC_SPI1_IRQ_Disable 						(NVIC_ICER1 |= (1<<2))  //37-35
-#define NVIC_SPI2_IRQ_Disable						(NVIC_ICER1 |= (1<<1))  //37-36
+#define NVIC_SPI1_IRQ_Disable 						(NVIC_ICER1 |= (1<<3))  //35-32
+#define NVIC_SPI2_IRQ_Disable						(NVIC_ICER1 |= (1<<4))  //35-32
 
 
 

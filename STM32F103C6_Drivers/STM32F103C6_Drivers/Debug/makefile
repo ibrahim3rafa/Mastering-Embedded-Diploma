@@ -12,6 +12,7 @@ RM := rm -rf
 -include Src/subdir.mk
 -include MCAL/gpio_driver/subdir.mk
 -include MCAL/USART/subdir.mk
+-include MCAL/SPI_driver/subdir.mk
 -include MCAL/RCC_driver/subdir.mk
 -include MCAL/EXTI_driver/subdir.mk
 -include HAL/lcd_driver/subdir.mk
@@ -51,8 +52,8 @@ STM32F103C6_Drivers.bin \
 all: STM32F103C6_Drivers.elf secondary-outputs
 
 # Tool invocations
-STM32F103C6_Drivers.elf: $(OBJS) $(USER_OBJS) D:\Embedded\KEROLES\Mastering\ Embedded\ System\github\Mastering-Embedded-Diploma\STM32F103x8_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld
-	arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103x8_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32F103C6_Drivers.elf: $(OBJS) $(USER_OBJS) D:\Embedded\KEROLES\Mastering\ Embedded\ System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld
+	arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

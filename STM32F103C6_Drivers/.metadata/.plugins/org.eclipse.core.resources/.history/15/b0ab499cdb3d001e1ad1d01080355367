@@ -1,0 +1,403 @@
+/*
+ * SPI.c
+ *
+ *  Created on: Aug 18, 2023
+ *      Author: ARAFA
+ */
+
+
+#include"SPI.h"
+#include"RCC.h"
+#include "EXTI_driver.h"
+
+SPI_Config* Gp_SPI_Config [2] = {NULL,NULL};
+
+#define SPI1_INDEX		0
+#define SPI2_INDEX		1
+
+
+
+#define TXE 				(uint16_t)(0x2)
+#define RXNE				(uint16_t)(0x1)
+
+
+
+// -------------------------------------------------------------------------
+// ======================= SPI APIs ================================
+// -------------------------------------------------------------------------
+
+/**================================================================
+ * @Fn					- MCAL_SPI_Init
+ * @brief 				- Initializes SPI according to the specified parameters
+ * @param [in] 			- SPIx: where x can be (1 or 2) depending on the device used
+ * @param [in] 			- SPI_Config: All the SPI configurations
+ * @retval 				- None
+ * Note					- Supports SPI full duplex Master/Slave only & NSS HW/SW
+ * 						in case of master you have to configure pin and drive it
+ */
+void MCAL_SPI_Init(SPI_typedef* SPIx, SPI_Config* SPI_Config){
+
+	//SAFETY TO THE CONFIG
+	uint16_t tmp_CR1 = 0 ;
+	uint16_t tmp_CR2 = 0;
+
+	//enable clock
+	if(SPIx == SPI1){
+
+		Gp_SPI_Config[SPI1_INDEX] = SPI_Config;
+		RCC_SPI1_CLK_Enable();
+
+	}else if(SPIx == SPI2){
+
+		Gp_SPI_Config[SPI2_INDEX] = SPI_Config;
+		RCC_SPI2_CLK_Enable();
+
+	}
+
+	//Enable SPI
+	tmp_CR1 |= (1<<6);
+
+	//device mode
+	tmp_CR1 |= SPI_Config->Device_Mode;
+
+	//communication mode
+	tmp_CR1 |= SPI_Config->Communication_Mode;
+
+	//frame format
+	tmp_CR1 |= SPI_Config->Frame_Format;
+
+	//data size
+	tmp_CR1 |= SPI_Config->Data_Size;
+
+	//clock polarity
+	tmp_CR1 |= SPI_Config->Clock_Polarity;
+
+	//clock phase
+	tmp_CR1 |= SPI_Config->Clock_Phase;
+
+
+	// ===================== NSS ===================
+	if(SPI_Config->NSS == SPI_NSS_HW_MASTER_OUTPUT_ENABLED){
+
+		tmp_CR2 |= SPI_Config->NSS;
+
+	}else if (SPI_Config->NSS == SPI_NSS_HW_MASTER_OUTPUT_DISABLED){
+
+		tmp_CR2 &= SPI_Config->NSS;
+
+	}else{
+
+		tmp_CR1 |= SPI_Config->NSS;
+
+	}
+
+
+	//Buadrate
+	tmp_CR1 |= SPI_Config->Buadrate_Prescaler;
+
+
+	// ===================== IRQ ==================
+	if(SPI_Config->IRQ_En != SPI_IRQ_NONE){
+
+		tmp_CR2 |= SPI_Config->IRQ_En;
+
+		if(SPIx == SPI1){
+
+			NVIC_SPI1_IRQ_Enable;
+
+		}else if (SPIx == SPI2){
+
+			NVIC_SPI2_IRQ_Enable;
+
+		}
+
+	}
+
+
+	SPIx->CR1 = tmp_CR1;
+	SPIx->CR2 = tmp_CR2;
+
+}
+
+
+
+
+
+
+/**================================================================
+ * @Fn					- MCAL_SPI_DeInit
+ * @brief 				- Initializes SPI according to the specified parameters
+ * @param [in] 			- SPIx: where x can be (1 or 2) depending on the device used
+ * @retval 				- None
+ * Note					- Supports SPI full duplex Master/Slave only & NSS HW/SW
+ * 						in case of master you have to configure pin and drive it
+ */
+void MCAL_SPI_DeInit(SPI_typedef* SPIx){
+
+	if(SPIx == SPI1){
+
+		RCC_SPI1_CLK_Disable();
+		NVIC_SPI1_IRQ_Disable;
+
+	}else if(SPIx == SPI2){
+
+		RCC_SPI2_CLK_Disable();
+		NVIC_SPI2_IRQ_Disable;
+
+	}
+
+}
+
+
+
+/**================================================================
+ * @Fn					- MCAL_SPI_Send_Data
+ * @brief 				- Send data via SPI
+ * @param [in] 			- SPIx: where x can be (1 or 2) depending on the device used
+ * @param [in] 			- pTxBuffer: buffer contain data
+ * @param [in] 			- poll_en: Whether you're using polling or interrupt
+ * @retval 				- None
+ * Note					- None
+ */
+void MCAL_SPI_Send_Data(SPI_typedef* SPIx, uint16_t * pTxBuffer , enum pollingMechanism poll_en){
+
+	if(poll_en == En)
+		while(!(SPIx->SR & (TXE)));
+	*pTxBuffer = SPIx->DR ;
+
+}
+
+
+
+/**================================================================
+ * @Fn					- MCAL_SPI_Receive_Data
+ * @brief 				- Receive data via SPI
+ * @param [in] 			- SPIx: where x can be (1 or 2) depending on the device used
+ * @param [in] 			- pRxBuffer: buffer contain data
+ * @param [in] 			- poll_en: Whether you're using polling or interrupt
+ * @retval 				- None
+ * Note					- None
+ */
+void MCAL_SPI_Receive_Data(SPI_typedef* SPIx, uint16_t * pRxBuffer , enum pollingMechanism poll_en){
+
+	if(poll_en == En)
+		while(!(SPIx->SR & (RXNE)));
+	SPIx->DR = *pRxBuffer;
+}
+
+
+/**================================================================
+ * @Fn					- MCAL_SPI_TX_RX
+ * @brief 				- To transmit and receive data via SPI
+ * @param [in] 			- SPIx: where x can be (1 or 2) depending on the device used
+ * @param [in] 			- pBuffer: All the SPI configurations
+ * @param [in] 			- poll_en: Whether you're using polling or interrupt
+ * @retval 				- None
+ * Note					- None
+ */
+
+void MCAL_SPI_TX_RX(SPI_typedef* SPIx, uint16_t * pBuffer , enum pollingMechanism poll_en){
+
+	if(poll_en == En)
+		while(!(SPIx->SR & (TXE)));
+	*pBuffer = SPIx->DR ;
+
+	if(poll_en == En)
+		while(!(SPIx->SR & (RXNE)));
+	SPIx->DR = *pBuffer;
+
+}
+
+
+
+/**================================================================
+ * @Fn					- MCAL_SPI_GPIO_Set_Pins
+ * @brief 				- Configure the pins as recommended in the data sheer
+ * @param [in] 			- SPIx: where x can be (1 or 2) depending on the device used
+ * @retval 				- None
+ * Note					- None
+ */
+
+void MCAL_SPI_GPIO_Set_Pins(SPI_typedef* SPIx){
+
+	GPIO_pinConfig gpio_cfg;
+
+	//check SPI number
+	if (SPIx == SPI1){
+		//PA4 SPI1_NSS
+		//PA5 SPI1_SCK
+		//PA6 SPI1_MISO
+		//PA7 SPI1_MOSI
+
+		//master
+		if(Gp_SPI_Config[SPI1_INDEX]->Device_Mode == SPI_Device_Mode_Master){
+
+			//PA4 SPI1_NSS
+			switch(Gp_SPI_Config[SPI1_INDEX]->NSS){
+
+			case SPI_NSS_HW_MASTER_OUTPUT_DISABLED:
+
+				gpio_cfg.GPIO_PinNum = GPIO_PIN_4;
+				gpio_cfg.GPIO_PinMode = INPUT_FLOATING_MODE;
+				MCAL_GPIO_init(GPIOA, &gpio_cfg);
+
+				break;
+
+			case SPI_NSS_HW_MASTER_OUTPUT_ENABLED:
+
+				gpio_cfg.GPIO_PinNum = GPIO_PIN_4;
+				gpio_cfg.GPIO_PinMode = AF_OUTPUT_PUSH_PULL_MODE;
+				gpio_cfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+				MCAL_GPIO_init(GPIOA, &gpio_cfg);
+
+				break;
+			}
+
+			//PA5 SPI1_SCK Master Alternate function push-pull
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_5;
+			gpio_cfg.GPIO_PinMode = AF_OUTPUT_PUSH_PULL_MODE;
+			gpio_cfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+			MCAL_GPIO_init(GPIOA, &gpio_cfg);
+
+			//PA6 SPI1_MISO		Full duplex / master Input floating / Input pull-up
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_6;
+			gpio_cfg.GPIO_PinMode = INPUT_FLOATING_MODE;
+			MCAL_GPIO_init(GPIOA, &gpio_cfg);
+
+			//PA7 SPI1_MOSI Full duplex / master Alternate function push-pull
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_7;
+			gpio_cfg.GPIO_PinMode = AF_OUTPUT_PUSH_PULL_MODE;
+			gpio_cfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+			MCAL_GPIO_init(GPIOA, &gpio_cfg);
+
+
+			//slave
+		}else if(Gp_SPI_Config[SPI1_INDEX]->Device_Mode == SPI_Device_Mode_Slave){
+			//SPIx_NSS   Input floating
+			if(Gp_SPI_Config[SPI1_INDEX]->NSS == SPI_NSS_HW_SLAVE){
+
+				gpio_cfg.GPIO_PinNum = GPIO_PIN_4;
+				gpio_cfg.GPIO_PinMode = INPUT_FLOATING_MODE;
+				MCAL_GPIO_init(GPIOA, &gpio_cfg);
+
+			}
+
+			//PA5 SPI1_SCK   Slave Input floating
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_5;
+			gpio_cfg.GPIO_PinMode = INPUT_FLOATING_MODE;
+			MCAL_GPIO_init(GPIOA, &gpio_cfg);
+
+			//PA6 SPI1_MISO Full duplex / slave (point to point) Alternate function push-pull
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_6;
+			gpio_cfg.GPIO_PinMode = AF_OUTPUT_PUSH_PULL_MODE;
+			gpio_cfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+			MCAL_GPIO_init(GPIOA, &gpio_cfg);
+
+			//PA7 SPI1_MOSI  	Full duplex / slave Input floating
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_7;
+			gpio_cfg.GPIO_PinMode = INPUT_FLOATING_MODE;
+			MCAL_GPIO_init(GPIOA, &gpio_cfg);
+		}
+
+
+	}else if (SPIx == SPI2){
+		//PB12		 	SPI2_NSS
+		//PB13			SPI2_SCK
+		//PB14			SPI2_MISO
+		//PB15 			SPI2_MOSI
+		//master
+		if(Gp_SPI_Config[SPI2_INDEX]->Device_Mode == SPI_Device_Mode_Master){
+
+			//PA4 SPI1_NSS
+			switch(Gp_SPI_Config[SPI2_INDEX]->NSS){
+
+			case SPI_NSS_HW_MASTER_OUTPUT_DISABLED:
+
+				gpio_cfg.GPIO_PinNum = GPIO_PIN_12;
+				gpio_cfg.GPIO_PinMode = INPUT_FLOATING_MODE;
+				MCAL_GPIO_init(GPIOB, &gpio_cfg);
+
+				break;
+
+			case SPI_NSS_HW_MASTER_OUTPUT_ENABLED:
+
+				gpio_cfg.GPIO_PinNum = GPIO_PIN_12;
+				gpio_cfg.GPIO_PinMode = AF_OUTPUT_PUSH_PULL_MODE;
+				gpio_cfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+				MCAL_GPIO_init(GPIOB, &gpio_cfg);
+
+				break;
+			}
+
+			//PA5 SPI1_SCK Master Alternate function push-pull
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_13;
+			gpio_cfg.GPIO_PinMode = AF_OUTPUT_PUSH_PULL_MODE;
+			gpio_cfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+			MCAL_GPIO_init(GPIOB, &gpio_cfg);
+
+			//PA6 SPI1_MISO		Full duplex / master Input floating / Input pull-up
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_14;
+			gpio_cfg.GPIO_PinMode = INPUT_FLOATING_MODE;
+			MCAL_GPIO_init(GPIOB, &gpio_cfg);
+
+			//PA7 SPI1_MOSI Full duplex / master Alternate function push-pull
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_15;
+			gpio_cfg.GPIO_PinMode = AF_OUTPUT_PUSH_PULL_MODE;
+			gpio_cfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+			MCAL_GPIO_init(GPIOB, &gpio_cfg);
+
+
+			//slave
+		}else if(Gp_SPI_Config[SPI2_INDEX]->Device_Mode == SPI_Device_Mode_Slave){
+			//SPIx_NSS   Input floating
+			if(Gp_SPI_Config[SPI2_INDEX]->NSS == SPI_NSS_HW_SLAVE){
+
+				gpio_cfg.GPIO_PinNum = GPIO_PIN_12;
+				gpio_cfg.GPIO_PinMode = INPUT_FLOATING_MODE;
+				MCAL_GPIO_init(GPIOB, &gpio_cfg);
+
+			}
+
+			//PA5 SPI1_SCK   Slave Input floating
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_13;
+			gpio_cfg.GPIO_PinMode = INPUT_FLOATING_MODE;
+			MCAL_GPIO_init(GPIOB, &gpio_cfg);
+
+			//PA6 SPI1_MISO Full duplex / slave (point to point) Alternate function push-pull
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_14;
+			gpio_cfg.GPIO_PinMode = AF_OUTPUT_PUSH_PULL_MODE;
+			gpio_cfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+			MCAL_GPIO_init(GPIOB, &gpio_cfg);
+
+			//PA7 SPI1_MOSI  	Full duplex / slave Input floating
+			gpio_cfg.GPIO_PinNum = GPIO_PIN_15;
+			gpio_cfg.GPIO_PinMode = INPUT_FLOATING_MODE;
+			MCAL_GPIO_init(GPIOB, &gpio_cfg);
+		}
+	}
+
+
+}
+
+
+
+
+
+// -------------------------------------------------------------------------
+// ======================= IRQ ================================
+// -------------------------------------------------------------------------
+
+
+void SPI1_IRQHandler(void){
+
+	struct SPI_Interrupt_source irq_src;
+
+	irq_src.TXE = (((SPI1->SR)&(1<<1)) >> 1);
+
+}
+
+
+
+void SPI2_IRQHandler(void){
+
+}

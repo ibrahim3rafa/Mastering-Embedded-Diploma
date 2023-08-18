@@ -49,7 +49,7 @@ typedef struct {
 																	// Take care you have to configure RCC to enter the correct clock  APB2 --> SPI1, APB1 --> SPI2
 	 */
 
-	uint16_t IRQ_Enable;											/*// Specifies whether using polling or interrupt mechanism
+	uint16_t IRQ_En;											/*// Specifies whether using polling or interrupt mechanism
 																	// This parameter must be defined based on @ref SPI_IRQ_define
 	 */
 
@@ -117,7 +117,7 @@ typedef struct {
 //@ref SPI_NSS_define
 //HARDWARE
 #define SPI_NSS_HW_SLAVE									(uint16_t)(0)		 // SSM in CR1
-#define SPI_NSS_HW_MASTER_OUTPUT_DISABLED					(uint16_t)(0)		// SSOE in CR2
+#define SPI_NSS_HW_MASTER_OUTPUT_DISABLED					(uint16_t)(~(1<<2))		// SSOE in CR2
 #define SPI_NSS_HW_MASTER_OUTPUT_ENABLED					(uint16_t)(1<<2)		// SSOE in CR2
 
 
@@ -133,6 +133,24 @@ typedef struct {
 #define SPI_IRQ_TXEIE										(uint16_t)(1<<7)
 #define SPI_IRQ_RXNEIE										(uint16_t)(1<<6)
 #define SPI_IRQ_ERRIE										(uint16_t)(1<<5)
+
+
+enum pollingMechanism{
+	dis,En
+};
+
+// -------------------------------------------------------------------------
+// ======================= SPI APIs ================================
+// -------------------------------------------------------------------------
+
+
+void MCAL_SPI_Init(SPI_typedef* SPIx, SPI_Config* SPI_Config);
+void MCAL_SPI_DeInit(SPI_typedef* SPIx);
+void MCAL_SPI_Send_Data(SPI_typedef* SPIx, uint16_t * pTxBuffer , enum pollingMechanism poll_en);
+void MCAL_SPI_Receive_Data(SPI_typedef* SPIx, uint16_t * pRxBuffer , enum pollingMechanism poll_en);
+void MCAL_SPI_GPIO_Set_Pins(SPI_typedef* SPIx);
+
+void MCAL_SPI_TX_RX(SPI_typedef* SPIx, uint16_t * pTxBuffer , enum pollingMechanism poll_en);
 
 
 #endif /* INCLUDES_SPI_H_ */

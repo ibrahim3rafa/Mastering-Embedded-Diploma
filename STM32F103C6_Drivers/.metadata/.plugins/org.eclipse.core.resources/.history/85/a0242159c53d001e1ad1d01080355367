@@ -1,0 +1,57 @@
+/*
+ * SPI.c
+ *
+ *  Created on: Aug 18, 2023
+ *      Author: ARAFA
+ */
+
+
+#include"SPI.h"
+#include"RCC.h"
+
+SPI_Config* Gp_SPI_Config [2] = {NULL,NULL};
+
+#define SPI1_INDEX		0
+#define SPI2_INDEX		1
+
+
+
+
+/**================================================================
+ * @Fn					- MCAL_SPI_Init
+ * @brief 				- Initializes SPI according to the specified parameters
+ * @param [in] 			- SPIx: where x can be (1 or 2) depending on the device used
+ * @param [in] 			- SPI_Cfg: All the SPI configurations
+ * @retval 				- None
+ * Note					- Supports SPI full duplex Master/Slave only & NSS HW/SW
+ * 						in case of master you have to configure pin and drive it
+ */
+void MCAL_SPI_Init(SPI_typedef* SPIx, SPI_Config* SPI_Config){
+
+	//SAFETY TO THE CONFIG
+	uint16_t tmp_CR1 = 0 ;
+	uint16_t tmp_CR2 = 0;
+
+	//enable clock
+	if(SPIx == SPI1){
+		RCC
+	}else if(SPIx == SPI2){
+
+	}
+
+
+}
+
+
+
+
+
+
+
+
+void MCAL_SPI_DeInit(SPI_typedef* SPIx);
+void MCAL_SPI_Send_Data(SPI_typedef* SPIx, uint16_t * pTxBuffer , enum pollingMechanism poll_en);
+void MCAL_SPI_Receive_Data(SPI_typedef* SPIx, uint16_t * pRxBuffer , enum pollingMechanism poll_en);
+void MCAL_SPI_GPIO_Set_Pins(SPI_typedef* SPIx);
+
+void MCAL_SPI_TX,RX(SPI_typedef* SPIx, uint16_t * pTxBuffer , enum pollingMechanism poll_en);

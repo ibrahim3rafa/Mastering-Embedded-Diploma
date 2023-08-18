@@ -21,18 +21,32 @@
 #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
+//#define SPI_ACT_AS_Master
+#define SPI_ACT_AS_Slave
+
+
 
 #include "../MCAL/includes/GPIO_driver.h"
 #include"../MCAL/includes/STM32F103x6.h"
 #include"../MCAL/includes/EXTI_driver.h"
 #include"USART.h"
 #include"RCC.h"
+#include"SPI.h"
+
 
 unsigned int IRQ_FLAG = 0;
-unsigned  ch;
+unsigned char  ch;
 void ARAFA_CallBack(void){
-	MCAL_UART_SendDate(USART1, &ch, Disable);
-	MCAL_UART_RecieveDate(USART1, &ch, Enable);
+#ifdef	SPI_ACT_AS_Master
+	MCAL_UART_RecieveDate(USART1, &ch, Disable);
+	MCAL_UART_SendDate(USART1, &ch, Enable);
+
+	//send to spi
+	MCAL_GPIO_Write_Pin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
+	MCAL_SPI_TX_RX(SPI1, &ch, En);
+	MCAL_GPIO_Write_Pin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+
+#endif
 }
 
 void clock_init(void){
@@ -54,25 +68,34 @@ void clock_init(void){
 
 	RCC_USART1_CLK_Enable();
 
+
+
 }
 
 
+void Arafa_SPI1_IRQHandler(struct SPI_Interrupt_source irq_src){
+#ifdef	SPI_ACT_AS_Slave
+	if(irq_src.RXNE){
 
-void wait_mss(uint32_t time){
-	uint32_t i,j ;
-	for(i=0 ; i<time ; i++){
-		for(j=0 ; j<255; j++);
+		ch = 0xf;
+		MCAL_SPI_TX_RX(SPI1, &ch, dis);
+		MCAL_UART_SendDate(USART1, &ch, Enable);
+
 	}
+#endif
 }
 
 
 int main(void)
 {
 
+	GPIO_pinConfig pinConfiguration;
+
 	clock_init();
 
 
 
+	//>>>>>>>>>>>UART INit<<<<<<<<<<<<<<<<<<
 	UART_Config uartcfg;
 
 	uartcfg.BuadRate = UART_BuadRate_115200;
@@ -86,6 +109,47 @@ int main(void)
 
 	MCAL_UART_Init(USART1, &uartcfg);
 	MCAL_UART_GPIO_SetPins(USART1);
+
+
+	//>>>>>>>>>>>SPI INit<<<<<<<<<<<<<<<<<<
+	SPI_Config spi_cfg;
+	spi_cfg.Clock_Phase = SPI_CLOCK_PHASE_SECOND_CLK_FIRST_CAPTURE_EDGE;
+	spi_cfg.Clock_Polarity = SPI_CLOCK_POLARITY_HIGH_IDLE;
+	spi_cfg.Communication_Mode = SPI_Two_Direction_2Lines;
+	spi_cfg.Data_Size = SPI_8BIT_DATA_FRAME;
+	spi_cfg.Frame_Format = SPI_Frame_Format_MSB_First;
+	//assume pclk2 is 8mhz
+	spi_cfg.Buadrate_Prescaler = SPI_BUADRATE_PRESCALER_8;
+
+#ifdef	SPI_ACT_AS_Master
+	//assume pclk2 is 8mhz
+	spi_cfg.Device_Mode = SPI_Device_Mode_Master;
+	spi_cfg.IRQ_En = SPI_IRQ_NONE;
+	spi_cfg.NSS = SPI_INTERNAL_SLAVE_SELECT_ENABLED;
+	spi_cfg.P_IRQ_CallBack = NULL;
+
+
+	//config PA4 as by gpio to slave select
+	pinConfiguration.GPIO_PinNum = GPIO_PIN_4;
+	pinConfiguration.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
+	pinConfiguration.GPIO_PinMode = OUTPUT_PUSH_PULL_MODE;
+	MCAL_GPIO_init(GPIOA, &pinConfiguration);
+
+	MCAL_GPIO_Write_Pin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+#endif
+
+
+#ifdef SPI_ACT_AS_Slave
+
+	spi_cfg.Device_Mode = SPI_Device_Mode_Slave;
+	spi_cfg.IRQ_En = SPI_IRQ_RXNEIE;
+	spi_cfg.NSS = SPI_NSS_HW_SLAVE;
+	spi_cfg.P_IRQ_CallBack = Arafa_SPI1_IRQHandler;
+
+#endif
+
+	MCAL_SPI_Init(SPI1, &spi_cfg);
+	MCAL_SPI_GPIO_Set_Pins(SPI1);
 
 	while(1){
 

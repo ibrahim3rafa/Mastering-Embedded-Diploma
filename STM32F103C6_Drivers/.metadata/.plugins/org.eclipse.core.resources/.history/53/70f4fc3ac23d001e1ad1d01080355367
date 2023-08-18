@@ -1,0 +1,148 @@
+/*
+ * SPI.h
+ *
+ *  Created on: Aug 16, 2023
+ *      Author: ARAFA
+ */
+
+#ifndef INCLUDES_SPI_H_
+#define INCLUDES_SPI_H_
+#include"STM32F103x6.h"
+
+
+struct SPI_Interrupt_source{
+	uint8_t TXE : 1  ; 		// Tx buffer empty interrupt
+	uint8_t RXNE : 1  ;		// Rx buffer not empty interrupt
+	uint8_t ERRI : 1 ;		// Error interrupt
+	uint8_t RESERVED :5;
+};
+
+
+
+
+//SPI Config
+typedef struct {
+	uint16_t Device_Mode; 											// Specifies SPI operating mode (master or slave)
+
+	uint16_t Communication_Mode;									/*// Specifies SPI directional mode
+																	// This parameter must be defined based on @ref SPI_Communication_Mode_define*/
+
+	uint16_t Frame_Format;											/*// Specifies LSB or MSB first
+																	// This parameter must be defined based on @ref SPI_Frame_Format_define*/
+
+	uint16_t Data_Size; 											/*// Specifies data size (8 or 16)
+																	// This parameter must be defined based on @ref SPI_Data_Size_define*/
+
+	uint16_t Clock_Polarity;										/*// Specifies what the idle case is (0 or 1)
+																	// This parameter must be defined based on @ref SPI_Clock_Polarity_define*/
+
+	uint16_t Clock_Phase;											/*// Specifies whether sampling on the first or the second edge
+																	// This parameter must be defined based on @ref SPI_Clock_Phase_define*/
+
+	uint16_t NSS;  													/*// Specifies whether using hardware pin (NSS) or software using SSI bit enable
+																	// This parameter must be defined based on @ref SPI_NSS_define*/
+
+
+	uint16_t Buadrate_Prescaler;									/*// Specifies the baudrate prescalar which will be used to configure SCK
+																	// This parameter must be defined based on @ref SPI_Baudrate_Prescalar_define
+																	// Note: The communication clock is derived from the master and it will be an input to the slave
+																	// Take care you have to configure RCC to enter the correct clock  APB2 --> SPI1, APB1 --> SPI2
+	 */
+
+	uint16_t IRQ_Enable;											/*// Specifies whether using polling or interrupt mechanism
+																	// This parameter must be defined based on @ref SPI_IRQ_define
+	 */
+
+
+	void (* P_IRQ_CallBack)(struct SPI_Interrupt_source );			/* Set the C function which will be called once the IRQ happens
+	 */
+
+}SPI_Config;
+
+
+
+// -------------------------------------------------------------------------
+// ======================= Reference Macros ================================
+// -------------------------------------------------------------------------
+
+//@REF SPI operating mode (master or slave)
+#define SPI_Device_Mode_Slave								(uint16_t)(0)
+#define SPI_Device_Mode_Master								(uint16_t)(1<<2)
+
+
+
+//@ref SPI_Communication_Mode_define
+#define SPI_Two_Direction_2Lines							(uint16_t)(0)
+#define SPI_Two_Direction_2Lines_RXONLY						(uint16_t)((1<<10))
+#define SPI_Two_Direction_1Line_TransmitAndReceive			(uint16_t)((1<<15))
+#define SPI_Two_Direction_1Line_Receive_Only				(uint16_t)((1<<15) | (1<<10))
+
+
+
+//@ref SPI_Frame_Format_define
+#define SPI_Frame_Format_MSB_First							(uint16_t)(0)
+#define SPI_Frame_Format_LSB_First							(uint16_t)(1<<7)
+
+
+
+//@ref SPI_Data_Size_define
+#define SPI_8BIT_DATA_FRAME									(uint16_t)(0)
+#define SPI_16BIT_DATA_FRAME								(uint16_t)(1<<11)
+
+
+
+
+//@ref SPI_Clock_Polarity_define
+#define SPI_CLOCK_POLARITY_LOW_IDLE							(uint16_t)(0)
+#define SPI_CLOCK_POLARITY_HIGH_IDLE						(uint16_t)(1<<1)
+
+
+
+
+//@ref SPI_Clock_Phase_define
+#define SPI_CLOCK_PHASE_FIRST_CLK_FIRST_CAPTURE_EDGE		(uint16_t)(0)
+#define SPI_CLOCK_PHASE_SECOND_CLK_FIRST_CAPTURE_EDGE		(uint16_t)(1<<0)
+
+
+//@ref SPI_Baudrate_Prescalar_define
+#define SPI_BUADRATE_PRESCALER_2							(uint16_t)(0b000<<3)
+#define SPI_BUADRATE_PRESCALER_4							(uint16_t)(0b001<<3)
+#define SPI_BUADRATE_PRESCALER_8							(uint16_t)(0b010<<3)
+#define SPI_BUADRATE_PRESCALER_16							(uint16_t)(0b011<<3)
+#define SPI_BUADRATE_PRESCALER_32							(uint16_t)(0b100<<3)
+#define SPI_BUADRATE_PRESCALER_64							(uint16_t)(0b101<<3)
+#define SPI_BUADRATE_PRESCALER_128							(uint16_t)(0b110<<3)
+#define SPI_BUADRATE_PRESCALER_256							(uint16_t)(0b111<<3)
+
+//@ref SPI_NSS_define
+//HARDWARE
+#define SPI_NSS_HW_SLAVE									(uint16_t)(0)		 // SSM in CR1
+#define SPI_NSS_HW_MASTER_OUTPUT_DISABLED					(uint16_t)(~(1<<2))		// SSOE in CR2
+#define SPI_NSS_HW_MASTER_OUTPUT_ENABLED					(uint16_t)(1<<2)		// SSOE in CR2
+
+
+//SOFTWARE
+#define SPI_INTERNAL_SLAVE_SELECT_RESET						(uint16_t)(1<<9)
+#define SPI_INTERNAL_SLAVE_SELECT_ENABLED					(uint16_t)(1<<9 | 1<<8)
+
+
+
+
+//@ref SPI_IRQ_define
+#define SPI_IRQ_NONE										(uint16_t)(0)
+#define SPI_IRQ_TXEIE										(uint16_t)(1<<7)
+#define SPI_IRQ_RXNEIE										(uint16_t)(1<<6)
+#define SPI_IRQ_ERRIE										(uint16_t)(1<<5)
+
+
+
+
+// -------------------------------------------------------------------------
+// ======================= SPI APIs ================================
+// -------------------------------------------------------------------------
+
+
+void MCAL_SPI_Init(SPI_typedef* SPIx, SPI_Config* SPI_Config);
+void MCAL_SPI_DeInit(SPI_typedef* SPIx);
+
+#endif /* INCLUDES_SPI_H_ */

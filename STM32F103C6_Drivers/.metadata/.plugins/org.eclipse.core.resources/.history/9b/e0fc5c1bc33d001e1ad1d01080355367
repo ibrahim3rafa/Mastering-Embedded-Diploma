@@ -1,0 +1,20 @@
+/*
+ * SPI.c
+ *
+ *  Created on: Aug 18, 2023
+ *      Author: ARAFA
+ */
+
+
+#include"SPI.h"
+
+SPI_Config* Gp_SPI_Config [2] = {NULL,NULL};
+
+#define SPI1_INDEX		0
+#define SPI2_INDEX		1
+
+
+
+
+
+
