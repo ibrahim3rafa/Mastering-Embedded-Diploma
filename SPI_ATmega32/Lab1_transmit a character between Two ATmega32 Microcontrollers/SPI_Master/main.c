@@ -37,14 +37,11 @@ unsigned char SPI_Master_Transmit(unsigned char cdata){
 
 int main(){
 
-	unsigned char ch= 0;
+	unsigned char x= 0 , data = '' ;
 	SPI_Master_Init();
-
-	DDRA = 0xff;
-
-	for(ch = 0 ; ch<=255 ; ch++){
-		_delay_ms(1000);
-		PORTA = SPI_Master_Transmit(ch);  /*Send and receive and show on PORTA*/
-	}
+	
+	
+	
+	
 
 }
