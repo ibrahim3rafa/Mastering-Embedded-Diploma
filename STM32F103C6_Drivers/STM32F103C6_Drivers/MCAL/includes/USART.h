@@ -9,7 +9,7 @@
 #define INCLUDES_USART_H_
 
 
-#include"STM32F103x6.h"
+#include <STM32F103x8.h>
 //
 //enum UART_IRQ_Event{
 //	UART_IRQ_TXE,						/*Transmission data register Empty*/

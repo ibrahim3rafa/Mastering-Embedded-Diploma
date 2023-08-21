@@ -8,7 +8,7 @@
 #ifndef INCLUDES_RCC_H_
 #define INCLUDES_RCC_H_
 
-#include"STM32F103x6.h"
+#include <STM32F103x8.h>
 
 // Baud rate Calculations
 // USARTDIV = fclck / (16* Baudrate)
@@ -29,45 +29,6 @@
 
 /*This Partial implementation of RCC driver just to could implement USART driver
  * We assumed here that we will take our clock from internal 8M HSI only */
-
-
-
-
-/*Clock Enable / Disable*/
-
-
-
-//ENABLE
-//USART Enable
-#define RCC_USART1_CLK_Enable() 						(RCC->APB2ENR |= (1<<14))
-#define RCC_USART2_CLK_Enable() 						(RCC->APB1ENR |= (1<<17))
-#define RCC_USART3_CLK_Enable() 						(RCC->APB1ENR |= (1<<18))
-
-
-
-//SPI Enable
-#define RCC_SPI1_CLK_Enable() 						(RCC->APB2ENR |= (1<<12))
-#define RCC_SPI2_CLK_Enable() 						(RCC->APB1ENR |= (1<<14))
-
-
-
-
-
-//DISABLE
-//USART Disable
-#define RCC_USART1_CLK_Disable() 						(RCC->APB2RSTR |= (1<<14))
-#define RCC_USART2_CLK_Disable() 						(RCC->APB1RSTR |= (1<<17))
-#define RCC_USART3_CLK_Disable() 						(RCC->APB1RSTR |= (1<<18))
-
-
-
-
-
-//SPI Disable
-#define RCC_SPI1_CLK_Disable() 						(RCC->APB2RSTR |= (1<<12))
-#define RCC_SPI2_CLK_Disable() 						(RCC->APB1RSTR |= (1<<14))
-
-
 
 
 

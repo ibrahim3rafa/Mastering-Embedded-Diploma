@@ -1,0 +1,114 @@
+/*
+ * I2C.h
+ *
+ *  Created on: Aug 21, 2023
+ *      Author: ARAFA
+ */
+
+#ifndef INCLUDES_I2C_H_
+#define INCLUDES_I2C_H_
+
+#include"STM32F103x8.h"
+
+
+
+
+/********************************************************************************************************************************
+ *->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   STRUCTS CONFIG  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ *********************************************************************************************************************************/
+
+typedef struct{
+
+	uint32_t I2C_Clock_Freq	;						//@ref I2C_clk_freq
+
+	uint32_t I2C_Clock_Stretch_Mode;				//@ref I2C_clk_Stretch_MOde
+
+
+	uint32_t I2C_General_Call_Mode;					//@ref I2C_General_Call_Mode
+
+
+	uint32_t I2C_Acknowledge_Mode;					//@ref I2C_Acknowledge_Mode
+
+
+	uint32_t I2C_SM_Bus_Mode;						//@ref I2C_SM_BUS_MODE
+
+
+	uint32_t I2C_Slave_Addressing_Mode;				//@ref I2C_Slave_Addressing_Mode
+
+
+}I2C_Init_typedef;
+
+/********************************************************************************************************************************
+ *->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   MACROS CONFIG  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ *********************************************************************************************************************************/
+//@ref I2C_clk_freq
+//– Standard Speed (up to 100 kHz)
+//– Fast Speed (up to 400 kHz)
+// To configure clock before enabling the peripheral
+// 1- in I2C_CR2 Bits 5:0 FREQ[5:0]: Peripheral clock frequency from APB1
+// 2- Configure the clock control register (Thigh = CCR * TPCLK1)
+// 			SM or FM
+// 3- Configure the rise time register (I2C_TRISE)
+#define I2C_SCLK_SM_50K							(50000U)
+#define I2C_SCLK_SM_100K						(100000U)
+#define I2C_SCLK_FM_200K						(200000U)  //Not supported
+#define I2C_SCLK_FM_400K						(400000U)	//Not supported
+
+
+
+
+//@ref I2C_clk_Stretch_MOde
+/*Bit 7 NOSTRETCH: Clock stretching disable (Slave mode)
+This bit is used to disable clock stretching in slave mode when ADDR or BTF flag is set, until
+it is reset by software.
+0: Clock stretching enabled
+1: Clock stretching disabled*/
+
+#define I2C_CLK_STRETCH_EN					(0X00000000)
+#define I2C_CLK_STRETCH_DIS					I2C_CR1_NOSTRETCH
+
+
+
+//@ref I2C_General_Call_Mode
+//Bit 6 ENGC: General call enable
+//0: General call disabled. Address 00h is NACKed.
+//1: General call enabled. Address 00h is ACKed.
+#define I2C_GENERAL_CALL_EN					I2C_CR1_ENGC
+#define I2C_GENERAL_CALL_DIS				(0X00000000)
+
+
+//@ref I2C_Acknowledge_Mode
+/*
+Bit 10 ACK: Acknowledge enable
+This bit is set and cleared by software and cleared by hardware when PE=0.
+0: No acknowledge returned
+1: Acknowledge returned after a byte is received (matched address or data)
+*/
+#define I2C_NO_ACK_RETURNED					(0X00000000)
+#define I2C_ACK_RETURNED					I2C_CR1_ACK
+
+
+//@ref I2C_SM_BUS_MODE
+//Bit 1 SMBUS: SMBus mode
+//0: I2C mode
+//1: SMBus mode
+#define I2C_I2C_Mode						(0x00000000)
+#define I2C_SMBus_Mode						I2C_CR1_SMBUS
+
+
+
+//@ref I2C_Slave_Addressing_Mode
+//Bit 15 ADDMODE Addressing mode (slave mode)
+//0: 7-bit slave address (10-bit address not acknowledged)
+//1: 10-bit slave address (7-bit address not acknowledged)
+#define I2C_7BIT_SLAVE_ADDRESS_MODE				(0X00000000)
+#define I2C_10BIT_SLAVE_ADDRESS_MODE			(uint16_t)(1<<15)
+
+/********************************************************************************************************************************
+ *->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> EXTI API'S  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ *********************************************************************************************************************************/
+
+
+
+
+#endif /* INCLUDES_I2C_H_ */

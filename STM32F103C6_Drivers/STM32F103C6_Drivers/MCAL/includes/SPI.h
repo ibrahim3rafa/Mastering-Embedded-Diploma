@@ -7,7 +7,7 @@
 
 #ifndef INCLUDES_SPI_H_
 #define INCLUDES_SPI_H_
-#include"STM32F103x6.h"
+#include <STM32F103x8.h>
 
 
 struct SPI_Interrupt_source{

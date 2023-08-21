@@ -22,6 +22,7 @@ SUBDIRS := \
 HAL/keypad_driver \
 HAL/lcd_driver \
 MCAL/EXTI_driver \
+MCAL/I2C_driver \
 MCAL/RCC_driver \
 MCAL/SPI_driver \
 MCAL/USART \

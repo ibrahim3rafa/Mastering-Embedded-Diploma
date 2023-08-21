@@ -6,10 +6,10 @@
  */
 
 
+#include <STM32F103x8.h>
 #include "lcd.h"
 
 #include "../../MCAL/includes/GPIO_driver.h"
-#include "../../MCAL/includes/STM32F103x6.h"
 
 //global variable
 GPIO_pinConfig pinCFG ;

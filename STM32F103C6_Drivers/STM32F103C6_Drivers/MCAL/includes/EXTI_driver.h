@@ -8,8 +8,8 @@
 #ifndef INCLUDES_EXTI_DRIVER_H_
 #define INCLUDES_EXTI_DRIVER_H_
 
+#include <STM32F103x8.h>
 #include "../includes/GPIO_driver.h"
-#include "../includes/STM32F103x6.h"
 
 
 
@@ -106,6 +106,10 @@ typedef struct{
 #define SPI1_IRQ				35
 #define SPI2_IRQ				36
 
+#define I2C1_EV_IRQ				31
+#define I2C1_ER_IRQ				32
+#define I2C2_EV_IRQ				33
+#define I2C2_ER_IRQ				34
 
 /*@ref EXTI_PIN*/
 //EXTI0
@@ -251,6 +255,12 @@ typedef struct{
 
 
 
+//I2C Enable Interrupt
+#define NVIC_I2C1_EV_IRQ_Enable						(NVIC_ISER0 |= (1<<31))  //31
+#define NVIC_I2C1_ER_IRQ_Enable						(NVIC_ISER1 |= (1<<0))  //32
+#define NVIC_I2C2_EV_IRQ_Enable						(NVIC_ISER1 |= (1<<1))  //33
+#define NVIC_I2C2_ER_IRQ_Enable						(NVIC_ISER1 |= (1<<2))  //34
+
 
 //DISABLE
 #define NVIC_EXTI0_IRQ_Disable						(NVIC_ICER0 |=  (1<<EXTI0_IRQ))
@@ -277,6 +287,13 @@ typedef struct{
 
 
 
+
+
+//I2C Disable Interrupt
+#define NVIC_I2C1_EV_IRQ_Disable						(NVIC_ICER0 |= (1<<31))  //31
+#define NVIC_I2C1_ER_IRQ_Disable						(NVIC_ICER1 |= (1<<0))  //32
+#define NVIC_I2C2_EV_IRQ_Disable						(NVIC_ICER1 |= (1<<1))  //33
+#define NVIC_I2C2_ER_IRQ_Disable						(NVIC_ICER1 |= (1<<2))  //34
 
 
 

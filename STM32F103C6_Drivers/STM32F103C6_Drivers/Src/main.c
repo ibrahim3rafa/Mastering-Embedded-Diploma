@@ -27,7 +27,7 @@
 
 
 #include "../MCAL/includes/GPIO_driver.h"
-#include"../MCAL/includes/STM32F103x6.h"
+#include<STM32F103x8.h>
 #include"../MCAL/includes/EXTI_driver.h"
 #include"USART.h"
 #include"RCC.h"

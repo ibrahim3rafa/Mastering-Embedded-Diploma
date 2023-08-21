@@ -7,7 +7,7 @@
 
 #ifndef STM32F103C6_GPIO_DRIVER_H_
 #define STM32F103C6_GPIO_DRIVER_H_
-#include "../includes/STM32F103x6.h"
+#include <STM32F103x8.h>
 
 
 //GPIO_config_struct

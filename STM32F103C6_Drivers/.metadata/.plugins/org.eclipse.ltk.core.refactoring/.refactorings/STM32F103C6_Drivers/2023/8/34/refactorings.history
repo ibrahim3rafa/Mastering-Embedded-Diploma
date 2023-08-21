@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;STM32F103C6_Drivers/MCAL/includes/STM32F103x6.h&apos; to &apos;STM32F103x8.h&apos;" description="Rename resource &apos;STM32F103x6.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="MCAL/includes/STM32F103x6.h" name="STM32F103x8.h" stamp="1692557030325" updateReferences="true"/>
+</session>

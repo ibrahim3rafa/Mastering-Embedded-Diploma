@@ -1,6 +1,7 @@
 "HAL/keypad_driver/keypad.o"
 "HAL/lcd_driver/lcd.o"
 "MCAL/EXTI_driver/EXTI_driver.o"
+"MCAL/I2C_driver/I2C.o"
 "MCAL/RCC_driver/RCC.o"
 "MCAL/SPI_driver/SPI.o"
 "MCAL/USART/USART.o"

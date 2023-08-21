@@ -8,8 +8,8 @@
 #ifndef KEYPAD_H_
 #define KEYPAD_H_
 
+#include <STM32F103x8.h>
 #include "../../MCAL/includes/GPIO_driver.h"
-#include "../../MCAL/includes/STM32F103x6.h"
 
 #define R0 				(GPIO_PIN_0)
 #define R1 				(GPIO_PIN_1)

@@ -14,6 +14,7 @@ RM := rm -rf
 -include MCAL/USART/subdir.mk
 -include MCAL/SPI_driver/subdir.mk
 -include MCAL/RCC_driver/subdir.mk
+-include MCAL/I2C_driver/subdir.mk
 -include MCAL/EXTI_driver/subdir.mk
 -include HAL/lcd_driver/subdir.mk
 -include HAL/keypad_driver/subdir.mk
