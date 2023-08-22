@@ -1,0 +1,13 @@
+/*
+ * I2C_EEPROM_SLAVE.h
+ *
+ *  Created on: Aug 22, 2023
+ *      Author: ARAFA
+ */
+
+#ifndef INLCUDES_I2C_EEPROM_SLAVE_H_
+#define INLCUDES_I2C_EEPROM_SLAVE_H_
+
+
+
+#endif /* INLCUDES_I2C_EEPROM_SLAVE_H_ */

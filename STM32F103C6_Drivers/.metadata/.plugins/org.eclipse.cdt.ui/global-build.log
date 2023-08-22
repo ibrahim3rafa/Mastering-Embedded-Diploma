@@ -2108,3 +2108,575 @@ Finished building: STM32F103C6_Drivers.bin
  
 Finished building: STM32F103C6_Drivers.list
  
+08:19:00 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/I2C_driver/I2C.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/I2C_driver/I2C.d" -MT"MCAL/I2C_driver/I2C.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/I2C_driver/I2C.o"
+../MCAL/I2C_driver/I2C.c:14:34: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                  ^~~~
+../MCAL/I2C_driver/I2C.c:14:34: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Freq')
+../MCAL/I2C_driver/I2C.c:14:39: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                       ^~~~
+../MCAL/I2C_driver/I2C.c:14:39: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Stretch_Mode')
+../MCAL/I2C_driver/I2C.c:14:33: warning: missing braces around initializer [-Wmissing-braces]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                 ^
+../MCAL/I2C_driver/I2C.c: In function 'MCAL_I2C_Master_TX':
+../MCAL/I2C_driver/I2C.c:281:35: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+  while(!(I2C_Get_FlagStatus(I2Cx, MASTER_BYTE_TRANSMITTING)));
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C_Get_FlagStatus':
+../MCAL/I2C_driver/I2C.c:482:2: warning: case label value exceeds maximum value for type
+  case MASTER_BYTE_TRANSMITTING:
+  ^~~~
+../MCAL/I2C_driver/I2C.c:469:2: warning: case value '2' not in enumerated type 'Status {aka enum <anonymous>}' [-Wswitch]
+  case EV6:
+  ^~~~
+../MCAL/I2C_driver/I2C.c:495:2: warning: case value '4' not in enumerated type 'Status {aka enum <anonymous>}' [-Wswitch]
+  case EV8:
+  ^~~~
+../MCAL/I2C_driver/I2C.c:505:2: warning: case value '5' not in enumerated type 'Status {aka enum <anonymous>}' [-Wswitch]
+  case EV7:
+  ^~~~
+../MCAL/I2C_driver/I2C.c:433:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead;
+                    ^~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4016	      8	   1688	   5712	   1650	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+08:19:11 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/I2C_driver/I2C.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/I2C_driver/I2C.d" -MT"MCAL/I2C_driver/I2C.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/I2C_driver/I2C.o"
+../MCAL/I2C_driver/I2C.c:14:34: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                  ^~~~
+../MCAL/I2C_driver/I2C.c:14:34: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Freq')
+../MCAL/I2C_driver/I2C.c:14:39: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                       ^~~~
+../MCAL/I2C_driver/I2C.c:14:39: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Stretch_Mode')
+../MCAL/I2C_driver/I2C.c:14:33: warning: missing braces around initializer [-Wmissing-braces]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                 ^
+../MCAL/I2C_driver/I2C.c: In function 'MCAL_I2C_Master_TX':
+../MCAL/I2C_driver/I2C.c:281:35: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+  while(!(I2C_Get_FlagStatus(I2Cx, MASTER_BYTE_TRANSMITTING)));
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C_Get_FlagStatus':
+../MCAL/I2C_driver/I2C.c:482:2: warning: case label value exceeds maximum value for type
+  case MASTER_BYTE_TRANSMITTING:
+  ^~~~
+../MCAL/I2C_driver/I2C.c:469:2: warning: case value '2' not in enumerated type 'Status {aka enum <anonymous>}' [-Wswitch]
+  case EV6:
+  ^~~~
+../MCAL/I2C_driver/I2C.c:495:2: warning: case value '4' not in enumerated type 'Status {aka enum <anonymous>}' [-Wswitch]
+  case EV8:
+  ^~~~
+../MCAL/I2C_driver/I2C.c:505:2: warning: case value '5' not in enumerated type 'Status {aka enum <anonymous>}' [-Wswitch]
+  case EV7:
+  ^~~~
+../MCAL/I2C_driver/I2C.c:433:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead;
+                    ^~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4016	      8	   1688	   5712	   1650	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+08:20:47 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/I2C_driver/I2C.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/I2C_driver/I2C.d" -MT"MCAL/I2C_driver/I2C.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/I2C_driver/I2C.o"
+../MCAL/I2C_driver/I2C.c:14:34: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                  ^~~~
+../MCAL/I2C_driver/I2C.c:14:34: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Freq')
+../MCAL/I2C_driver/I2C.c:14:39: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                       ^~~~
+../MCAL/I2C_driver/I2C.c:14:39: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Stretch_Mode')
+../MCAL/I2C_driver/I2C.c:14:33: warning: missing braces around initializer [-Wmissing-braces]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                 ^
+../MCAL/I2C_driver/I2C.c: In function 'MCAL_I2C_Master_TX':
+../MCAL/I2C_driver/I2C.c:281:35: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+  while(!(I2C_Get_FlagStatus(I2Cx, MASTER_BYTE_TRANSMITTING)));
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c: At top level:
+../MCAL/I2C_driver/I2C.c:432:12: error: conflicting types for 'I2C_Get_FlagStatus'
+ FlagStatus I2C_Get_FlagStatus(I2C_typedef* I2Cx , FlagStatus flag ){
+            ^~~~~~~~~~~~~~~~~~
+In file included from ../MCAL/I2C_driver/I2C.c:9:0:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes/I2C.h:203:12: note: previous declaration of 'I2C_Get_FlagStatus' was here
+ FlagStatus I2C_Get_FlagStatus(I2C_typedef* I2Cx , Status flag );
+            ^~~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C_Get_FlagStatus':
+../MCAL/I2C_driver/I2C.c:439:2: warning: enumeration value 'EV8_1' not handled in switch [-Wswitch]
+  switch(flag){
+  ^~~~~~
+../MCAL/I2C_driver/I2C.c:433:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead;
+                    ^~~~~~~~~
+make: *** [MCAL/I2C_driver/subdir.mk:18: MCAL/I2C_driver/I2C.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+08:21:21 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/I2C_driver/I2C.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/I2C_driver/I2C.d" -MT"MCAL/I2C_driver/I2C.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/I2C_driver/I2C.o"
+../MCAL/I2C_driver/I2C.c:14:34: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                  ^~~~
+../MCAL/I2C_driver/I2C.c:14:34: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Freq')
+../MCAL/I2C_driver/I2C.c:14:39: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                       ^~~~
+../MCAL/I2C_driver/I2C.c:14:39: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Stretch_Mode')
+../MCAL/I2C_driver/I2C.c:14:33: warning: missing braces around initializer [-Wmissing-braces]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                 ^
+../MCAL/I2C_driver/I2C.c: In function 'I2C_Get_FlagStatus':
+../MCAL/I2C_driver/I2C.c:439:2: warning: enumeration value 'EV8_1' not handled in switch [-Wswitch]
+  switch(flag){
+  ^~~~~~
+../MCAL/I2C_driver/I2C.c:433:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead;
+                    ^~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4016	      8	   1688	   5712	   1650	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+08:21:32 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4016	      8	   1688	   5712	   1650	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+09:57:35 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/I2C_driver/I2C.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/I2C_driver/I2C.d" -MT"MCAL/I2C_driver/I2C.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/I2C_driver/I2C.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.d" -MT"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o"
+../MCAL/I2C_driver/I2C.c:14:34: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                  ^~~~
+../MCAL/I2C_driver/I2C.c:14:34: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Freq')
+../MCAL/I2C_driver/I2C.c:14:39: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                       ^~~~
+../MCAL/I2C_driver/I2C.c:14:39: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Stretch_Mode')
+../MCAL/I2C_driver/I2C.c:14:33: warning: missing braces around initializer [-Wmissing-braces]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                 ^
+../MCAL/I2C_driver/I2C.c: In function 'MCAL_I2C_Slave_Receive':
+../MCAL/I2C_driver/I2C.c:389:9: warning: 'return' with a value, in function returning void
+  return (uint8_t)I2Cx->DR;
+         ^~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c:388:6: note: declared here
+ void MCAL_I2C_Slave_Receive(I2C_typedef* I2Cx ){
+      ^~~~~~~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C_Get_FlagStatus':
+../MCAL/I2C_driver/I2C.c:472:2: warning: enumeration value 'EV8_1' not handled in switch [-Wswitch]
+  switch(flag){
+  ^~~~~~
+../MCAL/I2C_driver/I2C.c:466:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead;
+                    ^~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C1_EV_IRQHandler':
+../MCAL/I2C_driver/I2C.c:671:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead = 0;
+                    ^~~~~~~~~
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c: In function 'EEPROM_READ_NBytes':
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:56:27: warning: passing argument 2 of 'MCAL_I2C_Master_TX' makes integer from pointer without a cast [-Wint-conversion]
+  MCAL_I2C_Master_TX(I2C1, &buffer, dataOut, datalen, withoutstop, start);   //write address
+                           ^
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes/I2C_EEPROM_SLAVE.h:11:0,
+                 from ../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes/I2C.h:187:6: note: expected 'uint16_t {aka short unsigned int}' but argument is of type 'unsigned char (*)[2]'
+ void MCAL_I2C_Master_TX(I2C_typedef* I2Cx ,uint16_t devAdd, uint8_t*  dataOut, uint32_t dataLen, StopCondition stop , RepeatedStart start  );
+      ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4500	      8	   1760	   6268	   187c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+09:58:36 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.d" -MT"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o"
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c: In function 'EEPROM_READ_NBytes':
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:56:27: warning: passing argument 2 of 'MCAL_I2C_Master_TX' makes integer from pointer without a cast [-Wint-conversion]
+  MCAL_I2C_Master_TX(I2C1, buffer, dataOut, 2, withoutstop, start);   //write address
+                           ^~~~~~
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes/I2C_EEPROM_SLAVE.h:11:0,
+                 from ../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes/I2C.h:187:6: note: expected 'uint16_t {aka short unsigned int}' but argument is of type 'unsigned char *'
+ void MCAL_I2C_Master_TX(I2C_typedef* I2Cx ,uint16_t devAdd, uint8_t*  dataOut, uint32_t dataLen, StopCondition stop , RepeatedStart start  );
+      ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4500	      8	   1760	   6268	   187c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+09:59:07 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.d" -MT"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o"
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c: In function 'EEPROM_READ_NBytes':
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:56:27: warning: passing argument 2 of 'MCAL_I2C_Master_TX' makes integer from pointer without a cast [-Wint-conversion]
+  MCAL_I2C_Master_TX(I2C1, buffer, dataOut,(uint8_t)2, withoutstop, start);   //write address
+                           ^~~~~~
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes/I2C_EEPROM_SLAVE.h:11:0,
+                 from ../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes/I2C.h:187:6: note: expected 'uint16_t {aka short unsigned int}' but argument is of type 'unsigned char *'
+ void MCAL_I2C_Master_TX(I2C_typedef* I2Cx ,uint16_t devAdd, uint8_t*  dataOut, uint32_t dataLen, StopCondition stop , RepeatedStart start  );
+      ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4500	      8	   1760	   6268	   187c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+09:59:18 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.d" -MT"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o"
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c: In function 'EEPROM_READ_NBytes':
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:56:27: warning: passing argument 2 of 'MCAL_I2C_Master_TX' makes integer from pointer without a cast [-Wint-conversion]
+  MCAL_I2C_Master_TX(I2C1, buffer, dataOut, (uint8_t)(2), withoutstop, start);   //write address
+                           ^~~~~~
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes/I2C_EEPROM_SLAVE.h:11:0,
+                 from ../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes/I2C.h:187:6: note: expected 'uint16_t {aka short unsigned int}' but argument is of type 'unsigned char *'
+ void MCAL_I2C_Master_TX(I2C_typedef* I2Cx ,uint16_t devAdd, uint8_t*  dataOut, uint32_t dataLen, StopCondition stop , RepeatedStart start  );
+      ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4500	      8	   1760	   6268	   187c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+09:59:26 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.d" -MT"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o"
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c: In function 'EEPROM_READ_NBytes':
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:56:27: warning: passing argument 2 of 'MCAL_I2C_Master_TX' makes integer from pointer without a cast [-Wint-conversion]
+  MCAL_I2C_Master_TX(I2C1, &buffer, dataOut, (uint8_t)(2), withoutstop, start);   //write address
+                           ^
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes/I2C_EEPROM_SLAVE.h:11:0,
+                 from ../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes/I2C.h:187:6: note: expected 'uint16_t {aka short unsigned int}' but argument is of type 'unsigned char (*)[2]'
+ void MCAL_I2C_Master_TX(I2C_typedef* I2Cx ,uint16_t devAdd, uint8_t*  dataOut, uint32_t dataLen, StopCondition stop , RepeatedStart start  );
+      ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4500	      8	   1760	   6268	   187c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+10:00:28 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.d" -MT"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o"
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c: In function 'EEPROM_READ_NBytes':
+../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:56:43: warning: passing argument 3 of 'MCAL_I2C_Master_TX' from incompatible pointer type [-Wincompatible-pointer-types]
+  MCAL_I2C_Master_TX(I2C1, EEPROM_ADDRESS, &buffer, (2), withoutstop, start);   //write address
+                                           ^
+In file included from D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes/I2C_EEPROM_SLAVE.h:11:0,
+                 from ../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c:9:
+D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes/I2C.h:187:6: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'unsigned char (*)[2]'
+ void MCAL_I2C_Master_TX(I2C_typedef* I2Cx ,uint16_t devAdd, uint8_t*  dataOut, uint32_t dataLen, StopCondition stop , RepeatedStart start  );
+      ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4500	      8	   1760	   6268	   187c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+10:00:43 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.d" -MT"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4500	      8	   1760	   6268	   187c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+10:11:04 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4580	      8	   1712	   6300	   189c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+10:25:45 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/I2C_driver/I2C.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/I2C_driver/I2C.d" -MT"MCAL/I2C_driver/I2C.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/I2C_driver/I2C.o"
+../MCAL/I2C_driver/I2C.c:14:34: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                  ^~~~
+../MCAL/I2C_driver/I2C.c:14:34: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Freq')
+../MCAL/I2C_driver/I2C.c:14:39: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                       ^~~~
+../MCAL/I2C_driver/I2C.c:14:39: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Stretch_Mode')
+../MCAL/I2C_driver/I2C.c:14:33: warning: missing braces around initializer [-Wmissing-braces]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                 ^
+../MCAL/I2C_driver/I2C.c: In function 'MCAL_I2C_Slave_Receive':
+../MCAL/I2C_driver/I2C.c:389:9: warning: 'return' with a value, in function returning void
+  return (uint8_t)I2Cx->DR;
+         ^~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c:388:6: note: declared here
+ void MCAL_I2C_Slave_Receive(I2C_typedef* I2Cx ){
+      ^~~~~~~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C_Get_FlagStatus':
+../MCAL/I2C_driver/I2C.c:472:2: warning: enumeration value 'EV8_1' not handled in switch [-Wswitch]
+  switch(flag){
+  ^~~~~~
+../MCAL/I2C_driver/I2C.c:466:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead;
+                    ^~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C1_EV_IRQHandler':
+../MCAL/I2C_driver/I2C.c:671:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead = 0;
+                    ^~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4580	      8	   1712	   6300	   189c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+10:27:57 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/I2C_driver/I2C.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/I2C_driver/I2C.d" -MT"MCAL/I2C_driver/I2C.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/I2C_driver/I2C.o"
+../MCAL/I2C_driver/I2C.c:14:34: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                  ^~~~
+../MCAL/I2C_driver/I2C.c:14:34: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Freq')
+../MCAL/I2C_driver/I2C.c:14:39: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                       ^~~~
+../MCAL/I2C_driver/I2C.c:14:39: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Stretch_Mode')
+../MCAL/I2C_driver/I2C.c:14:33: warning: missing braces around initializer [-Wmissing-braces]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                 ^
+../MCAL/I2C_driver/I2C.c: In function 'MCAL_I2C_Slave_Receive':
+../MCAL/I2C_driver/I2C.c:389:9: warning: 'return' with a value, in function returning void
+  return (uint8_t)I2Cx->DR;
+         ^~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c:388:6: note: declared here
+ void MCAL_I2C_Slave_Receive(I2C_typedef* I2Cx ){
+      ^~~~~~~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C_Get_FlagStatus':
+../MCAL/I2C_driver/I2C.c:472:2: warning: enumeration value 'EV8_1' not handled in switch [-Wswitch]
+  switch(flag){
+  ^~~~~~
+../MCAL/I2C_driver/I2C.c:466:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead;
+                    ^~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C1_EV_IRQHandler':
+../MCAL/I2C_driver/I2C.c:671:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead = 0;
+                    ^~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4580	      8	   1712	   6300	   189c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+10:37:08 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/I2C_driver/I2C.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/I2C_driver/I2C.d" -MT"MCAL/I2C_driver/I2C.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/I2C_driver/I2C.o"
+../MCAL/I2C_driver/I2C.c:14:34: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                  ^~~~
+../MCAL/I2C_driver/I2C.c:14:34: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Freq')
+../MCAL/I2C_driver/I2C.c:14:39: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                       ^~~~
+../MCAL/I2C_driver/I2C.c:14:39: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Stretch_Mode')
+../MCAL/I2C_driver/I2C.c:14:33: warning: missing braces around initializer [-Wmissing-braces]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                 ^
+../MCAL/I2C_driver/I2C.c: In function 'MCAL_I2C_Slave_Receive':
+../MCAL/I2C_driver/I2C.c:389:9: warning: 'return' with a value, in function returning void
+  return (uint8_t)I2Cx->DR;
+         ^~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c:388:6: note: declared here
+ void MCAL_I2C_Slave_Receive(I2C_typedef* I2Cx ){
+      ^~~~~~~~~~~~~~~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C_Get_FlagStatus':
+../MCAL/I2C_driver/I2C.c:472:2: warning: enumeration value 'EV8_1' not handled in switch [-Wswitch]
+  switch(flag){
+  ^~~~~~
+../MCAL/I2C_driver/I2C.c:466:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead;
+                    ^~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C1_EV_IRQHandler':
+../MCAL/I2C_driver/I2C.c:671:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead = 0;
+                    ^~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4592	      8	   1712	   6312	   18a8	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 
+10:47:59 **** Incremental Build of configuration Debug for project STM32F103C6_Drivers ****
+make -j8 all 
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../MCAL/I2C_driver/I2C.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"MCAL/I2C_driver/I2C.d" -MT"MCAL/I2C_driver/I2C.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "MCAL/I2C_driver/I2C.o"
+arm-none-eabi-gcc -gdwarf-2 "../HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -DDEBUG -c -I../Inc -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/MCAL/includes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/HAL/inlcudes" -I"D:/Embedded/KEROLES/Mastering Embedded System/github/Mastering-Embedded-Diploma/STM32F103C6_Drivers/STM32F103C6_Drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.d" -MT"HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "HAL/I2C_EEPROM_SLAVE.c/I2C_EEPROM_SLAVE.o"
+../MCAL/I2C_driver/I2C.c:14:34: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                  ^~~~
+../MCAL/I2C_driver/I2C.c:14:34: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Freq')
+../MCAL/I2C_driver/I2C.c:14:39: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                       ^~~~
+../MCAL/I2C_driver/I2C.c:14:39: note: (near initialization for 'Gp_I2C_Config[0].I2C_Clock_Stretch_Mode')
+../MCAL/I2C_driver/I2C.c:14:33: warning: missing braces around initializer [-Wmissing-braces]
+ I2C_Config_t Gp_I2C_Config[2] = {NULL,NULL};
+                                 ^
+../MCAL/I2C_driver/I2C.c: In function 'I2C_Get_FlagStatus':
+../MCAL/I2C_driver/I2C.c:472:2: warning: enumeration value 'EV8_1' not handled in switch [-Wswitch]
+  switch(flag){
+  ^~~~~~
+../MCAL/I2C_driver/I2C.c:466:20: warning: unused variable 'dummyRead' [-Wunused-variable]
+  volatile uint32_t dummyRead;
+                    ^~~~~~~~~
+../MCAL/I2C_driver/I2C.c: In function 'I2C1_EV_IRQHandler':
+../MCAL/I2C_driver/I2C.c:670:20: warning: variable 'dummyRead' set but not used [-Wunused-but-set-variable]
+  volatile uint32_t dummyRead = 0;
+                    ^~~~~~~~~
+arm-none-eabi-gcc -gdwarf-2 -o "STM32F103C6_Drivers.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded\KEROLES\Mastering Embedded System\github\Mastering-Embedded-Diploma\STM32F103C6_Drivers\STM32F103C6_Drivers\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103C6_Drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32F103C6_Drivers.elf
+ 
+arm-none-eabi-objdump -h -S  STM32F103C6_Drivers.elf  > "STM32F103C6_Drivers.list"
+arm-none-eabi-objcopy  -O binary  STM32F103C6_Drivers.elf  "STM32F103C6_Drivers.bin"
+arm-none-eabi-size   STM32F103C6_Drivers.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4580	      8	   1712	   6300	   189c	STM32F103C6_Drivers.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F103C6_Drivers.bin
+ 
+Finished building: STM32F103C6_Drivers.list
+ 

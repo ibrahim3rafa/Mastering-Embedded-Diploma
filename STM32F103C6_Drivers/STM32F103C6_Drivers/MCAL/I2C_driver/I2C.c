@@ -61,7 +61,7 @@ void MCAL_I2C_Init(I2C_typedef* I2Cx, I2C_Config_t * I2C_Config){
 		tempreg = I2Cx->CR2;
 
 		//clear freq[5:0];
-		tempreg &= ~(I2C_CR2_FREQ);
+		tempreg &= ~(I2C_CR2_FREQ_Msk);
 
 		//get pclk1 freq
 		pclk1 = MCAL_RCC_GetPCLK1_CLCKFreq();
@@ -88,7 +88,7 @@ void MCAL_I2C_Init(I2C_typedef* I2Cx, I2C_Config_t * I2C_Config){
 			//Tclk / 2 = CRR * Tpclk1
 			//CRR = Tclk / (2  * Tpclk1)
 			//CRR = Fpclk1 / (2 * Fclk)
-			result = (uint16_t) (pclk1 / (I2C_Config->I2C_Clock_Freq) << 1);
+			result = (uint16_t) (pclk1 / (I2C_Config->I2C_Clock_Freq << 1));
 
 			tempreg |= result;
 
@@ -136,7 +136,7 @@ void MCAL_I2C_Init(I2C_typedef* I2Cx, I2C_Config_t * I2C_Config){
 
 		tempreg = 0;
 
-		tempreg = I2C_Config->I2C_Slave_Address_Mode.Primary_Slave_Address << 1;
+		tempreg |= I2C_Config->I2C_Slave_Address_Mode.Primary_Slave_Address << 1;
 
 		tempreg |=  I2C_Config->I2C_Slave_Address_Mode.Addressing_Bits;
 
@@ -217,26 +217,26 @@ void MCAL_I2C_Set_GPIO_PINS(I2C_typedef* I2Cx){
 		//PB7 SDA
 		gpio_pinCfg.GPIO_PinNum = GPIO_PIN_6;
 		gpio_pinCfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-		gpio_pinCfg.GPIO_PinMode = OUTPUT_OPEN_DRAIN_MODE;
-		MCAL_GPIO_init(GPIOA, &gpio_pinCfg);
+		gpio_pinCfg.GPIO_PinMode = AF_OUTPUT_OPEN_DRAIN_MODE;
+		MCAL_GPIO_init(GPIOB, &gpio_pinCfg);
 
 		gpio_pinCfg.GPIO_PinNum = GPIO_PIN_7;
 		gpio_pinCfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-		gpio_pinCfg.GPIO_PinMode = OUTPUT_OPEN_DRAIN_MODE;
-		MCAL_GPIO_init(GPIOA, &gpio_pinCfg);
+		gpio_pinCfg.GPIO_PinMode = AF_OUTPUT_OPEN_DRAIN_MODE;
+		MCAL_GPIO_init(GPIOB, &gpio_pinCfg);
 
 	}else if(I2Cx == I2C2){
 		//PB10 SCL
 		//PB11 SDA
 		gpio_pinCfg.GPIO_PinNum = GPIO_PIN_10;
 		gpio_pinCfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-		gpio_pinCfg.GPIO_PinMode = OUTPUT_OPEN_DRAIN_MODE;
-		MCAL_GPIO_init(GPIOA, &gpio_pinCfg);
+		gpio_pinCfg.GPIO_PinMode = AF_OUTPUT_OPEN_DRAIN_MODE;
+		MCAL_GPIO_init(GPIOB, &gpio_pinCfg);
 
 		gpio_pinCfg.GPIO_PinNum = GPIO_PIN_11;
 		gpio_pinCfg.GPIO_Output_Speed = GPIO_SPEED_10MHZ;
-		gpio_pinCfg.GPIO_PinMode = OUTPUT_OPEN_DRAIN_MODE;
-		MCAL_GPIO_init(GPIOA, &gpio_pinCfg);
+		gpio_pinCfg.GPIO_PinMode = AF_OUTPUT_OPEN_DRAIN_MODE;
+		MCAL_GPIO_init(GPIOB, &gpio_pinCfg);
 	}
 }
 
@@ -360,6 +360,39 @@ void MCAL_I2C_Master_RX(I2C_typedef* I2Cx ,uint16_t devAdd, uint8_t*  dataOut, u
 }
 
 
+
+//slave interrupt
+
+/**================================================================
+ * @Fn					- MCAL_I2C_Slave_Transmit
+ * @brief 				- To send data in case you were a slave
+ * @param [in] 			- I2Cx: where x can be (1 or 2) depending on the device used
+ * @param [in] 			- data: the data to be sent
+ * @retval 				- None
+ * Note					- None
+ *
+ */
+void MCAL_I2C_Slave_Transmit(I2C_typedef* I2Cx , uint8_t data ){
+	I2Cx->DR = data;
+}
+
+
+/**================================================================
+ * @Fn					- MCAL_I2C_Slave_Recieve
+ * @brief 				- To send data in case you were a slave
+ * @param [in] 			- I2Cx: where x can be (1 or 2) depending on the device used
+ * @retval 				- the received data
+ * Note					- None
+ *
+ */
+uint8_t MCAL_I2C_Slave_Receive(I2C_typedef* I2Cx ){
+	return (uint8_t)I2Cx->DR;
+}
+
+
+
+
+
 //Generic APIS
 /**================================================================
  * @Fn					- I2C_Generate_START
@@ -429,7 +462,7 @@ void I2C_Generate_Stop(I2C_typedef * I2Cx, FunctionalState newstate){
  *
  */
 
-FlagStatus I2C_Get_FlagStatus(I2C_typedef* I2Cx , Status flag ){
+FlagStatus I2C_Get_FlagStatus(I2C_typedef* I2Cx , FlagStatus flag ){
 	volatile uint32_t dummyRead;
 	uint32_t flag1 = 0;
 	uint32_t flag2 = 0;
@@ -475,8 +508,7 @@ FlagStatus I2C_Get_FlagStatus(I2C_typedef* I2Cx , Status flag ){
 			bitStatus = SET;
 		else
 			bitStatus = RESET;
-		//		ADDR=1, cleared by reading SR1 register followed by reading SR2
-		dummyRead = I2Cx->SR2;
+
 		break;
 
 	case MASTER_BYTE_TRANSMITTING:
@@ -576,3 +608,143 @@ void I2C_Acknowledge_Config(I2C_typedef* I2Cx, FunctionalState NewState)
 	}
 }
 
+
+void Slave_Status(I2C_typedef* I2Cx, Slave_State state)
+{
+
+	uint8_t index = I2Cx == I2C1? I2C1_INDEX : I2C2_INDEX;
+
+	switch(state){
+
+	case I2C_ERROR_AF :
+
+		if(I2Cx->SR2 & (I2C_SR2_TRA)){
+			// slave not send
+		}
+		break;
+
+	case I2C_EV_STOP:
+
+		if(I2Cx->SR2 & (I2C_SR2_TRA)){
+			//TELL THE APP stop CONDITION IS SENT
+			Gp_I2C_Config[index].P_Slave_Event_CallBack(I2C_EV_STOP);
+		}
+		break;
+
+	case I2C_EV_ADDR_MATCHED:
+
+		//TELL THE APP stop CONDITION IS SENT
+		Gp_I2C_Config[index].P_Slave_Event_CallBack(I2C_EV_ADDR_MATCHED);
+
+		break;
+
+	case I2C_EV_DATA_REQ:
+		if(I2Cx->SR2 & (I2C_SR2_TRA)){
+			//TELL THE APP stop CONDITION IS SENT
+			Gp_I2C_Config[index].P_Slave_Event_CallBack(I2C_EV_ADDR_MATCHED);
+
+		}
+		break;
+	case I2C_EV_DATA_RCV:
+		//make sure that the slave in receiver mode
+
+		if(!(I2Cx->SR2 & (I2C_SR2_TRA))){
+			// The app should read the data
+			Gp_I2C_Config[index].P_Slave_Event_CallBack(I2C_EV_STOP);
+		}
+		break;
+
+	}
+
+}
+
+
+
+
+
+
+
+
+//Interrupts
+void I2C1_EV_IRQHandler(void){/* I2C1 event interrupt                             */
+	volatile uint32_t dummyRead = 0;
+	uint32_t flag1,flag2,flag3;
+
+	I2C_typedef * I2Cx  = I2C1;
+
+	flag1 = I2Cx->CR2 & (I2C_CR2_ITEVTEN);
+	flag2 = I2Cx->CR2 & (I2C_CR2_ITBUFEN);
+
+	flag3 = I2Cx->CR1 & (I2C_SR1_STOPF);
+
+	//handle STOPF EV
+	if(flag1 && flag3){
+		//clear flag
+		// write to cr1
+		I2Cx->CR1 |= 0x0000;
+		Slave_Status(I2Cx, I2C_EV_STOP);
+
+	}
+
+
+
+	//Handle for ADDR event
+	if(flag1 && flag3){
+		//check device mode
+		if(I2Cx->SR2 & (I2C_SR2_MSL)){
+			//master
+		}else{
+			//slave mode
+			// clear by reading sr1 & sr2
+			dummyRead = I2Cx->SR1;
+			dummyRead = I2Cx->SR2;
+			Slave_Status(I2Cx, I2C_EV_ADDR_MATCHED);
+		}
+	}
+
+
+	flag3 = I2Cx->SR1 & (I2C_SR1_TXE);
+
+	//handle TXE event
+	if(flag1 && flag2 && flag3){
+		//check device mode
+				if(I2Cx->SR2 & (I2C_SR2_MSL)){
+					//master
+				}else{
+					//slave mode
+
+					Slave_Status(I2Cx, I2C_EV_DATA_REQ);
+				}
+	}
+
+
+
+	flag3 = I2Cx->SR1 & (I2C_SR1_RXNE);
+
+	//handle SB1
+	if(flag1 && flag2 && flag3){
+		//check device mode
+				if(I2Cx->SR2 & (I2C_SR2_MSL)){
+					//master
+				}else{
+					//slave mode
+
+					Slave_Status(I2Cx, I2C_EV_DATA_RCV);
+				}
+	}
+
+
+}
+void I2C1_ER_IRQHandler(void){/* I2C1 error interrupt                             */
+
+}
+void I2C2_EV_IRQHandler(void)        			/* I2C2 event interrupt                             */
+{
+
+}
+
+
+void I2C2_ER_IRQHandler(void)        			/* I2C2 error interrupt                             */
+{
+
+}

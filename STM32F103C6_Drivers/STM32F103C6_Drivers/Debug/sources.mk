@@ -19,6 +19,7 @@ OBJCOPY_BIN :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+HAL/I2C_EEPROM_SLAVE.c \
 HAL/keypad_driver \
 HAL/lcd_driver \
 MCAL/EXTI_driver \

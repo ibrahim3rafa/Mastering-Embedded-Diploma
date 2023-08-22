@@ -1,0 +1,25 @@
+/*
+ * I2C_EEPROM_SLAVE.h
+ *
+ *  Created on: Aug 22, 2023
+ *      Author: ARAFA
+ */
+
+#ifndef INLCUDES_I2C_EEPROM_SLAVE_H_
+#define INLCUDES_I2C_EEPROM_SLAVE_H_
+
+#include "I2C.h"
+/**
+ * E2PROM is an I2C slave
+ * Idle Mode : Device is in high impedance state and waits for data
+ * Master Transmitter Mode : the device transmits data to slave reciever
+ * Master Reciever Mode : the device receives data from a slave transmitter
+ */
+
+#define EEPROM_ADDRESS			0X2A
+
+void EEPROM_Init(void);
+unsigned char EEPROM_WRITE_NBytes(unsigned int Memory_Address, unsigned char* Bytes, uint8_t datalen);
+unsigned char EEPROM_READ_NBytes(unsigned int Address, uint8_t* dataOut, uint8_t datalen);
+
+#endif /* INLCUDES_I2C_EEPROM_SLAVE_H_ */

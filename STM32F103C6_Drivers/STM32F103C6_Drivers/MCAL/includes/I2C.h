@@ -47,11 +47,11 @@ typedef enum {
 
 	I2C_FLAG_BUSY = 0,
 	EV5, 				//EV5: SB=1, cleared by reading SR1 register followed by writing DR register with Address
-	EV6,				//EV6: ADDR=1, cleared by reading SR1 register followed by reading SR2.
+	EV6 = 2,				//EV6: ADDR=1, cleared by reading SR1 register followed by reading SR2.
 	EV8_1,				//EV8_1: TxE=1, shift register empty, data register empty, write Data1 in DR.
 	EV8,				//EV8: TxE=1, shift register not empty, d . ata register empty, cleared by writing DR register
 	EV7,
-	MASTER_BYTE_TRANSMITTING = ((uint32_t)0X00070080) //TRA , BUSY , MSL , TXE flags
+	MASTER_BYTE_TRANSMITTING = ((uint32_t)0X00070080)  //TRA , BUSY , MSL , TXE flags
 
 }FlagStatus;
 
@@ -189,7 +189,10 @@ void MCAL_I2C_Master_RX(I2C_typedef* I2Cx ,uint16_t devAdd, uint8_t*  dataOut, u
 
 
 
+//slave interrupt
 
+void MCAL_I2C_Slave_Transmit(I2C_typedef* I2Cx , uint8_t data );
+uint8_t MCAL_I2C_Slave_Receive(I2C_typedef* I2Cx );
 
 
 
@@ -197,7 +200,7 @@ void MCAL_I2C_Master_RX(I2C_typedef* I2Cx ,uint16_t devAdd, uint8_t*  dataOut, u
 
 void I2C_Generate_Start(I2C_typedef* I2Cx, FunctionalState state, RepeatedStart start);
 
-FlagStatus I2C_Get_FlagStatus(I2C_typedef* I2Cx , Status flag );
+FlagStatus I2C_Get_FlagStatus(I2C_typedef* I2Cx , FlagStatus flag );
 
 
 void I2C_SendAddress(I2C_typedef* I2Cx , uint16_t Address , I2C_Direction direction );
@@ -207,5 +210,7 @@ void I2C_Generate_Stop(I2C_typedef * I2Cx, FunctionalState newstate);
 
 void I2C_Acknowledge_Config(I2C_typedef* I2Cx, FunctionalState NewState);
 
+
+void Slave_Status(I2C_typedef* I2Cx, Slave_State state);
 
 #endif /* INCLUDES_I2C_H_ */

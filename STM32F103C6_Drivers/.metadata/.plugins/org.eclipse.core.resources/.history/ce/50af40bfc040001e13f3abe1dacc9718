@@ -1,0 +1,33 @@
+/*
+ * I2C_EEPROM_SLAVE.c
+ *
+ *  Created on: Aug 22, 2023
+ *      Author: ARAFA
+ */
+
+
+#include"I2C_EEPROM_SLAVE.h"
+#include "I2C.h"
+
+void EEPROM_Init(void){
+	//I2C INIT
+	//	PB6 = SCL
+	//	PB7 = SDA
+
+	I2C_Config_t I2C1CFG;
+
+	// i2C ACT AS MASTER
+	I2C1CFG.I2C_Acknowledge_Mode = I2C_ACK_RETURNED;
+	I2C1CFG.I2C_Clock_Freq = I2C_SCLK_SM_100K;
+	I2C1CFG.I2C_Clock_Stretch_Mode = I2C_CLK_STRETCH_EN;
+	I2C1CFG.I2C_General_Call_Mode = I2C_GENERAL_CALL_EN;
+	I2C1CFG.I2C_SM_Bus_Mode = I2C_I2C_Mode;
+	I2C1CFG.P_Slave_Event_CallBack = NULL;
+
+	MCAL_I2C_Set_GPIO_PINS(I2C1);
+	MCAL_I2C_Init(I2C1, &I2C1CFG);
+
+
+}
+
+

@@ -18,6 +18,7 @@ RM := rm -rf
 -include MCAL/EXTI_driver/subdir.mk
 -include HAL/lcd_driver/subdir.mk
 -include HAL/keypad_driver/subdir.mk
+-include HAL/I2C_EEPROM_SLAVE.c/subdir.mk
 -include subdir.mk
 -include objects.mk
 
